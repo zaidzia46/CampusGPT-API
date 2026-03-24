@@ -18,17 +18,12 @@ Admin support for updating knowledge base
 This project is part of a Final Year Project (FYP).
 
 ## Tech Stack
-
-###Backend Framework:
+### Backend Framework:
 FastAPI (Python)
 
 ### AI & RAG:
 Large Language Models (Gemini/OpenAI/Grok)
 Vector Database (ChromaDB)
 
-### Other Tools:
-Python
-REST APIs
-
-Frontend (Connected App):
+### Frontend (Connected App):
 Flutter Mobile Application
