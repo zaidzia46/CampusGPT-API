@@ -1,0 +1,124 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import JSONResponse
+from auth.register_verification_fns import save_otp, verify_otp, generate_otp
+from core.security import password_hashing, verify_password, create_access_token, create_refresh_token
+from db.session import get_db
+from sqlalchemy.orm import Session
+from schemas.auth import Register, ResetPasswordRequest, ResetPwd, SendOTP, VerifyOTP
+from models.models import UserAuth
+from fastapi.security import OAuth2PasswordRequestForm
+from auth.reset_password_fns import create_reset_token, send_email, verify_reset_token
+import re
+
+UNIVERSITY_EMAIL_REGEX = re.compile(
+    r"^("
+    r"(fa|sp)\d{2}-[a-z]+-\d{3}@students\.cuisahiwal\.edu\.pk"
+    r"|"
+    r"[a-z]+\d*@(cuisahiwal|ciitsahiwal)\.edu\.pk"
+    r")$",
+    re.IGNORECASE,
+)
+
+def validate_university_email(email: str) -> str:
+    email = email.strip().lower()
+
+    if not UNIVERSITY_EMAIL_REGEX.match(email):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid university email"
+        )
+
+    return email
+
+router = APIRouter(
+    prefix='/auth',
+    tags=['Auth'],
+    dependencies=[Depends(get_db)]
+)
+
+@router.post('/register')
+def Register(register: Register, db = Depends(get_db)):
+    existing_user = db.query(UserAuth).filter(UserAuth.email == register.email).first()
+    if existing_user:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='User already existed')
+    
+    hashed_password = password_hashing(register.password)
+    new_user = UserAuth(username=register.username, email = register.email, password=hashed_password, role='student')
+
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+
+    return JSONResponse(status_code=status.HTTP_201_CREATED, content={'message': 'Account created successfully'})
+
+@router.post('/login')
+def Login(form_data: OAuth2PasswordRequestForm = Depends(), db = Depends(get_db)):
+    email = validate_university_email(form_data.username)
+    existing_user = db.query(UserAuth).filter(UserAuth.email == email).first()
+    if existing_user is None or not verify_password(form_data.password, existing_user.password):
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='Wrong email or password')
+    
+    access_token = create_access_token({'sub': str(existing_user.id), 'role': existing_user.role})
+    refresh_token = create_refresh_token({'sub': str(existing_user.id), 'role': existing_user.role})
+
+    return {
+        'access_token': access_token,
+        'refresh_token': refresh_token,
+        'token_type': 'bearer'
+    }
+
+@router.post('/forgot-password')
+def ForgotPassword(data: ResetPwd, db: Session = Depends(get_db)):
+    email = validate_university_email(data.email)
+    user = db.query(UserAuth).filter(email == UserAuth.email).first()
+
+    if user:
+        token = create_reset_token(user.id)
+        reset_link = f"http://127.0.0.1:8000/static/reset-password.html?token={token}"
+
+        send_email(
+            to=user.email,
+            subject='Reset Password',
+            body=f"Click this link to reset your password:\n{reset_link}"
+        )
+
+    return {"message": "A reset link has been sent"}
+
+@router.post('/reset-password')
+def ResetPWD(data: ResetPasswordRequest, db: Session = Depends(get_db)):
+    try:
+        user_id = verify_reset_token(data.token)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    user = db.query(UserAuth).filter(user_id == UserAuth.id).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    user.hashed_password = password_hashing(data.new_password)
+    db.commit()
+
+    return {"message": "Password reset successful"}
+
+@router.post('/send-otp')
+def SendOTP(OTP: SendOTP, db: Session = Depends(get_db)):
+    email = validate_university_email(OTP.email)
+    existing_user = db.query(UserAuth).filter(UserAuth.email == email).first()
+    if existing_user:
+        raise HTTPException(status_code=400, detail="User already exists with this email")
+    
+    otp = generate_otp()
+    save_otp(email, otp)
+    send_email(
+        to=email,
+        subject='Your OTP Code',
+        body=f"Your OTP code is: {otp}. It will expire in 2 minutes."
+    )
+    return {"message": "OTP sent to your email"}
+
+@router.post('/verify-otp')
+def VerifyOTP(OTP: VerifyOTP, db: Session = Depends(get_db)):
+    email = validate_university_email(OTP.email)
+    if verify_otp(email, OTP.otp):
+        return {"message": "OTP verified successfully"}
+    else:
+        raise HTTPException(status_code=400, detail="Invalid or expired OTP")
