@@ -8,7 +8,7 @@ from db.session import engine
 from core.security import router as refresh_router
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI(title="AI Campus Assistant")
+app = FastAPI(title="CmapusGPT API", description="API for CampusGPT application", version="1.0.0")
 app.mount('/static-pwd-reset', StaticFiles(directory='static-pwd-reset'), name='static-pwd-reset')
 
 app.include_router(auth_router)
