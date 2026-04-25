@@ -1,11 +1,12 @@
 import json
-import subprocess
-import sys
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, HTTPException
 
 from admin.deps import get_current_admin
+from rag_pipeline.generator import generate
+from rag_pipeline.embedder  import embed
+from rag_pipeline.searcher  import search
 from schemas.admin.admin import EmbedRequest, GenerateRequest, SearchRequest
 
 router = APIRouter(
@@ -14,10 +15,12 @@ router = APIRouter(
     dependencies=[Depends(get_current_admin)]
 )
 
-CHUNKS_DIR = Path("data/chunks")
+ROOT       = Path(__file__).parent.parent
+CHUNKS_DIR = ROOT / "UNIdata" / "chunks"
 
-@router.get("/status")
+@router.get('/status')
 def status():
+    """Returns list of all generated chunk files."""
     files = []
     for f in sorted(CHUNKS_DIR.glob("chunks_*.json"), reverse=True):
         with open(f, encoding="utf-8") as fp:
@@ -31,118 +34,41 @@ def status():
     return {"chunk_files": files}
 
 
-@router.post("/generate")
-def generate(req: GenerateRequest):
-    result = subprocess.run(
-        [sys.executable, "generate_chunks.py", "--semester", req.semester],
-        capture_output=True,
-        text=True,
-    )
-
-    if result.returncode != 0:
-        raise HTTPException(status_code=500, detail={
-            "message": "Chunk generation failed",
-            "output":  result.stdout + result.stderr,
-        })
-
-    chunk_file = CHUNKS_DIR / f"chunks_{req.semester}.json"
-    summary = {}
-    if chunk_file.exists():
-        with open(chunk_file, encoding="utf-8") as f:
-            data = json.load(f)
-        types = {}
-        for c in data["chunks"]:
-            t = c["chunk_type"]
-            types[t] = types.get(t, 0) + 1
-        summary = {
-            "total_chunks": data["total_chunks"],
-            "by_type":      types,
-            "generated_at": data["generated_at"],
-        }
-
-    return {
-        "success":  True,
-        "semester": req.semester,
-        "summary":  summary,
-        "output":   result.stdout + result.stderr,
-    }
+@router.post('/generate')
+def admin_generate(req: GenerateRequest):
+    """Generate chunks from Google Sheets for the given semester."""
+    result = generate(req.semester)
+    if not result["success"]:
+        raise HTTPException(status_code=500, detail=result)
+    return result
 
 
-@router.post("/embed")
-def embed(req: EmbedRequest):
-    chunk_file = CHUNKS_DIR / f"chunks_{req.semester}.json"
-
-    if not chunk_file.exists():
-        raise HTTPException(status_code=404, detail={
-            "message": f"No chunk file for '{req.semester}'. Run /admin/generate first.",
-        })
-
-    args = [sys.executable, "embed_chunks.py", "--file", str(chunk_file)]
-    if req.wipe:
-        args.append("--wipe")
-
-    result = subprocess.run(args, capture_output=True, text=True)
-
-    if result.returncode != 0:
-        raise HTTPException(status_code=500, detail={
-            "message": "Embedding failed",
-            "output":  result.stdout + result.stderr,
-        })
-
-    return {
-        "success":  True,
-        "semester": req.semester,
-        "wiped":    req.wipe,
-        "output":   result.stdout + result.stderr,
-    }
+@router.post('/embed')
+def admin_embed(req: EmbedRequest):
+    """Embed chunks into ChromaDB."""
+    result = embed(req.semester, req.wipe)
+    if not result["success"]:
+        raise HTTPException(status_code=500, detail=result)
+    return result
 
 
-@router.get("/chunks")
-def get_chunks(semester: str):
+@router.get('/chunks')
+def admin_chunks(semester: str):
+    """Returns the chunks JSON for a given semester."""
     chunk_file = CHUNKS_DIR / f"chunks_{semester}.json"
-
     if not chunk_file.exists():
-        raise HTTPException(status_code=404, detail={
-            "message": f"No chunk file found for semester '{semester}'.",
-        })
-
+        raise HTTPException(
+            status_code=404,
+            detail=f"No chunk file found for semester '{semester}'."
+        )
     with open(chunk_file, encoding="utf-8") as f:
-        data = json.load(f)
-    return data
+        return json.load(f)
 
 
-@router.post("/search")
-def search(req: SearchRequest):
-    try:
-        import chromadb
-        from chromadb.config import Settings
-        from sentence_transformers import SentenceTransformer
-
-        client = chromadb.PersistentClient(
-            path=str(Path("data/vectordb").resolve()),
-            settings=Settings(anonymized_telemetry=False),
-        )
-        collection = client.get_collection("cui_sahiwal_kb")
-        model      = SentenceTransformer("all-MiniLM-L6-v2")
-
-        vector  = model.encode(req.query).tolist()
-        results = collection.query(
-            query_embeddings=[vector],
-            n_results=req.top_k,
-        )
-
-        hits = []
-        for i in range(len(results["ids"][0])):
-            hits.append({
-                "chunk_id": results["ids"][0][i],
-                "text":     results["documents"][0][i],
-                "distance": round(results["distances"][0][i], 4),
-                "metadata": results["metadatas"][0][i],
-            })
-
-        return {"query": req.query, "results": hits}
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail={
-            "message": f"Search failed: {str(e)}",
-        })
+@router.post('/search')
+def admin_search(req: SearchRequest):
+    """Test search against ChromaDB — for admin quality checking."""
+    result = search(req.query, req.top_k)
+    if not result["success"]:
+        raise HTTPException(status_code=500, detail=result["error"])
+    return result

@@ -1,0 +1,17 @@
+{
+    "credentials_file": "credentials.json",
+    "sheets": {
+        "scholarships": {
+            "sheet_id": "1Fp7NJtAIsVQeVqPw3elB2QDU1hx1fxiyNHJmajguqlY",
+            "sheet_name": "Scholarships"
+        },
+        "fees": {
+            "sheet_id": "1p4b7NWAacz0Wi0SRBZB7yxREITLPtzOV9uQxhK9dYHo",
+            "sheet_name": "Fee Structure"
+        },
+        "basic_info": {
+            "sheet_id": "1I20Xlme_DQEK6gqHpBEQmsp6Mhh1xFdoYe3l1lcBOoM",
+            "sheet_name": "Basic Info Topics"
+        }
+    }
+}

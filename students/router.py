@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
+from sqlalchemy.orm import Session
 from db.session import get_db
 from students.deps import get_current_student
 from schemas.students.feedback import Feedback_pd
@@ -8,6 +9,7 @@ from schemas.students.query_feedback import QueryFeedback_pd
 from schemas.students.update_pwd import UpdatePassword
 from models.models import Feedback, QueryFeedback, UserAuth
 from core.security import verify_password, password_hashing
+from rag_pipeline.searcher import search
 
 
 router = APIRouter(
@@ -17,10 +19,29 @@ router = APIRouter(
 )
 
 @router.post('/query')
-def UserQuery(query: Query):
-    #give to RAG pipeline
-    #return response to user
-    return JSONResponse(status_code=status.HTTP_200_OK, content={'response':'LLM Response for the query', 'query':query.query_text})
+def UserQuery(query: Query, db: Session = Depends(get_db)):
+    # Search ChromaDB for relevant chunks
+    search_result = search(query.query_text, top_k=3)
+
+    if not search_result["success"]:
+        return JSONResponse(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            content={"error": "Could not retrieve information. Please try again."}
+        )
+
+    # For now return the top chunk text as the response
+    # This will be replaced with LLM response in the next step
+    top_chunks = search_result["results"]
+    context    = "\n\n".join([c["text"] for c in top_chunks])
+
+    return JSONResponse(
+        status_code=status.HTTP_200_OK,
+        content={
+            "response": context,
+            "query":    query.query_text,
+            "chunks":   top_chunks,
+        }
+    )
 
 @router.post('/query-feedback')
 def UserQueryFeedback(queryFeedback: QueryFeedback_pd, current_student = Depends(get_current_student), db = Depends(get_db)):
