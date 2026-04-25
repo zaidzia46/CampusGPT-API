@@ -25,3 +25,8 @@ sentence-transformers
 pypdf
 python-docx
 unstructured
+
+gspread
+openpyxl
+pandas
+google-auth
