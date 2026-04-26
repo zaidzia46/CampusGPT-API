@@ -1,5 +1,6 @@
+from datetime import datetime
 from db.session import base
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, DateTime, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 class UserAuth(base):
@@ -35,3 +36,13 @@ class QueryFeedback(base):
     user_id = Column(Integer, ForeignKey('user_auth.id'), nullable=False)
 
     userqueryfeedback = relationship("UserAuth", back_populates="queryfeedbacks")
+
+
+class OTPRecord(base):
+    __tablename__ = "otp_records"
+    id         = Column(Integer, primary_key=True)
+    email      = Column(String, index=True)
+    otp_hash   = Column(String)          # store hash, not plain OTP
+    expires_at = Column(DateTime)
+    attempts   = Column(Integer, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)

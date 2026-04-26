@@ -70,11 +70,11 @@ def Login(form_data: OAuth2PasswordRequestForm = Depends(), db = Depends(get_db)
 @router.post('/forgot-password')
 def ForgotPassword(data: ResetPwd, db: Session = Depends(get_db)):
     email = validate_university_email(data.email)
-    user = db.query(UserAuth).filter(email == UserAuth.email).first()
+    user = db.query(UserAuth).filter(UserAuth.email == email).first()
 
     if user:
         token = create_reset_token(user.id)
-        reset_link = f"http://127.0.0.1:8000/static/reset-password.html?token={token}"
+        reset_link = f"http://127.0.0.1:8000/static-pwd-reset/forgot-password.html?token={token}"
 
         send_email(
             to=user.email,
@@ -90,35 +90,36 @@ def ResetPWD(data: ResetPasswordRequest, db: Session = Depends(get_db)):
         user_id = verify_reset_token(data.token)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    user = db.query(UserAuth).filter(user_id == UserAuth.id).first()
+    user = db.query(UserAuth).filter(UserAuth.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-
-    user.hashed_password = password_hashing(data.new_password)
+    print(f"data.new_password: {data.new_password}")
+    user.password = password_hashing(data.new_password)
     db.commit()
+    db.refresh(user)  # add this
+    print(f"Updated hash in DB: {user.password}")
 
     return {"message": "Password reset successful"}
 
 @router.post('/send-otp')
-def SendOTP(OTP: SendOTP, db: Session = Depends(get_db)):
-    email = validate_university_email(OTP.email)
-    existing_user = db.query(UserAuth).filter(UserAuth.email == email).first()
-    if existing_user:
+def SendOTP(payload: SendOTP, db: Session = Depends(get_db)):
+    email = validate_university_email(payload.email)
+
+    if db.query(UserAuth).filter(UserAuth.email == email).first():
         raise HTTPException(status_code=400, detail="User already exists with this email")
-    
+
     otp = generate_otp()
-    save_otp(email, otp)
+    save_otp(email, otp, db)          # handles cooldown + storage
     send_email(
-        to=email,
-        subject='Your OTP Code',
-        body=f"Your OTP code is: {otp}. It will expire in 2 minutes."
+        to      = email,
+        subject = "Your CampusGPT Verification Code",
+        body    = f"Your OTP is: {otp}\n\nIt expires in 60 seconds. Do not share it with anyone."
     )
     return {"message": "OTP sent to your email"}
 
+
 @router.post('/verify-otp')
-def VerifyOTP(OTP: VerifyOTP, db: Session = Depends(get_db)):
-    email = validate_university_email(OTP.email)
-    if verify_otp(email, OTP.otp):
-        return {"message": "OTP verified successfully"}
-    else:
-        raise HTTPException(status_code=400, detail="Invalid or expired OTP")
+def VerifyOTP(payload: VerifyOTP, db: Session = Depends(get_db)):
+    email = validate_university_email(payload.email)
+    verify_otp(email, payload.otp, db)   # raises HTTPException on failure
+    return {"message": "OTP verified successfully"}
