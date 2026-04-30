@@ -1,14 +1,3 @@
-"""
-run_fee_chunks.py
------------------
-Reads fee_structure.xlsx and produces:
-  - data/sources/fee_structure_spring_2026.xlsx  (admin dashboard)
-  - data/chunks/fee_chunks_spring_2026.json       (RAG-ready chunks)
-
-Each program gets 3 chunks: narrative, faq, metadata.
-Global fee policy notes become their own policy chunks.
-"""
-
 import json
 import math
 import pandas as pd
@@ -25,7 +14,6 @@ SRC_FILE = "/mnt/user-data/uploads/fee_structure.xlsx"
 OUT_XL   = "/home/claude/cui_rag/data/sources/fee_structure_spring_2026.xlsx"
 OUT_JSON = "/home/claude/cui_rag/data/chunks/fee_chunks_spring_2026.json"
 
-# ── Helpers ────────────────────────────────────────────────────────────────
 
 def fmt_rs(v):
     """Format a numeric rupee value nicely, or return string as-is."""
@@ -62,8 +50,6 @@ def program_category(name: str) -> str:
     if "english" in n:                                          return "humanities"
     if "math" in n:                                             return "mathematics"
     return "general"
-
-# ── Narrative ──────────────────────────────────────────────────────────────
 
 def narrative(r: dict) -> str:
     name    = r["program"]
@@ -106,8 +92,6 @@ def narrative(r: dict) -> str:
         f"Office or Student Support Center before each semester."
     )
 
-# ── FAQ ────────────────────────────────────────────────────────────────────
-
 def faq(r: dict) -> str:
     name    = r["program"]
     adm_fee = r.get("admission_fee")
@@ -116,7 +100,6 @@ def faq(r: dict) -> str:
 
     lines = []
 
-    # extract clean numeric values for formatting
     sem_num_clean = None if (sem_fee is None or lump) else int(sem_fee)
     adm_num_clean = None if not has_admission_fee(r) else int(adm_fee)
 
@@ -168,8 +151,6 @@ def faq(r: dict) -> str:
 
     return "\n".join(lines)
 
-# ── Metadata text ──────────────────────────────────────────────────────────
-
 def meta_text(r: dict) -> str:
     return (
         f"Program: {r['program']} | Level: {program_level(r['program'])} | "
@@ -194,8 +175,6 @@ def make_metadata(r: dict) -> dict:
         "source":             SOURCE,
         "semester":           SEMESTER,
     }
-
-# ── Global policy chunks ───────────────────────────────────────────────────
 
 POLICY_CHUNKS = [
     {
@@ -290,35 +269,71 @@ POLICY_CHUNKS = [
     },
 ]
 
-# ── Chunk builder ──────────────────────────────────────────────────────────
-
 def build_chunks(df: pd.DataFrame) -> list[dict]:
+    import math
+
+    # Convert fee columns from string to numeric
+    for col in ("admission_fee", "semester_fee", "total_first_semester", "sr_no"):
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+
     chunks = list(POLICY_CHUNKS)
-    for i, row in df.iterrows():
+
+    for _, row in df.iterrows():
         r = {k: (None if (isinstance(v, float) and math.isnan(v)) else v)
              for k, v in row.items()}
-        program_slug = r["program"].lower().replace(" ", "_").replace("&","and")
-        base_id = f"{SOURCE}_{SEMESTER}_{program_slug}"
 
-        chunks += [
-            {"chunk_id": f"{base_id}_narrative", "chunk_type": "narrative",
-             "topic": SOURCE, "semester": SEMESTER, "source": SOURCE,
-             "text": narrative(r), "metadata": make_metadata(r)},
-            {"chunk_id": f"{base_id}_faq", "chunk_type": "faq",
-             "topic": SOURCE, "semester": SEMESTER, "source": SOURCE,
-             "text": faq(r), "metadata": make_metadata(r)},
-            {"chunk_id": f"{base_id}_metadata", "chunk_type": "metadata",
-             "topic": SOURCE, "semester": SEMESTER, "source": SOURCE,
-             "text": meta_text(r), "metadata": make_metadata(r)},
-        ]
+        program = r.get("program", "unknown")
+        if not program:
+            continue
+
+        # Build a clean slug for the chunk ID
+        slug = str(program).lower()\
+                           .replace(" ", "_")\
+                           .replace("&", "and")\
+                           .replace("(", "")\
+                           .replace(")", "")\
+                           .replace("/", "_")
+        base_id = f"{SOURCE}_{SEMESTER}_{slug}"
+
+        try:
+            chunks += [
+                {
+                    "chunk_id":   f"{base_id}_narrative",
+                    "chunk_type": "narrative",
+                    "topic":      SOURCE,
+                    "semester":   SEMESTER,
+                    "source":     SOURCE,
+                    "text":       narrative(r),
+                    "metadata":   make_metadata(r),
+                },
+                {
+                    "chunk_id":   f"{base_id}_faq",
+                    "chunk_type": "faq",
+                    "topic":      SOURCE,
+                    "semester":   SEMESTER,
+                    "source":     SOURCE,
+                    "text":       faq(r),
+                    "metadata":   make_metadata(r),
+                },
+                {
+                    "chunk_id":   f"{base_id}_metadata",
+                    "chunk_type": "metadata",
+                    "topic":      SOURCE,
+                    "semester":   SEMESTER,
+                    "source":     SOURCE,
+                    "text":       meta_text(r),
+                    "metadata":   make_metadata(r),
+                },
+            ]
+        except Exception as e:
+            print(f"  [WARN] Skipped {program}: {e}")
+
     return chunks
-
-# ── Admin Excel builder ────────────────────────────────────────────────────
 
 def build_admin_excel(df: pd.DataFrame, out_path: str):
     wb = Workbook()
 
-    # ── Styles ──
     C_HDR_BG  = "1F4E79"
     C_HDR_FG  = "FFFFFF"
     C_BS_ENG  = "DEEAF1"   # blue  — BS Eng/CS
@@ -348,7 +363,6 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
     def rgt():
         return Alignment(horizontal="right", vertical="center")
 
-    # ── Sheet 1: Fee Structure ──
     ws = wb.active
     ws.title = "Fee Structure"
 
@@ -367,7 +381,6 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
     ws["A2"].alignment = ctr()
     ws.row_dimensions[2].height = 16
 
-    # Column headers
     headers = [
         ("A", "Sr No",                       7),
         ("B", "Program Name",               36),
@@ -389,7 +402,6 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
         ws.column_dimensions[col_letter].width = width
     ws.row_dimensions[3].height = 30
 
-    # Row colour by category
     def row_color(name):
         n = name.lower()
         if program_level(name) == "MS":  return C_MS
@@ -412,7 +424,6 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
     for sr, (_, row) in enumerate(df.iterrows(), start=1):
         name = row["program"]
 
-        # Section header
         if name in sections:
             _, sec_label = sections[name]
             ws.merge_cells(f"A{excel_row}:I{excel_row}")
@@ -474,7 +485,6 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
     ws.freeze_panes = "B4"
     ws.auto_filter.ref = f"A3:I{excel_row-1}"
 
-    # ── Sheet 2: Legend ──
     wl = wb.create_sheet("Legend & Notes")
     wl.merge_cells("A1:C1")
     wl["A1"] = "Legend & Fee Notes — Spring 2026"
@@ -547,7 +557,6 @@ def build(excel_path: str = None) -> list[dict]:
     excel_path is kept as parameter for compatibility but is ignored.
     """
     from sheets_reader import read_sheet
-    import math
 
     df = read_sheet(
         topic      = "fees",
@@ -558,24 +567,28 @@ def build(excel_path: str = None) -> list[dict]:
     # Clean column names
     df.columns = [c.strip().lower().replace(" ", "_").replace("\n", "_")
                   for c in df.columns]
-
+    
     # Drop section separator rows
     first_col = df.columns[0]
     df = df[pd.to_numeric(df[first_col], errors="coerce").notna()].copy()
     df = df.reset_index(drop=True)
 
-    # Rename columns
+
     rename = {}
     for c in df.columns:
-        if "program_name" in c:  rename[c] = "program"
-        elif "admission"  in c:  rename[c] = "admission_fee"
-        elif "semester"   in c:  rename[c] = "semester_fee"
+        if c == "program_name":                        rename[c] = "program"
+        elif "admission_fee" in c:                     rename[c] = "admission_fee"
+        elif c.startswith("semester_fee"):             rename[c] = "semester_fee"
+        elif "total_1st" in c or "total_first" in c:  rename[c] = "total_first_semester"
     df = df.rename(columns=rename)
 
-    df = df[df["program"].notna()].reset_index(drop=True)
-    return build_chunks(df)
 
-# ── Main ───────────────────────────────────────────────────────────────────
+    df = df[df["program"].notna()].reset_index(drop=True)
+    print("[DEBUG] Columns going into build_chunks:", list(df.columns))
+    print("[DEBUG] Sample row:")
+    for col in df.columns:
+        print(f"  {col}: {df.iloc[0].get(col) if len(df) > 0 else 'NO ROWS'}")
+    return build_chunks(df)
 
 if __name__ == "__main__":
     # Read source
@@ -585,6 +598,7 @@ if __name__ == "__main__":
     df = df[df["program"].notna()]
 
     print(f"  Loaded {len(df)} programs from {SRC_FILE}")
+    print("[DEBUG] Fee sheet columns:", list(df.columns))
 
     # Build admin Excel
     build_admin_excel(df, OUT_XL)
@@ -602,7 +616,7 @@ if __name__ == "__main__":
     with open(OUT_JSON, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"  Chunks saved   → {OUT_JSON}")
+    print(f"  Chunks saved  -> {OUT_JSON}")
     print(f"\n  Summary:")
     types = {}
     for c in chunks:

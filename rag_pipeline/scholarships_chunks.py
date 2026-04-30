@@ -1,24 +1,8 @@
-"""
-scholarships_chunks.py
-----------------------
-Reads the scholarships admin Excel and produces three chunk types per entry:
-  1. narrative  — full prose paragraph for semantic retrieval
-  2. faq        — Q&A pairs covering common student questions
-  3. metadata   — structured tags for filtered retrieval
-
-Output: list of chunk dicts, returned to generate_chunks.py
-"""
-
 import pandas as pd
 
 
 SEMESTER = "spring_2026"
 SOURCE    = "scholarships"
-
-
-# ---------------------------------------------------------------------------
-# Narrative templates
-# ---------------------------------------------------------------------------
 
 def _narrative_merit_engineering(r: dict) -> str:
     exam = r["exam_type"]
@@ -97,10 +81,6 @@ def _narrative_kinship(r: dict) -> str:
         f"Support Center and provide relevant documentation to avail this concession."
     )
 
-
-# ---------------------------------------------------------------------------
-# FAQ templates
-# ---------------------------------------------------------------------------
 
 def _faq_merit_engineering(r: dict) -> str:
     exam = r["exam_type"]
@@ -189,10 +169,6 @@ def _faq_kinship(r: dict) -> str:
     ])
 
 
-# ---------------------------------------------------------------------------
-# Metadata builder
-# ---------------------------------------------------------------------------
-
 def _metadata(r: dict) -> dict:
     return {
         "scholarship_id":        r.get("sr_no"),
@@ -212,9 +188,6 @@ def _metadata(r: dict) -> dict:
     }
 
 
-# ---------------------------------------------------------------------------
-# Row dispatcher
-# ---------------------------------------------------------------------------
 
 def _build_chunks_for_row(r: dict) -> list[dict]:
     cat  = str(r.get("category", "")).strip()
@@ -241,7 +214,6 @@ def _build_chunks_for_row(r: dict) -> list[dict]:
             "A: No. You will be identified at the time of admission based on your board result.",
         ])
 
-    # ── sr_no=13: Daanish Schools (lumpsum, no numeric fees) ──
     elif r.get("sr_no") == 13 or "daanish" in name:
         narrative = (
             "The Special Scholarship for Students of Daanish Schools System is available at "
@@ -328,10 +300,6 @@ def _build_chunks_for_row(r: dict) -> list[dict]:
     ]
 
 
-# ---------------------------------------------------------------------------
-# Global policy chunk (applies across all scholarships)
-# ---------------------------------------------------------------------------
-
 GLOBAL_POLICY_CHUNKS = [
     {
         "chunk_id":   f"{SOURCE}_{SEMESTER}_policy_cgpa",
@@ -385,9 +353,6 @@ GLOBAL_POLICY_CHUNKS = [
 ]
 
 
-# ---------------------------------------------------------------------------
-# Public entry point
-# ---------------------------------------------------------------------------
 
 def build(excel_path: str = None) -> list[dict]:
     """
@@ -411,7 +376,6 @@ def build(excel_path: str = None) -> list[dict]:
     df = df[pd.to_numeric(df[first_col], errors="coerce").notna()].copy()
     df = df.rename(columns={first_col: "sr_no"})
 
-    # Rename columns to standard names
     rename = {}
     for c in df.columns:
         if "scholarship_name" in c:          rename[c] = "scholarship_name"

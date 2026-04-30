@@ -12,7 +12,7 @@ from schemas.admin.admin import EmbedRequest, GenerateRequest, SearchRequest
 router = APIRouter(
     prefix='/admin',
     tags=['Admin'],
-    dependencies=[Depends(get_current_admin)]
+    # dependencies=[Depends(get_current_admin)]
 )
 
 ROOT       = Path(__file__).parent.parent
@@ -20,7 +20,6 @@ CHUNKS_DIR = ROOT / "UNIdata" / "chunks"
 
 @router.get('/status')
 def status():
-    """Returns list of all generated chunk files."""
     files = []
     for f in sorted(CHUNKS_DIR.glob("chunks_*.json"), reverse=True):
         with open(f, encoding="utf-8") as fp:

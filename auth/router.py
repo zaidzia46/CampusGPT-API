@@ -74,7 +74,7 @@ def ForgotPassword(data: ResetPwd, db: Session = Depends(get_db)):
 
     if user:
         token = create_reset_token(user.id)
-        reset_link = f"http://127.0.0.1:8000/static-pwd-reset/forgot-password.html?token={token}"
+        reset_link = f"http://172.17.111.58:8000/static-pwd-reset/forgot-password.html?token={token}"
 
         send_email(
             to=user.email,

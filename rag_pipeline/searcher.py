@@ -1,10 +1,3 @@
-"""
-rag_pipeline/searcher.py
--------------------------
-Searches ChromaDB for relevant chunks.
-Called by both admin (testing) and student (query) endpoints.
-"""
-
 from pathlib import Path
 
 ROOT            = Path(__file__).parent.parent

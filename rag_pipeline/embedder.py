@@ -1,10 +1,3 @@
-"""
-rag_pipeline/embedder.py
--------------------------
-Embeds chunks into ChromaDB.
-Called by the admin router endpoint.
-"""
-
 import json
 from pathlib import Path
 
@@ -18,10 +11,6 @@ BATCH_SIZE      = 64
 
 
 def embed(semester: str, wipe: bool = True) -> dict:
-    """
-    Embed chunks for the given semester into ChromaDB.
-    Returns a summary dict.
-    """
     chunk_file = CHUNKS_DIR / f"chunks_{semester}.json"
 
     if not chunk_file.exists():

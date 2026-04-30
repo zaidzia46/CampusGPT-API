@@ -1,10 +1,3 @@
-"""
-sheets_reader.py
-----------------
-Shared utility used by all _chunks.py files to read
-data from Google Sheets instead of local Excel files.
-"""
-
 import json
 from pathlib import Path
 import gspread

@@ -1,14 +1,3 @@
-"""
-run_basic_info_chunks.py
-------------------------
-Reads Basic_Info.docx content and produces:
-  - data/sources/basic_info_spring_2026.xlsx   (admin dashboard)
-  - data/chunks/basic_info_spring_2026.json    (RAG-ready chunks)
-
-Unlike scholarships/fees which are tabular, basic info is topic-based.
-Each topic gets its own narrative + FAQ + metadata chunk set.
-"""
-
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,9 +8,6 @@ SEMESTER = "spring_2026"
 SOURCE   = "basic_info"
 OUT_XL   = "/home/claude/cui_rag/data/sources/basic_info_spring_2026.xlsx"
 OUT_JSON = "/home/claude/cui_rag/data/chunks/basic_info_spring_2026.json"
-
-# ── Raw topic data ─────────────────────────────────────────────────────────
-# Each entry: (topic_id, topic_label, category, content_dict)
 
 TOPICS = [
 
@@ -364,8 +350,6 @@ TOPICS = [
 ]
 
 
-# ── Chunk builder ──────────────────────────────────────────────────────────
-
 def build_chunks(topics: list) -> list[dict]:
     chunks = []
     for t in topics:
@@ -388,7 +372,6 @@ def build_chunks(topics: list) -> list[dict]:
             },
         })
 
-        # FAQ chunk — all Q&A pairs for this topic in one chunk
         faq_text = "\n\n".join(
             f"Q: {q}\nA: {a}" for q, a in t["faqs"]
         )
@@ -408,7 +391,6 @@ def build_chunks(topics: list) -> list[dict]:
             },
         })
 
-        # Metadata chunk — compact tag line for filtered retrieval
         facts_str = " | ".join(
             f"{k}: {v}" for k, v in t["facts"].items()
             if not isinstance(v, list)
@@ -436,8 +418,6 @@ def build_chunks(topics: list) -> list[dict]:
 
     return chunks
 
-
-# ── Admin Excel builder ────────────────────────────────────────────────────
 
 def build_admin_excel(topics: list, out_path: str):
     wb = Workbook()
@@ -631,18 +611,10 @@ def build_admin_excel(topics: list, out_path: str):
     wb.save(out_path)
     print(f"  Admin Excel saved → {out_path}")
 
-
-# ── Main ───────────────────────────────────────────────────────────────────
-
 def build(excel_path: str = None) -> list[dict]:
-    """
-    Reads basic info data from Google Sheets and returns all chunks.
-    excel_path is kept as parameter for compatibility but is ignored.
-    """
     import pandas as pd   
     from sheets_reader import read_sheet
 
-    # Read Topics sheet
     df_topics = read_sheet(
         topic      = "basic_info",
         sheet_name = "Basic Info Topics",
@@ -651,13 +623,11 @@ def build(excel_path: str = None) -> list[dict]:
     df_topics.columns = [c.strip().lower().replace(" ", "_")
                          for c in df_topics.columns]
 
-    # Drop section separator rows
     first_col = df_topics.columns[0]
     df_topics = df_topics[
         pd.to_numeric(df_topics[first_col], errors="coerce").notna()
     ].copy()
 
-    # Normalize column names
     col_map = {}
     for c in df_topics.columns:
         if "topic_id"    in c:               col_map[c] = "topic_id"
@@ -666,7 +636,6 @@ def build(excel_path: str = None) -> list[dict]:
         elif "narrative" in c:               col_map[c] = "narrative"
     df_topics = df_topics.rename(columns=col_map)
 
-    # Read FAQ sheet
     df_faqs = read_sheet(
         topic      = "basic_info",
         sheet_name = "FAQ Details",

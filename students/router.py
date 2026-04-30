@@ -10,6 +10,7 @@ from schemas.students.update_pwd import UpdatePassword
 from models.models import Feedback, QueryFeedback, UserAuth
 from core.security import verify_password, password_hashing
 from rag_pipeline.searcher import search
+from rag_pipeline.llm import get_answer
 
 
 router = APIRouter(
@@ -20,26 +21,28 @@ router = APIRouter(
 
 @router.post('/query')
 def UserQuery(query: Query, db: Session = Depends(get_db)):
-    # Search ChromaDB for relevant chunks
     search_result = search(query.query_text, top_k=3)
 
     if not search_result["success"]:
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            content={"error": "Could not retrieve information. Please try again."}
+            content={
+                "response": "Sorry, I couldn't process your question. Please try again.",
+                "query":    query.query_text,
+            }
         )
 
-    # For now return the top chunk text as the response
-    # This will be replaced with LLM response in the next step
-    top_chunks = search_result["results"]
-    context    = "\n\n".join([c["text"] for c in top_chunks])
+    chunks = search_result["results"]
+    llm_result = get_answer(query.query_text, chunks)
 
     return JSONResponse(
         status_code=status.HTTP_200_OK,
         content={
-            "response": context,
+            "response": llm_result["answer"],
             "query":    query.query_text,
-            "chunks":   top_chunks,
+            "success":  llm_result["success"],
+            "model":    llm_result["model"],
+            "error":    llm_result.get("error", None),
         }
     )
 

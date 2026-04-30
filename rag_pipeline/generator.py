@@ -1,10 +1,3 @@
-"""
-rag_pipeline/generator.py
---------------------------
-Generates chunks from all data sources.
-Called by the admin router endpoint.
-"""
-
 import json
 import sys
 from datetime import datetime, timezone
@@ -26,10 +19,6 @@ SOURCES = [
 ]
 
 def generate(semester: str, topic: str = None) -> dict:
-    """
-    Generate chunks for the given semester.
-    Returns a summary dict with total_chunks, by_type, errors.
-    """
     CHUNKS_DIR.mkdir(parents=True, exist_ok=True)
 
     all_chunks = []
