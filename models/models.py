@@ -14,6 +14,9 @@ class UserAuth(base):
 
     feedbacks = relationship("Feedback", back_populates="user")
     queryfeedbacks = relationship("QueryFeedback", back_populates="userqueryfeedback")
+    chat_messages = relationship("ChatMessage", back_populates="user")
+    saved_chats = relationship("SavedChat", back_populates="user")
+
 
 class Feedback(base):
     __tablename__ = 'feedback'
@@ -46,3 +49,25 @@ class OTPRecord(base):
     expires_at = Column(DateTime)
     attempts   = Column(Integer, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+class ChatMessage(base):
+    __tablename__ = 'chat_messages'
+
+    id         = Column(Integer, primary_key=True, index=True)
+    user_id    = Column(Integer, ForeignKey('user_auth.id'), nullable=False)
+    role       = Column(String, nullable=False)   # 'user' or 'assistant'
+    content    = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("UserAuth", back_populates="chat_messages")
+
+class SavedChat(base):
+    __tablename__ = 'saved_chats'
+
+    id           = Column(Integer, primary_key=True, index=True)
+    user_id      = Column(Integer, ForeignKey('user_auth.id'), nullable=False)
+    query        = Column(String, nullable=False)
+    response     = Column(String, nullable=False)
+    saved_at     = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("UserAuth", back_populates="saved_chats")

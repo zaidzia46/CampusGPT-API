@@ -1,30 +1,39 @@
+"""
+rag_pipeline/searcher.py
+-------------------------
+Searches ChromaDB for relevant chunks.
+- Model and client cached at module level for performance
+"""
+
 from pathlib import Path
+
+import chromadb
+from chromadb.config import Settings
+from sentence_transformers import SentenceTransformer
 
 ROOT            = Path(__file__).parent.parent
 DB_PATH         = str((ROOT / "UNIdata" / "vectordb").resolve())
 COLLECTION_NAME = "cui_sahiwal_kb"
 EMBED_MODEL     = "all-MiniLM-L6-v2"
 
+print("[Searcher] Loading SentenceTransformer model...")
+_model  = SentenceTransformer(EMBED_MODEL)
+_client = chromadb.PersistentClient(
+    path=DB_PATH,
+    settings=Settings(anonymized_telemetry=False),
+)
+print("[Searcher] Model and ChromaDB client ready.")
 
-def search(query: str, top_k: int = 5) -> dict:
+
+def search(query: str, top_k: int = 3) -> dict:
     """
     Search ChromaDB for chunks matching the query.
     Returns list of hits with chunk_id, text, distance, metadata.
     """
     try:
-        import chromadb
-        from chromadb.config import Settings
-        from sentence_transformers import SentenceTransformer
-
-        client = chromadb.PersistentClient(
-            path=DB_PATH,
-            settings=Settings(anonymized_telemetry=False),
-        )
-        collection = client.get_collection(COLLECTION_NAME)
-        model      = SentenceTransformer(EMBED_MODEL)
-
-        vector  = model.encode(query).tolist()
-        results = collection.query(
+        collection = _client.get_collection(COLLECTION_NAME)
+        vector     = _model.encode(query).tolist()
+        results    = collection.query(
             query_embeddings=[vector],
             n_results=top_k,
         )

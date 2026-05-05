@@ -2,15 +2,17 @@ from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from db.session import get_db
+from schemas.students.saved_chat import SaveChatRequest
 from students.deps import get_current_student
 from schemas.students.feedback import Feedback_pd
 from schemas.students.query import Query
 from schemas.students.query_feedback import QueryFeedback_pd
 from schemas.students.update_pwd import UpdatePassword
-from models.models import Feedback, QueryFeedback, UserAuth
+from models.models import ChatMessage, Feedback, QueryFeedback, SavedChat, UserAuth
 from core.security import verify_password, password_hashing
 from rag_pipeline.searcher import search
-from rag_pipeline.llm import get_answer
+from rag_pipeline.llm import get_answer, rewrite_query
+from students.manage_msg import manage_messages
 
 
 router = APIRouter(
@@ -20,31 +22,136 @@ router = APIRouter(
 )
 
 @router.post('/query')
-def UserQuery(query: Query, db: Session = Depends(get_db)):
-    search_result = search(query.query_text, top_k=3)
+def UserQuery(
+    query:   Query,
+    db:      Session = Depends(get_db),
+    current_student: dict = Depends(get_current_student),
+):
+    user_id=current_student['user_id']
 
-    if not search_result["success"]:
-        return JSONResponse(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            content={
-                "response": "Sorry, I couldn't process your question. Please try again.",
-                "query":    query.query_text,
-            }
-        )
+    manage_messages(user_id, db)
+    recent = db.query(ChatMessage).filter(
+        ChatMessage.user_id == user_id
+    ).order_by(ChatMessage.created_at.desc()).limit(6).all()
 
-    chunks = search_result["results"]
-    llm_result = get_answer(query.query_text, chunks)
+    history = [{"role": m.role, "content": m.content}
+               for m in reversed(recent)]
+
+    # Rewrite vague query using history before searching
+    search_query = rewrite_query(query.query_text, history)
+
+    # Search ChromaDB with the rewritten query
+    search_result = search(search_query, top_k=3)
+    chunks = search_result.get("results", [])
+
+    # Get answer from LLM with rewritten question + history
+    llm_result = get_answer(search_query, chunks, history)
+
+    # Save original messages to DB (not rewritten)
+    db.add(ChatMessage(user_id=user_id, role="user",
+                       content=search_query))
+    db.add(ChatMessage(user_id=user_id, role="assistant",
+                       content=llm_result["answer"]))
+    db.commit()
 
     return JSONResponse(
         status_code=status.HTTP_200_OK,
         content={
-            "response": llm_result["answer"],
-            "query":    query.query_text,
-            "success":  llm_result["success"],
-            "model":    llm_result["model"],
-            "error":    llm_result.get("error", None),
+            "response":       llm_result["answer"],
+            "query":          query.query_text,
+            "search_query":   search_query,
+            "success":        llm_result["success"],
+            "model":          llm_result["model"],
         }
     )
+
+@router.delete('/clear-history')
+def ClearHistory(
+    db:      Session = Depends(get_db),
+    current_student: dict    = Depends(get_current_student),
+):
+    db.query(ChatMessage).filter(
+        ChatMessage.user_id == current_student['user_id']
+    ).delete()
+    db.commit()
+    return {"message": "History cleared"}
+
+
+@router.post('/saved-chats')
+def SaveChat(
+    body:    SaveChatRequest,
+    db:      Session = Depends(get_db),
+    current: dict    = Depends(get_current_student),
+):
+    saved = SavedChat(
+        user_id  = current['user_id'],
+        query    = body.query,
+        response = body.response,
+    )
+    db.add(saved)
+    db.commit()
+    db.refresh(saved)
+    return {
+        "message":  "Chat saved successfully",
+        "saved_id": saved.id,
+    }
+
+
+# Get all saved chats
+@router.get('/saved-chats')
+def GetSavedChats(
+    db:      Session = Depends(get_db),
+    current: dict    = Depends(get_current_student),
+):
+    chats = db.query(SavedChat).filter(
+        SavedChat.user_id == current['user_id']
+    ).order_by(SavedChat.saved_at.desc()).all()
+
+    return [{
+        "id":       c.id,
+        "query":    c.query,
+        "response": c.response,
+        "saved_at": c.saved_at.isoformat(),
+    } for c in chats]
+
+
+# Unsave/delete a saved chat
+@router.delete('/saved-chats/{chat_id}')
+def UnsaveChat(
+    chat_id: int,
+    db:      Session = Depends(get_db),
+    current: dict    = Depends(get_current_student),
+):
+    chat = db.query(SavedChat).filter(
+        SavedChat.id      == chat_id,
+        SavedChat.user_id == current['user_id'],
+    ).first()
+
+    if not chat:
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"error": "Saved chat not found"}
+        )
+
+    db.delete(chat)
+    db.commit()
+    return {"message": "Chat unsaved successfully"}
+
+
+# Check if a specific chat is saved
+@router.get('/saved-chats/check')
+def CheckSaved(
+    query:   str,
+    db:      Session = Depends(get_db),
+    current: dict    = Depends(get_current_student),
+):
+    chat = db.query(SavedChat).filter(
+        SavedChat.user_id == current['user_id'],
+        SavedChat.query   == query,
+    ).first()
+
+    return {"is_saved": chat is not None, "saved_id": chat.id if chat else None}
+
 
 @router.post('/query-feedback')
 def UserQueryFeedback(queryFeedback: QueryFeedback_pd, current_student = Depends(get_current_student), db = Depends(get_db)):
