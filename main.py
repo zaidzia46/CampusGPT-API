@@ -2,7 +2,8 @@ from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from auth.router import router as auth_router
 from students.router import router as students_router
-from admin.router import router as admin_router
+from admin.router import public_router as admin_public_router
+from admin.router import protected_router as admin_protected_router
 from models import models
 from db.session import engine
 from core.security import router as refresh_router
@@ -13,8 +14,9 @@ app.mount('/static-pwd-reset', StaticFiles(directory='static-pwd-reset'), name='
 
 app.include_router(auth_router)
 app.include_router(students_router)
-app.include_router(admin_router)
 app.include_router(refresh_router)
+app.include_router(admin_public_router)
+app.include_router(admin_protected_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

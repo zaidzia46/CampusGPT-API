@@ -37,17 +37,13 @@ def UserQuery(
     history = [{"role": m.role, "content": m.content}
                for m in reversed(recent)]
 
-    # Rewrite vague query using history before searching
     search_query = rewrite_query(query.query_text, history)
 
-    # Search ChromaDB with the rewritten query
     search_result = search(search_query, top_k=3)
     chunks = search_result.get("results", [])
 
-    # Get answer from LLM with rewritten question + history
     llm_result = get_answer(search_query, chunks, history)
 
-    # Save original messages to DB (not rewritten)
     db.add(ChatMessage(user_id=user_id, role="user",
                        content=search_query))
     db.add(ChatMessage(user_id=user_id, role="assistant",
