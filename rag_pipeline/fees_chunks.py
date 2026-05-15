@@ -1,3 +1,4 @@
+import argparse
 import json
 import math
 import pandas as pd
@@ -7,12 +8,13 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-SEMESTER = "spring_2026"
 SOURCE   = "fee_structure"
+DEFAULT_SEMESTER = "spring_2026"
+SEMESTER = DEFAULT_SEMESTER
 
 SRC_FILE = "/mnt/user-data/uploads/fee_structure.xlsx"
-OUT_XL   = "/home/claude/cui_rag/data/sources/fee_structure_spring_2026.xlsx"
-OUT_JSON = "/home/claude/cui_rag/data/chunks/fee_chunks_spring_2026.json"
+OUT_XL   = f"/home/claude/cui_rag/data/sources/fee_structure_{DEFAULT_SEMESTER}.xlsx"
+OUT_JSON = f"/home/claude/cui_rag/data/chunks/fee_chunks_{DEFAULT_SEMESTER}.json"
 
 
 def fmt_rs(v):
@@ -151,17 +153,17 @@ def faq(r: dict) -> str:
 
     return "\n".join(lines)
 
-def meta_text(r: dict) -> str:
+def meta_text(r: dict, semester: str = DEFAULT_SEMESTER) -> str:
     return (
         f"Program: {r['program']} | Level: {program_level(r['program'])} | "
         f"Category: {program_category(r['program'])} | "
         f"Semester fee: Rs. {fmt_rs(r.get('semester_fee'))} | "
         f"Admission fee: Rs. {fmt_rs(r.get('admission_fee'))} | "
         f"Lumpsum model: {is_lumpsum(r.get('semester_fee'))} | "
-        f"Source: {SOURCE} | Semester: {SEMESTER}"
+        f"Source: {SOURCE} | Semester: {semester}"
     )
 
-def make_metadata(r: dict) -> dict:
+def make_metadata(r: dict, semester: str = DEFAULT_SEMESTER) -> dict:
     sem_fee = r.get("semester_fee")
     adm_fee = r.get("admission_fee")
     return {
@@ -173,7 +175,7 @@ def make_metadata(r: dict) -> dict:
         "lumpsum":            is_lumpsum(sem_fee),
         "lumpsum_amount_rs":  fmt_rs(sem_fee) if is_lumpsum(sem_fee) else None,
         "source":             SOURCE,
-        "semester":           SEMESTER,
+        "semester":           semester,
     }
 
 POLICY_CHUNKS = [
@@ -269,7 +271,7 @@ POLICY_CHUNKS = [
     },
 ]
 
-def build_chunks(df: pd.DataFrame) -> list[dict]:
+def build_chunks(df: pd.DataFrame, semester: str = DEFAULT_SEMESTER) -> list[dict]:
     import math
 
     # Convert fee columns from string to numeric
@@ -277,7 +279,12 @@ def build_chunks(df: pd.DataFrame) -> list[dict]:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    chunks = list(POLICY_CHUNKS)
+    chunks = []
+    for chunk in POLICY_CHUNKS:
+        policy_chunk = {**chunk, "semester": semester}
+        policy_chunk["chunk_id"] = policy_chunk["chunk_id"].replace(DEFAULT_SEMESTER, semester)
+        policy_chunk["metadata"] = {**chunk["metadata"], "semester": semester}
+        chunks.append(policy_chunk)
 
     for _, row in df.iterrows():
         r = {k: (None if (isinstance(v, float) and math.isnan(v)) else v)
@@ -294,7 +301,7 @@ def build_chunks(df: pd.DataFrame) -> list[dict]:
                            .replace("(", "")\
                            .replace(")", "")\
                            .replace("/", "_")
-        base_id = f"{SOURCE}_{SEMESTER}_{slug}"
+        base_id = f"{SOURCE}_{semester}_{slug}"
 
         try:
             chunks += [
@@ -302,28 +309,28 @@ def build_chunks(df: pd.DataFrame) -> list[dict]:
                     "chunk_id":   f"{base_id}_narrative",
                     "chunk_type": "narrative",
                     "topic":      SOURCE,
-                    "semester":   SEMESTER,
+                    "semester":   semester,
                     "source":     SOURCE,
                     "text":       narrative(r),
-                    "metadata":   make_metadata(r),
+                    "metadata":   make_metadata(r, semester=semester),
                 },
                 {
                     "chunk_id":   f"{base_id}_faq",
                     "chunk_type": "faq",
                     "topic":      SOURCE,
-                    "semester":   SEMESTER,
+                    "semester":   semester,
                     "source":     SOURCE,
                     "text":       faq(r),
-                    "metadata":   make_metadata(r),
+                    "metadata":   make_metadata(r, semester=semester),
                 },
                 {
                     "chunk_id":   f"{base_id}_metadata",
                     "chunk_type": "metadata",
                     "topic":      SOURCE,
-                    "semester":   SEMESTER,
+                    "semester":   semester,
                     "source":     SOURCE,
-                    "text":       meta_text(r),
-                    "metadata":   make_metadata(r),
+                    "text":       meta_text(r, semester=semester),
+                    "metadata":   make_metadata(r, semester=semester),
                 },
             ]
         except Exception as e:
@@ -551,7 +558,7 @@ def build_admin_excel(df: pd.DataFrame, out_path: str):
     wb.save(out_path)
     print(f"  Admin Excel saved → {out_path}")
 
-def build(excel_path: str = None) -> list[dict]:
+def build(excel_path: str = None, semester: str = DEFAULT_SEMESTER, **kwargs) -> list[dict]:
     """
     Reads fee structure data from Google Sheets and returns all chunks.
     excel_path is kept as parameter for compatibility but is ignored.
@@ -588,9 +595,17 @@ def build(excel_path: str = None) -> list[dict]:
     print("[DEBUG] Sample row:")
     for col in df.columns:
         print(f"  {col}: {df.iloc[0].get(col) if len(df) > 0 else 'NO ROWS'}")
-    return build_chunks(df)
+    return build_chunks(df, semester=semester)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--semester", default=DEFAULT_SEMESTER)
+    args = parser.parse_args()
+
+    semester = args.semester
+    out_xl = OUT_XL.replace(DEFAULT_SEMESTER, semester)
+    out_json = OUT_JSON.replace(DEFAULT_SEMESTER, semester)
+
     # Read source
     df = pd.read_excel(SRC_FILE, dtype={"Semester Fee": str})
     df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
@@ -601,22 +616,22 @@ if __name__ == "__main__":
     print("[DEBUG] Fee sheet columns:", list(df.columns))
 
     # Build admin Excel
-    build_admin_excel(df, OUT_XL)
+    build_admin_excel(df, out_xl)
 
     # Build chunks
-    chunks = build_chunks(df)
+    chunks = build_chunks(df, semester=semester)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "semester":     SEMESTER,
+        "semester":     semester,
         "total_chunks": len(chunks),
         "chunks":       chunks,
     }
-    Path(OUT_JSON).parent.mkdir(parents=True, exist_ok=True)
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    Path(out_json).parent.mkdir(parents=True, exist_ok=True)
+    with open(out_json, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"  Chunks saved  -> {OUT_JSON}")
+    print(f"  Chunks saved  -> {out_json}")
     print(f"\n  Summary:")
     types = {}
     for c in chunks:

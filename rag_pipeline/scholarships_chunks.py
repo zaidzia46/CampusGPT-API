@@ -1,8 +1,9 @@
 import pandas as pd
 
 
-SEMESTER = "spring_2026"
-SOURCE    = "scholarships"
+SOURCE = "scholarships"
+DEFAULT_SEMESTER = "spring_2026"
+SEMESTER = DEFAULT_SEMESTER
 
 def _narrative_merit_engineering(r: dict) -> str:
     exam = r["exam_type"]
@@ -169,7 +170,7 @@ def _faq_kinship(r: dict) -> str:
     ])
 
 
-def _metadata(r: dict) -> dict:
+def _metadata(r: dict, semester: str = DEFAULT_SEMESTER) -> dict:
     return {
         "scholarship_id":        r.get("sr_no"),
         "scholarship_name":      r.get("scholarship_name"),
@@ -184,12 +185,12 @@ def _metadata(r: dict) -> dict:
         "is_female_only":        r.get("is_female_only", False),
         "is_auto_awarded":       r.get("is_auto_awarded", False),
         "source":                SOURCE,
-        "semester":              SEMESTER,
+        "semester":              semester,
     }
 
 
 
-def _build_chunks_for_row(r: dict) -> list[dict]:
+def _build_chunks_for_row(r: dict, semester: str = DEFAULT_SEMESTER) -> list[dict]:
     cat  = str(r.get("category", "")).strip()
     name = str(r.get("scholarship_name", "")).lower()
 
@@ -256,32 +257,32 @@ def _build_chunks_for_row(r: dict) -> list[dict]:
         narrative = _narrative_external(r)
         faq       = _faq_external(r)
 
-    base_id = f"{SOURCE}_{SEMESTER}_sr{int(r['sr_no']):02}"
+    base_id = f"{SOURCE}_{semester}_sr{int(r['sr_no']):02}"
 
     return [
         {
             "chunk_id":   f"{base_id}_narrative",
             "chunk_type": "narrative",
             "topic":      SOURCE,
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       narrative,
-            "metadata":   _metadata(r),
+            "metadata":   _metadata(r, semester=semester),
         },
         {
             "chunk_id":   f"{base_id}_faq",
             "chunk_type": "faq",
             "topic":      SOURCE,
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       faq,
-            "metadata":   _metadata(r),
+            "metadata":   _metadata(r, semester=semester),
         },
         {
             "chunk_id":   f"{base_id}_metadata",
             "chunk_type": "metadata",
             "topic":      SOURCE,
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       (
                 f"Scholarship: {r.get('scholarship_name')} | "
@@ -293,9 +294,9 @@ def _build_chunks_for_row(r: dict) -> list[dict]:
                 f"Student pays: Rs. {r.get('student_pays', 'varies')} | "
                 f"Need-based: {r.get('is_need_based', False)} | "
                 f"Female only: {r.get('is_female_only', False)} | "
-                f"Semester: {SEMESTER}"
+                f"Semester: {semester}"
             ),
-            "metadata":   _metadata(r),
+            "metadata":   _metadata(r, semester=semester),
         },
     ]
 
@@ -351,10 +352,29 @@ GLOBAL_POLICY_CHUNKS = [
                      "topic": "validity_disclaimer"},
     },
 ]
+def _policy_chunks(semester: str = DEFAULT_SEMESTER) -> list[dict]:
+    chunks = []
+    for chunk in GLOBAL_POLICY_CHUNKS:
+        policy_chunk = {**chunk, "semester": semester}
+        policy_chunk["chunk_id"] = policy_chunk["chunk_id"].replace(DEFAULT_SEMESTER, semester)
+        policy_chunk["metadata"] = {**chunk["metadata"], "semester": semester}
+        chunks.append(policy_chunk)
+    return chunks
 
 
+def build_chunks(df: pd.DataFrame, semester: str = DEFAULT_SEMESTER) -> list[dict]:
+    chunks = _policy_chunks(semester)
+    for _, row in df.iterrows():
+        r = row.where(pd.notna(row), other=None).to_dict()
+        try:
+            chunks.extend(_build_chunks_for_row(r, semester=semester))
+        except Exception as e:
+            print(f"  [WARN] Skipped sr_no={r.get('sr_no')}: {e}")
 
-def build(excel_path: str = None) -> list[dict]:
+    return chunks
+
+
+def build(excel_path: str = None, semester: str = DEFAULT_SEMESTER, **kwargs) -> list[dict]:
     """
     Reads scholarships data from Google Sheets and returns all chunks.
     excel_path is kept as parameter for compatibility but is ignored.
@@ -407,12 +427,4 @@ def build(excel_path: str = None) -> list[dict]:
             df[col] = df[col].str.strip().str.lower().map(
                 {"yes": True, "no": False}).fillna(False)
 
-    chunks = list(GLOBAL_POLICY_CHUNKS)
-    for _, row in df.iterrows():
-        r = row.where(pd.notna(row), other=None).to_dict()
-        try:
-            chunks.extend(_build_chunks_for_row(r))
-        except Exception as e:
-            print(f"  [WARN] Skipped sr_no={r.get('sr_no')}: {e}")
-
-    return chunks
+    return build_chunks(df, semester=semester)

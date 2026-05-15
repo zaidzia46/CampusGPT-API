@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-28T05:57:57.354717+00:00",
+  "generated_at": "2026-05-12T11:24:12.185010+00:00",
   "semester": "spring_2026",
-  "total_chunks": 158,
+  "total_chunks": 359,
   "chunks": [
     {
       "chunk_id": "scholarships_spring_2026_policy_cgpa",
@@ -3205,6 +3205,3543 @@
         "lumpsum": false,
         "lumpsum_amount_rs": null,
         "source": "fee_structure",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A3 (Room ID: A3) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet. Room type: Classroom. First room on left side of ground floor.",
+      "metadata": {
+        "room_id": "A3",
+        "room_name": "Classroom A3",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A3 in COMSATS Sahiwal?\nA: Classroom A3 is on the Ground Floor of A Block (Left wing). First room on left side of ground floor.\n\nQ: What is in room A3 at COMSATS Sahiwal?\nA: Room A3 is Classroom A3, a Classroom on the Ground Floor of A Block.\n\nQ: What is next to Classroom A3?\nA: Classroom A3 is adjacent to Male Toilet.",
+      "metadata": {
+        "room_id": "A3",
+        "room_name": "Classroom A3",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_mt_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Toilet (Room ID: AGF-MT) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A3. Room type: Toilet. Next to Classroom A3.",
+      "metadata": {
+        "room_id": "AGF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_mt_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Toilet in COMSATS Sahiwal?\nA: Male Toilet is on the Ground Floor of A Block (Left wing). Next to Classroom A3.\n\nQ: What is in room AGF-MT at COMSATS Sahiwal?\nA: Room AGF-MT is Male Toilet, a Toilet on the Ground Floor of A Block.\n\nQ: What is next to Male Toilet?\nA: Male Toilet is adjacent to Classroom A3.",
+      "metadata": {
+        "room_id": "AGF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_eml_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Engineering Mechanics Lab (Room ID: AGF-EML) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet. Room type: Lab. After Male Toilet.",
+      "metadata": {
+        "room_id": "AGF-EML",
+        "room_name": "Engineering Mechanics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_eml_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Engineering Mechanics Lab in COMSATS Sahiwal?\nA: Engineering Mechanics Lab is on the Ground Floor of A Block (Left wing). After Male Toilet.\n\nQ: What is in room AGF-EML at COMSATS Sahiwal?\nA: Room AGF-EML is Engineering Mechanics Lab, a Lab on the Ground Floor of A Block.\n\nQ: What is next to Engineering Mechanics Lab?\nA: Engineering Mechanics Lab is adjacent to Male Toilet.",
+      "metadata": {
+        "room_id": "AGF-EML",
+        "room_name": "Engineering Mechanics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_sr_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Server Room (Room ID: AGF-SR) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Engineering Mechanics Lab. Room type: Server Room. After Engineering Mechanics Lab.",
+      "metadata": {
+        "room_id": "AGF-SR",
+        "room_name": "Server Room",
+        "room_type": "Server Room",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_sr_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Server Room in COMSATS Sahiwal?\nA: Server Room is on the Ground Floor of A Block (Left wing). After Engineering Mechanics Lab.\n\nQ: What is in room AGF-SR at COMSATS Sahiwal?\nA: Room AGF-SR is Server Room, a Server Room on the Ground Floor of A Block.\n\nQ: What is next to Server Room?\nA: Server Room is adjacent to Engineering Mechanics Lab.",
+      "metadata": {
+        "room_id": "AGF-SR",
+        "room_name": "Server Room",
+        "room_type": "Server Room",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab8_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 8 (CAD & CAE) (Room ID: CLAB8) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Server Room. Room type: Lab. CAD & CAE Lab, next to Server Room.",
+      "metadata": {
+        "room_id": "CLAB8",
+        "room_name": "Computer Lab 8 (CAD & CAE)",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab8_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 8 (CAD & CAE) in COMSATS Sahiwal?\nA: Computer Lab 8 (CAD & CAE) is on the Ground Floor of A Block (Left wing). CAD & CAE Lab, next to Server Room.\n\nQ: What is in room CLAB8 at COMSATS Sahiwal?\nA: Room CLAB8 is Computer Lab 8 (CAD & CAE), a Lab on the Ground Floor of A Block.\n\nQ: What is next to Computer Lab 8 (CAD & CAE)?\nA: Computer Lab 8 (CAD & CAE) is adjacent to Server Room.",
+      "metadata": {
+        "room_id": "CLAB8",
+        "room_name": "Computer Lab 8 (CAD & CAE)",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_mml_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Mechanics of Materials Lab (Room ID: AGF-MML) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 8. Room type: Lab. Lab Supervisor: Sohail Ahmad.",
+      "metadata": {
+        "room_id": "AGF-MML",
+        "room_name": "Mechanics of Materials Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_mml_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Mechanics of Materials Lab in COMSATS Sahiwal?\nA: Mechanics of Materials Lab is on the Ground Floor of A Block (Left wing). Lab Supervisor: Sohail Ahmad.\n\nQ: What is in room AGF-MML at COMSATS Sahiwal?\nA: Room AGF-MML is Mechanics of Materials Lab, a Lab on the Ground Floor of A Block.\n\nQ: What is next to Mechanics of Materials Lab?\nA: Mechanics of Materials Lab is adjacent to Computer Lab 8.",
+      "metadata": {
+        "room_id": "AGF-MML",
+        "room_name": "Mechanics of Materials Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_tdl_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Thermodynamics Lab (Room ID: AGF-TDL) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Mechanics of Materials Lab. Room type: Lab. Thermodynamics Lab.",
+      "metadata": {
+        "room_id": "AGF-TDL",
+        "room_name": "Thermodynamics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_tdl_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Thermodynamics Lab in COMSATS Sahiwal?\nA: Thermodynamics Lab is on the Ground Floor of A Block (Left wing). Thermodynamics Lab.\n\nQ: What is in room AGF-TDL at COMSATS Sahiwal?\nA: Room AGF-TDL is Thermodynamics Lab, a Lab on the Ground Floor of A Block.\n\nQ: What is next to Thermodynamics Lab?\nA: Thermodynamics Lab is adjacent to Mechanics of Materials Lab.",
+      "metadata": {
+        "room_id": "AGF-TDL",
+        "room_name": "Thermodynamics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_icel_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "IC Engine / Engineer Lab (Room ID: AGF-ICEL) is located in A Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Thermodynamics Lab. Room type: Lab. End of left side.",
+      "metadata": {
+        "room_id": "AGF-ICEL",
+        "room_name": "IC Engine / Engineer Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_icel_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is IC Engine / Engineer Lab in COMSATS Sahiwal?\nA: IC Engine / Engineer Lab is on the Ground Floor of A Block (Left wing). End of left side.\n\nQ: What is in room AGF-ICEL at COMSATS Sahiwal?\nA: Room AGF-ICEL is IC Engine / Engineer Lab, a Lab on the Ground Floor of A Block.\n\nQ: What is next to IC Engine / Engineer Lab?\nA: IC Engine / Engineer Lab is adjacent to Thermodynamics Lab.",
+      "metadata": {
+        "room_id": "AGF-ICEL",
+        "room_name": "IC Engine / Engineer Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_lib_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Library (Room ID: AGF-LIB) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Admin Office. Room type: Library. Start of right side.",
+      "metadata": {
+        "room_id": "AGF-LIB",
+        "room_name": "Library",
+        "room_type": "Library",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_lib_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Library in COMSATS Sahiwal?\nA: Library is on the Ground Floor of A Block (Right wing). Start of right side.\n\nQ: What is in room AGF-LIB at COMSATS Sahiwal?\nA: Room AGF-LIB is Library, a Library on the Ground Floor of A Block.\n\nQ: What is next to Library?\nA: Library is adjacent to Admin Office.",
+      "metadata": {
+        "room_id": "AGF-LIB",
+        "room_name": "Library",
+        "room_type": "Library",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_adm_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Admin Office (Room ID: AGF-ADM) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Library, Classroom A1. Room type: Office. Between Library and Classroom A1.",
+      "metadata": {
+        "room_id": "AGF-ADM",
+        "room_name": "Admin Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_adm_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Admin Office in COMSATS Sahiwal?\nA: Admin Office is on the Ground Floor of A Block (Right wing). Between Library and Classroom A1.\n\nQ: What is in room AGF-ADM at COMSATS Sahiwal?\nA: Room AGF-ADM is Admin Office, a Office on the Ground Floor of A Block.\n\nQ: What is next to Admin Office?\nA: Admin Office is adjacent to Library, Classroom A1.",
+      "metadata": {
+        "room_id": "AGF-ADM",
+        "room_name": "Admin Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A1 (Room ID: A1) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Admin Office, Female Toilet. Room type: Classroom. After Admin Office.",
+      "metadata": {
+        "room_id": "A1",
+        "room_name": "Classroom A1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A1 in COMSATS Sahiwal?\nA: Classroom A1 is on the Ground Floor of A Block (Right wing). After Admin Office.\n\nQ: What is in room A1 at COMSATS Sahiwal?\nA: Room A1 is Classroom A1, a Classroom on the Ground Floor of A Block.\n\nQ: What is next to Classroom A1?\nA: Classroom A1 is adjacent to Admin Office, Female Toilet.",
+      "metadata": {
+        "room_id": "A1",
+        "room_name": "Classroom A1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_ft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Female Toilet (Room ID: AGF-FT) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A1. Room type: Toilet. Next to Classroom A1.",
+      "metadata": {
+        "room_id": "AGF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_ft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Female Toilet in COMSATS Sahiwal?\nA: Female Toilet is on the Ground Floor of A Block (Right wing). Next to Classroom A1.\n\nQ: What is in room AGF-FT at COMSATS Sahiwal?\nA: Room AGF-FT is Female Toilet, a Toilet on the Ground Floor of A Block.\n\nQ: What is next to Female Toilet?\nA: Female Toilet is adjacent to Classroom A1.",
+      "metadata": {
+        "room_id": "AGF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_fft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Female Faculty Toilet (Room ID: AGF-FFT) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Female Toilet. Room type: Toilet. After Female Toilet.",
+      "metadata": {
+        "room_id": "AGF-FFT",
+        "room_name": "Female Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_fft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Female Faculty Toilet in COMSATS Sahiwal?\nA: Female Faculty Toilet is on the Ground Floor of A Block (Right wing). After Female Toilet.\n\nQ: What is in room AGF-FFT at COMSATS Sahiwal?\nA: Room AGF-FFT is Female Faculty Toilet, a Toilet on the Ground Floor of A Block.\n\nQ: What is next to Female Faculty Toilet?\nA: Female Faculty Toilet is adjacent to Female Toilet.",
+      "metadata": {
+        "room_id": "AGF-FFT",
+        "room_name": "Female Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_hr_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Human Resource Department (Room ID: AGF-HR) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Female Faculty Toilet. Room type: Department. HR Department.",
+      "metadata": {
+        "room_id": "AGF-HR",
+        "room_name": "Human Resource Department",
+        "room_type": "Department",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_hr_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Human Resource Department in COMSATS Sahiwal?\nA: Human Resource Department is on the Ground Floor of A Block (Right wing). HR Department.\n\nQ: What is in room AGF-HR at COMSATS Sahiwal?\nA: Room AGF-HR is Human Resource Department, a Department on the Ground Floor of A Block.\n\nQ: What is next to Human Resource Department?\nA: Human Resource Department is adjacent to Female Faculty Toilet.",
+      "metadata": {
+        "room_id": "AGF-HR",
+        "room_name": "Human Resource Department",
+        "room_type": "Department",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_reg_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Registration Office (Room ID: AGF-REG) is located in A Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to HR Department, Director Office. Room type: Office. Near entrance and Director Office.",
+      "metadata": {
+        "room_id": "AGF-REG",
+        "room_name": "Registration Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_reg_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Registration Office in COMSATS Sahiwal?\nA: Registration Office is on the Ground Floor of A Block (Right wing). Near entrance and Director Office.\n\nQ: What is in room AGF-REG at COMSATS Sahiwal?\nA: Room AGF-REG is Registration Office, a Office on the Ground Floor of A Block.\n\nQ: What is next to Registration Office?\nA: Registration Office is adjacent to HR Department, Director Office.",
+      "metadata": {
+        "room_id": "AGF-REG",
+        "room_name": "Registration Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_dir_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Director Office (Room ID: AGF-DIR) is located in A Block, Ground Floor (Entrance) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Registration Office. Room type: Office. At the entrance from right side.",
+      "metadata": {
+        "room_id": "AGF-DIR",
+        "room_name": "Director Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_dir_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Director Office in COMSATS Sahiwal?\nA: Director Office is on the Ground Floor of A Block (Entrance). At the entrance from right side.\n\nQ: What is in room AGF-DIR at COMSATS Sahiwal?\nA: Room AGF-DIR is Director Office, a Office on the Ground Floor of A Block.\n\nQ: What is next to Director Office?\nA: Director Office is adjacent to Registration Office.",
+      "metadata": {
+        "room_id": "AGF-DIR",
+        "room_name": "Director Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_conf_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Conference Room (Room ID: AGF-CONF) is located in A Block, Ground Floor (Entrance) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Director Office. Room type: Conference Room. Near Director Office at entrance.",
+      "metadata": {
+        "room_id": "AGF-CONF",
+        "room_name": "Conference Room",
+        "room_type": "Conference Room",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_conf_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Conference Room in COMSATS Sahiwal?\nA: Conference Room is on the Ground Floor of A Block (Entrance). Near Director Office at entrance.\n\nQ: What is in room AGF-CONF at COMSATS Sahiwal?\nA: Room AGF-CONF is Conference Room, a Conference Room on the Ground Floor of A Block.\n\nQ: What is next to Conference Room?\nA: Conference Room is adjacent to Director Office.",
+      "metadata": {
+        "room_id": "AGF-CONF",
+        "room_name": "Conference Room",
+        "room_type": "Conference Room",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_fa_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "First Aid Facility Office (Room ID: AGF-FA) is located in A Block, Ground Floor (Entrance) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Conference Room. Room type: First Aid. First Aid office near fountain.",
+      "metadata": {
+        "room_id": "AGF-FA",
+        "room_name": "First Aid Facility Office",
+        "room_type": "First Aid",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_agf_fa_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is First Aid Facility Office in COMSATS Sahiwal?\nA: First Aid Facility Office is on the Ground Floor of A Block (Entrance). First Aid office near fountain.\n\nQ: What is in room AGF-FA at COMSATS Sahiwal?\nA: Room AGF-FA is First Aid Facility Office, a First Aid on the Ground Floor of A Block.\n\nQ: What is next to First Aid Facility Office?\nA: First Aid Facility Office is adjacent to Conference Room.",
+      "metadata": {
+        "room_id": "AGF-FA",
+        "room_name": "First Aid Facility Office",
+        "room_type": "First Aid",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab9_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 9 (Room ID: CLAB9) is located in A Block, Ground Floor (Entrance) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to First Aid Office. Room type: Lab. Near entrance side.",
+      "metadata": {
+        "room_id": "CLAB9",
+        "room_name": "Computer Lab 9",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab9_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 9 in COMSATS Sahiwal?\nA: Computer Lab 9 is on the Ground Floor of A Block (Entrance). Near entrance side.\n\nQ: What is in room CLAB9 at COMSATS Sahiwal?\nA: Room CLAB9 is Computer Lab 9, a Lab on the Ground Floor of A Block.\n\nQ: What is next to Computer Lab 9?\nA: Computer Lab 9 is adjacent to First Aid Office.",
+      "metadata": {
+        "room_id": "CLAB9",
+        "room_name": "Computer Lab 9",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "wing": "Entrance",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A1.1 (Room ID: A1.1) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Faculty Toilet. Room type: Classroom. First room on right side of first floor.",
+      "metadata": {
+        "room_id": "A1.1",
+        "room_name": "Classroom A1.1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A1.1 in COMSATS Sahiwal?\nA: Classroom A1.1 is on the First Floor of A Block (Right wing). First room on right side of first floor.\n\nQ: What is in room A1.1 at COMSATS Sahiwal?\nA: Room A1.1 is Classroom A1.1, a Classroom on the First Floor of A Block.\n\nQ: What is next to Classroom A1.1?\nA: Classroom A1.1 is adjacent to Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "A1.1",
+        "room_name": "Classroom A1.1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_mft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Faculty Toilet (Room ID: AFF-MFT) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A1.1. Room type: Toilet. Next to Classroom A1.1.",
+      "metadata": {
+        "room_id": "AFF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_mft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Faculty Toilet in COMSATS Sahiwal?\nA: Male Faculty Toilet is on the First Floor of A Block (Right wing). Next to Classroom A1.1.\n\nQ: What is in room AFF-MFT at COMSATS Sahiwal?\nA: Room AFF-MFT is Male Faculty Toilet, a Toilet on the First Floor of A Block.\n\nQ: What is next to Male Faculty Toilet?\nA: Male Faculty Toilet is adjacent to Classroom A1.1.",
+      "metadata": {
+        "room_id": "AFF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A1.2 (Room ID: A1.2) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Faculty Toilet. Room type: Classroom. After Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "A1.2",
+        "room_name": "Classroom A1.2",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A1.2 in COMSATS Sahiwal?\nA: Classroom A1.2 is on the First Floor of A Block (Right wing). After Male Faculty Toilet.\n\nQ: What is in room A1.2 at COMSATS Sahiwal?\nA: Room A1.2 is Classroom A1.2, a Classroom on the First Floor of A Block.\n\nQ: What is next to Classroom A1.2?\nA: Classroom A1.2 is adjacent to Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "A1.2",
+        "room_name": "Classroom A1.2",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_racl_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Refrigeration & Air Conditioning Lab (Room ID: AFF-RACL) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A1.2. Room type: Lab. R&AC Lab.",
+      "metadata": {
+        "room_id": "AFF-RACL",
+        "room_name": "Refrigeration & Air Conditioning Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_racl_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Refrigeration & Air Conditioning Lab in COMSATS Sahiwal?\nA: Refrigeration & Air Conditioning Lab is on the First Floor of A Block (Right wing). R&AC Lab.\n\nQ: What is in room AFF-RACL at COMSATS Sahiwal?\nA: Room AFF-RACL is Refrigeration & Air Conditioning Lab, a Lab on the First Floor of A Block.\n\nQ: What is next to Refrigeration & Air Conditioning Lab?\nA: Refrigeration & Air Conditioning Lab is adjacent to Classroom A1.2.",
+      "metadata": {
+        "room_id": "AFF-RACL",
+        "room_name": "Refrigeration & Air Conditioning Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_acc_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Accounts Office (Room ID: AFF-ACC) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to R&AC Lab. Room type: Office. Incharge: M. Tauqeer Anwar.",
+      "metadata": {
+        "room_id": "AFF-ACC",
+        "room_name": "Accounts Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_acc_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Accounts Office in COMSATS Sahiwal?\nA: Accounts Office is on the First Floor of A Block (Right wing). Incharge: M. Tauqeer Anwar.\n\nQ: What is in room AFF-ACC at COMSATS Sahiwal?\nA: Room AFF-ACC is Accounts Office, a Office on the First Floor of A Block.\n\nQ: What is next to Accounts Office?\nA: Accounts Office is adjacent to R&AC Lab.",
+      "metadata": {
+        "room_id": "AFF-ACC",
+        "room_name": "Accounts Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_phl_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Physics Lab (Room ID: AFF-PHL) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Accounts Office. Room type: Lab. After Accounts Office.",
+      "metadata": {
+        "room_id": "AFF-PHL",
+        "room_name": "Physics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_phl_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Physics Lab in COMSATS Sahiwal?\nA: Physics Lab is on the First Floor of A Block (Right wing). After Accounts Office.\n\nQ: What is in room AFF-PHL at COMSATS Sahiwal?\nA: Room AFF-PHL is Physics Lab, a Lab on the First Floor of A Block.\n\nQ: What is next to Physics Lab?\nA: Physics Lab is adjacent to Accounts Office.",
+      "metadata": {
+        "room_id": "AFF-PHL",
+        "room_name": "Physics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_psd_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Purchase & Store Department (Room ID: AFF-PSD) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Physics Lab. Room type: Store. Incharge: M. Nadeem Rana (Senior Program Officer).",
+      "metadata": {
+        "room_id": "AFF-PSD",
+        "room_name": "Purchase & Store Department",
+        "room_type": "Store",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_psd_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Purchase & Store Department in COMSATS Sahiwal?\nA: Purchase & Store Department is on the First Floor of A Block (Right wing). Incharge: M. Nadeem Rana (Senior Program Officer).\n\nQ: What is in room AFF-PSD at COMSATS Sahiwal?\nA: Room AFF-PSD is Purchase & Store Department, a Store on the First Floor of A Block.\n\nQ: What is next to Purchase & Store Department?\nA: Purchase & Store Department is adjacent to Physics Lab.",
+      "metadata": {
+        "room_id": "AFF-PSD",
+        "room_name": "Purchase & Store Department",
+        "room_type": "Store",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_sal_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Salary Section (Room ID: AFF-SAL) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Purchase & Store Department. Room type: Office. Query hours: 2:30 PM – 4:00 PM.",
+      "metadata": {
+        "room_id": "AFF-SAL",
+        "room_name": "Salary Section",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_sal_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Salary Section in COMSATS Sahiwal?\nA: Salary Section is on the First Floor of A Block (Right wing). Query hours: 2:30 PM – 4:00 PM.\n\nQ: What is in room AFF-SAL at COMSATS Sahiwal?\nA: Room AFF-SAL is Salary Section, a Office on the First Floor of A Block.\n\nQ: What is next to Salary Section?\nA: Salary Section is adjacent to Purchase & Store Department.",
+      "metadata": {
+        "room_id": "AFF-SAL",
+        "room_name": "Salary Section",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab11_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 11 (Room ID: CLAB11) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Salary Section. Room type: Lab. After Salary Section.",
+      "metadata": {
+        "room_id": "CLAB11",
+        "room_name": "Computer Lab 11",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab11_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 11 in COMSATS Sahiwal?\nA: Computer Lab 11 is on the First Floor of A Block (Right wing). After Salary Section.\n\nQ: What is in room CLAB11 at COMSATS Sahiwal?\nA: Room CLAB11 is Computer Lab 11, a Lab on the First Floor of A Block.\n\nQ: What is next to Computer Lab 11?\nA: Computer Lab 11 is adjacent to Salary Section.",
+      "metadata": {
+        "room_id": "CLAB11",
+        "room_name": "Computer Lab 11",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_aud_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Auditorium Hall (Room ID: AFF-AUD) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 11. Room type: Auditorium. Auditorium Hall.",
+      "metadata": {
+        "room_id": "AFF-AUD",
+        "room_name": "Auditorium Hall",
+        "room_type": "Auditorium",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_aud_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Auditorium Hall in COMSATS Sahiwal?\nA: Auditorium Hall is on the First Floor of A Block (Right wing). Auditorium Hall.\n\nQ: What is in room AFF-AUD at COMSATS Sahiwal?\nA: Room AFF-AUD is Auditorium Hall, a Auditorium on the First Floor of A Block.\n\nQ: What is next to Auditorium Hall?\nA: Auditorium Hall is adjacent to Computer Lab 11.",
+      "metadata": {
+        "room_id": "AFF-AUD",
+        "room_name": "Auditorium Hall",
+        "room_type": "Auditorium",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab12_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 12 (Room ID: CLAB12) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Auditorium Hall. Room type: Lab. After Auditorium.",
+      "metadata": {
+        "room_id": "CLAB12",
+        "room_name": "Computer Lab 12",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_clab12_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 12 in COMSATS Sahiwal?\nA: Computer Lab 12 is on the First Floor of A Block (Right wing). After Auditorium.\n\nQ: What is in room CLAB12 at COMSATS Sahiwal?\nA: Room CLAB12 is Computer Lab 12, a Lab on the First Floor of A Block.\n\nQ: What is next to Computer Lab 12?\nA: Computer Lab 12 is adjacent to Auditorium Hall.",
+      "metadata": {
+        "room_id": "CLAB12",
+        "room_name": "Computer Lab 12",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_mml_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Mechanics of Machine Lab (Room ID: AFF-MML) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 12. Room type: Lab. Mechanics of Machine Lab.",
+      "metadata": {
+        "room_id": "AFF-MML",
+        "room_name": "Mechanics of Machine Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_mml_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Mechanics of Machine Lab in COMSATS Sahiwal?\nA: Mechanics of Machine Lab is on the First Floor of A Block (Right wing). Mechanics of Machine Lab.\n\nQ: What is in room AFF-MML at COMSATS Sahiwal?\nA: Room AFF-MML is Mechanics of Machine Lab, a Lab on the First Floor of A Block.\n\nQ: What is next to Mechanics of Machine Lab?\nA: Mechanics of Machine Lab is adjacent to Computer Lab 12.",
+      "metadata": {
+        "room_id": "AFF-MML",
+        "room_name": "Mechanics of Machine Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_gcr_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Girls Common Room (Room ID: AFF-GCR) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Mechanics of Machine Lab. Room type: Common Room. Girls Common Room.",
+      "metadata": {
+        "room_id": "AFF-GCR",
+        "room_name": "Girls Common Room",
+        "room_type": "Common Room",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_gcr_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Girls Common Room in COMSATS Sahiwal?\nA: Girls Common Room is on the First Floor of A Block (Right wing). Girls Common Room.\n\nQ: What is in room AFF-GCR at COMSATS Sahiwal?\nA: Room AFF-GCR is Girls Common Room, a Common Room on the First Floor of A Block.\n\nQ: What is next to Girls Common Room?\nA: Girls Common Room is adjacent to Mechanics of Machine Lab.",
+      "metadata": {
+        "room_id": "AFF-GCR",
+        "room_name": "Girls Common Room",
+        "room_type": "Common Room",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_fml_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Fluid Mechanics Lab (Room ID: AFF-FML) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Girls Common Room. Room type: Lab. Fluid Mechanics Lab.",
+      "metadata": {
+        "room_id": "AFF-FML",
+        "room_name": "Fluid Mechanics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_fml_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Fluid Mechanics Lab in COMSATS Sahiwal?\nA: Fluid Mechanics Lab is on the First Floor of A Block (Right wing). Fluid Mechanics Lab.\n\nQ: What is in room AFF-FML at COMSATS Sahiwal?\nA: Room AFF-FML is Fluid Mechanics Lab, a Lab on the First Floor of A Block.\n\nQ: What is next to Fluid Mechanics Lab?\nA: Fluid Mechanics Lab is adjacent to Girls Common Room.",
+      "metadata": {
+        "room_id": "AFF-FML",
+        "room_name": "Fluid Mechanics Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_ft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Female Toilet (Room ID: AFF-FT) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Fluid Mechanics Lab. Room type: Toilet. After Fluid Mechanics Lab.",
+      "metadata": {
+        "room_id": "AFF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_ft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Female Toilet in COMSATS Sahiwal?\nA: Female Toilet is on the First Floor of A Block (Right wing). After Fluid Mechanics Lab.\n\nQ: What is in room AFF-FT at COMSATS Sahiwal?\nA: Room AFF-FT is Female Toilet, a Toilet on the First Floor of A Block.\n\nQ: What is next to Female Toilet?\nA: Female Toilet is adjacent to Fluid Mechanics Lab.",
+      "metadata": {
+        "room_id": "AFF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A1.3 (Room ID: A1.3) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Female Toilet. Room type: Classroom. After Female Toilet.",
+      "metadata": {
+        "room_id": "A1.3",
+        "room_name": "Classroom A1.3",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a1_3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A1.3 in COMSATS Sahiwal?\nA: Classroom A1.3 is on the First Floor of A Block (Right wing). After Female Toilet.\n\nQ: What is in room A1.3 at COMSATS Sahiwal?\nA: Room A1.3 is Classroom A1.3, a Classroom on the First Floor of A Block.\n\nQ: What is next to Classroom A1.3?\nA: Classroom A1.3 is adjacent to Female Toilet.",
+      "metadata": {
+        "room_id": "A1.3",
+        "room_name": "Classroom A1.3",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_icl_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Instrument Control Lab (Room ID: AFF-ICL) is located in A Block, First Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A1.3. Room type: Lab. Lab Engineer: Miss Rimsha Sajjad.",
+      "metadata": {
+        "room_id": "AFF-ICL",
+        "room_name": "Instrument Control Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_aff_icl_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Instrument Control Lab in COMSATS Sahiwal?\nA: Instrument Control Lab is on the First Floor of A Block (Right wing). Lab Engineer: Miss Rimsha Sajjad.\n\nQ: What is in room AFF-ICL at COMSATS Sahiwal?\nA: Room AFF-ICL is Instrument Control Lab, a Lab on the First Floor of A Block.\n\nQ: What is next to Instrument Control Lab?\nA: Instrument Control Lab is adjacent to Classroom A1.3.",
+      "metadata": {
+        "room_id": "AFF-ICL",
+        "room_name": "Instrument Control Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "First Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_fyp_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "FYP Lab (Open Ended Lab) (Room ID: ASF-FYP) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A2.2. Room type: Lab. Start of second floor.",
+      "metadata": {
+        "room_id": "ASF-FYP",
+        "room_name": "FYP Lab (Open Ended Lab)",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_fyp_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is FYP Lab (Open Ended Lab) in COMSATS Sahiwal?\nA: FYP Lab (Open Ended Lab) is on the Second Floor of A Block. Start of second floor.\n\nQ: What is in room ASF-FYP at COMSATS Sahiwal?\nA: Room ASF-FYP is FYP Lab (Open Ended Lab), a Lab on the Second Floor of A Block.\n\nQ: What is next to FYP Lab (Open Ended Lab)?\nA: FYP Lab (Open Ended Lab) is adjacent to Classroom A2.2.",
+      "metadata": {
+        "room_id": "ASF-FYP",
+        "room_name": "FYP Lab (Open Ended Lab)",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a2_2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A2.2 (Room ID: A2.2) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to FYP Lab. Room type: Classroom. Next to FYP Lab.",
+      "metadata": {
+        "room_id": "A2.2",
+        "room_name": "Classroom A2.2",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a2_2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A2.2 in COMSATS Sahiwal?\nA: Classroom A2.2 is on the Second Floor of A Block. Next to FYP Lab.\n\nQ: What is in room A2.2 at COMSATS Sahiwal?\nA: Room A2.2 is Classroom A2.2, a Classroom on the Second Floor of A Block.\n\nQ: What is next to Classroom A2.2?\nA: Classroom A2.2 is adjacent to FYP Lab.",
+      "metadata": {
+        "room_id": "A2.2",
+        "room_name": "Classroom A2.2",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_mw_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Washroom (Room ID: ASF-MW) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A2.2. Room type: Washroom. Next to A2.2.",
+      "metadata": {
+        "room_id": "ASF-MW",
+        "room_name": "Male Washroom",
+        "room_type": "Washroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_mw_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Washroom in COMSATS Sahiwal?\nA: Male Washroom is on the Second Floor of A Block. Next to A2.2.\n\nQ: What is in room ASF-MW at COMSATS Sahiwal?\nA: Room ASF-MW is Male Washroom, a Washroom on the Second Floor of A Block.\n\nQ: What is next to Male Washroom?\nA: Male Washroom is adjacent to Classroom A2.2.",
+      "metadata": {
+        "room_id": "ASF-MW",
+        "room_name": "Male Washroom",
+        "room_type": "Washroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_eml_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Electric Machine Lab (Room ID: ASF-EML) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Washroom. Room type: Lab. After Male Washroom.",
+      "metadata": {
+        "room_id": "ASF-EML",
+        "room_name": "Electric Machine Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_eml_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Electric Machine Lab in COMSATS Sahiwal?\nA: Electric Machine Lab is on the Second Floor of A Block. After Male Washroom.\n\nQ: What is in room ASF-EML at COMSATS Sahiwal?\nA: Room ASF-EML is Electric Machine Lab, a Lab on the Second Floor of A Block.\n\nQ: What is next to Electric Machine Lab?\nA: Electric Machine Lab is adjacent to Male Washroom.",
+      "metadata": {
+        "room_id": "ASF-EML",
+        "room_name": "Electric Machine Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_dco_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "DCO / LDC Office (Room ID: ASF-DCO) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Electric Machine Lab. Room type: Office. DCO / LDC Office.",
+      "metadata": {
+        "room_id": "ASF-DCO",
+        "room_name": "DCO / LDC Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_dco_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is DCO / LDC Office in COMSATS Sahiwal?\nA: DCO / LDC Office is on the Second Floor of A Block. DCO / LDC Office.\n\nQ: What is in room ASF-DCO at COMSATS Sahiwal?\nA: Room ASF-DCO is DCO / LDC Office, a Office on the Second Floor of A Block.\n\nQ: What is next to DCO / LDC Office?\nA: DCO / LDC Office is adjacent to Electric Machine Lab.",
+      "metadata": {
+        "room_id": "ASF-DCO",
+        "room_name": "DCO / LDC Office",
+        "room_type": "Office",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_mft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Faculty Toilet (Room ID: ASF-MFT) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to DCO/LDC Office. Room type: Toilet. Next to DCO/LDC Office.",
+      "metadata": {
+        "room_id": "ASF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_mft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Faculty Toilet in COMSATS Sahiwal?\nA: Male Faculty Toilet is on the Second Floor of A Block. Next to DCO/LDC Office.\n\nQ: What is in room ASF-MFT at COMSATS Sahiwal?\nA: Room ASF-MFT is Male Faculty Toilet, a Toilet on the Second Floor of A Block.\n\nQ: What is next to Male Faculty Toilet?\nA: Male Faculty Toilet is adjacent to DCO/LDC Office.",
+      "metadata": {
+        "room_id": "ASF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a2_1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom A2.1 (Room ID: A2.1) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Faculty Toilet. Room type: Classroom. After Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "A2.1",
+        "room_name": "Classroom A2.1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_a2_1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom A2.1 in COMSATS Sahiwal?\nA: Classroom A2.1 is on the Second Floor of A Block. After Male Faculty Toilet.\n\nQ: What is in room A2.1 at COMSATS Sahiwal?\nA: Room A2.1 is Classroom A2.1, a Classroom on the Second Floor of A Block.\n\nQ: What is next to Classroom A2.1?\nA: Classroom A2.1 is adjacent to Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "A2.1",
+        "room_name": "Classroom A2.1",
+        "room_type": "Classroom",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_cisco_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Cisco Lab (Room ID: ASF-CISCO) is located in A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Classroom A2.1. Room type: Lab. Last room on second floor.",
+      "metadata": {
+        "room_id": "ASF-CISCO",
+        "room_name": "Cisco Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_asf_cisco_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Cisco Lab in COMSATS Sahiwal?\nA: Cisco Lab is on the Second Floor of A Block. Last room on second floor.\n\nQ: What is in room ASF-CISCO at COMSATS Sahiwal?\nA: Room ASF-CISCO is Cisco Lab, a Lab on the Second Floor of A Block.\n\nQ: What is next to Cisco Lab?\nA: Cisco Lab is adjacent to Classroom A2.1.",
+      "metadata": {
+        "room_id": "ASF-CISCO",
+        "room_name": "Cisco Lab",
+        "room_type": "Lab",
+        "block": "A Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B1 (Room ID: B1) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B2. Room type: Classroom. First room on right side.",
+      "metadata": {
+        "room_id": "B1",
+        "room_name": "Classroom B1",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B1 in COMSATS Sahiwal?\nA: Classroom B1 is on the Ground Floor of B Block (Right wing). First room on right side.\n\nQ: What is in room B1 at COMSATS Sahiwal?\nA: Room B1 is Classroom B1, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B1?\nA: Classroom B1 is adjacent to B2.",
+      "metadata": {
+        "room_id": "B1",
+        "room_name": "Classroom B1",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B2 (Room ID: B2) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B1, B3. Room type: Classroom. Between B1 and B3.",
+      "metadata": {
+        "room_id": "B2",
+        "room_name": "Classroom B2",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B2 in COMSATS Sahiwal?\nA: Classroom B2 is on the Ground Floor of B Block (Right wing). Between B1 and B3.\n\nQ: What is in room B2 at COMSATS Sahiwal?\nA: Room B2 is Classroom B2, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B2?\nA: Classroom B2 is adjacent to B1, B3.",
+      "metadata": {
+        "room_id": "B2",
+        "room_name": "Classroom B2",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B3 (Room ID: B3) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B2, B4. Room type: Classroom. Between B2 and B4.",
+      "metadata": {
+        "room_id": "B3",
+        "room_name": "Classroom B3",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B3 in COMSATS Sahiwal?\nA: Classroom B3 is on the Ground Floor of B Block (Right wing). Between B2 and B4.\n\nQ: What is in room B3 at COMSATS Sahiwal?\nA: Room B3 is Classroom B3, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B3?\nA: Classroom B3 is adjacent to B2, B4.",
+      "metadata": {
+        "room_id": "B3",
+        "room_name": "Classroom B3",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b4_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B4 (Room ID: B4) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B3, B5. Room type: Classroom. Between B3 and B5.",
+      "metadata": {
+        "room_id": "B4",
+        "room_name": "Classroom B4",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b4_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B4 in COMSATS Sahiwal?\nA: Classroom B4 is on the Ground Floor of B Block (Right wing). Between B3 and B5.\n\nQ: What is in room B4 at COMSATS Sahiwal?\nA: Room B4 is Classroom B4, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B4?\nA: Classroom B4 is adjacent to B3, B5.",
+      "metadata": {
+        "room_id": "B4",
+        "room_name": "Classroom B4",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b5_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B5 (Room ID: B5) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B4, B6. Room type: Classroom. Between B4 and B6.",
+      "metadata": {
+        "room_id": "B5",
+        "room_name": "Classroom B5",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b5_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B5 in COMSATS Sahiwal?\nA: Classroom B5 is on the Ground Floor of B Block (Right wing). Between B4 and B6.\n\nQ: What is in room B5 at COMSATS Sahiwal?\nA: Room B5 is Classroom B5, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B5?\nA: Classroom B5 is adjacent to B4, B6.",
+      "metadata": {
+        "room_id": "B5",
+        "room_name": "Classroom B5",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b6_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B6 (Room ID: B6) is located in B Block, Ground Floor (Right wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B5, Male Toilet. Room type: Classroom. Last room on right side.",
+      "metadata": {
+        "room_id": "B6",
+        "room_name": "Classroom B6",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b6_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B6 in COMSATS Sahiwal?\nA: Classroom B6 is on the Ground Floor of B Block (Right wing). Last room on right side.\n\nQ: What is in room B6 at COMSATS Sahiwal?\nA: Room B6 is Classroom B6, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B6?\nA: Classroom B6 is adjacent to B5, Male Toilet.",
+      "metadata": {
+        "room_id": "B6",
+        "room_name": "Classroom B6",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Right wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_bgf_mt_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Toilet (Room ID: BGF-MT) is located in B Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B6, B7. Room type: Toilet. Between right and middle wings.",
+      "metadata": {
+        "room_id": "BGF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_bgf_mt_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Toilet in COMSATS Sahiwal?\nA: Male Toilet is on the Ground Floor of B Block (Middle). Between right and middle wings.\n\nQ: What is in room BGF-MT at COMSATS Sahiwal?\nA: Room BGF-MT is Male Toilet, a Toilet on the Ground Floor of B Block.\n\nQ: What is next to Male Toilet?\nA: Male Toilet is adjacent to B6, B7.",
+      "metadata": {
+        "room_id": "BGF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b7_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B7 (Room ID: B7) is located in B Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet, B8. Room type: Classroom. First room in middle section.",
+      "metadata": {
+        "room_id": "B7",
+        "room_name": "Classroom B7",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b7_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B7 in COMSATS Sahiwal?\nA: Classroom B7 is on the Ground Floor of B Block (Middle). First room in middle section.\n\nQ: What is in room B7 at COMSATS Sahiwal?\nA: Room B7 is Classroom B7, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B7?\nA: Classroom B7 is adjacent to Male Toilet, B8.",
+      "metadata": {
+        "room_id": "B7",
+        "room_name": "Classroom B7",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b8_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B8 (Room ID: B8) is located in B Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B7, B9. Room type: Classroom. Between B7 and B9.",
+      "metadata": {
+        "room_id": "B8",
+        "room_name": "Classroom B8",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b8_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B8 in COMSATS Sahiwal?\nA: Classroom B8 is on the Ground Floor of B Block (Middle). Between B7 and B9.\n\nQ: What is in room B8 at COMSATS Sahiwal?\nA: Room B8 is Classroom B8, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B8?\nA: Classroom B8 is adjacent to B7, B9.",
+      "metadata": {
+        "room_id": "B8",
+        "room_name": "Classroom B8",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b9_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B9 (Room ID: B9) is located in B Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B8, B10. Room type: Classroom. Between B8 and B10.",
+      "metadata": {
+        "room_id": "B9",
+        "room_name": "Classroom B9",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b9_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B9 in COMSATS Sahiwal?\nA: Classroom B9 is on the Ground Floor of B Block (Middle). Between B8 and B10.\n\nQ: What is in room B9 at COMSATS Sahiwal?\nA: Room B9 is Classroom B9, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B9?\nA: Classroom B9 is adjacent to B8, B10.",
+      "metadata": {
+        "room_id": "B9",
+        "room_name": "Classroom B9",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b10_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B10 (Room ID: B10) is located in B Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B9. Room type: Classroom. Last room in middle section.",
+      "metadata": {
+        "room_id": "B10",
+        "room_name": "Classroom B10",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b10_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B10 in COMSATS Sahiwal?\nA: Classroom B10 is on the Ground Floor of B Block (Middle). Last room in middle section.\n\nQ: What is in room B10 at COMSATS Sahiwal?\nA: Room B10 is Classroom B10, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B10?\nA: Classroom B10 is adjacent to B9.",
+      "metadata": {
+        "room_id": "B10",
+        "room_name": "Classroom B10",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b11_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B11 (Room ID: B11) is located in B Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B10, B14. Room type: Classroom. First room on left side.",
+      "metadata": {
+        "room_id": "B11",
+        "room_name": "Classroom B11",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b11_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B11 in COMSATS Sahiwal?\nA: Classroom B11 is on the Ground Floor of B Block (Left wing). First room on left side.\n\nQ: What is in room B11 at COMSATS Sahiwal?\nA: Room B11 is Classroom B11, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B11?\nA: Classroom B11 is adjacent to B10, B14.",
+      "metadata": {
+        "room_id": "B11",
+        "room_name": "Classroom B11",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b14_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom B14 (Room ID: B14) is located in B Block, Ground Floor (Left wing) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to B11. Room type: Classroom. Last room on left side.",
+      "metadata": {
+        "room_id": "B14",
+        "room_name": "Classroom B14",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_b14_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom B14 in COMSATS Sahiwal?\nA: Classroom B14 is on the Ground Floor of B Block (Left wing). Last room on left side.\n\nQ: What is in room B14 at COMSATS Sahiwal?\nA: Room B14 is Classroom B14, a Classroom on the Ground Floor of B Block.\n\nQ: What is next to Classroom B14?\nA: Classroom B14 is adjacent to B11.",
+      "metadata": {
+        "room_id": "B14",
+        "room_name": "Classroom B14",
+        "room_type": "Classroom",
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "wing": "Left wing",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1 (Room ID: C1) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. Room type: Classroom. First room on ground floor.",
+      "metadata": {
+        "room_id": "C1",
+        "room_name": "Classroom C1",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1 in COMSATS Sahiwal?\nA: Classroom C1 is on the Ground Floor of C Block. First room on ground floor.\n\nQ: What is in room C1 at COMSATS Sahiwal?\nA: Room C1 is Classroom C1, a Classroom on the Ground Floor of C Block.\n\nQ: What floor is Classroom C1 on?\nA: Classroom C1 is on the Ground Floor of C Block.",
+      "metadata": {
+        "room_id": "C1",
+        "room_name": "Classroom C1",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C2 (Room ID: C2) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1. Room type: Classroom. Next to C1.",
+      "metadata": {
+        "room_id": "C2",
+        "room_name": "Classroom C2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C2 in COMSATS Sahiwal?\nA: Classroom C2 is on the Ground Floor of C Block. Next to C1.\n\nQ: What is in room C2 at COMSATS Sahiwal?\nA: Room C2 is Classroom C2, a Classroom on the Ground Floor of C Block.\n\nQ: What is next to Classroom C2?\nA: Classroom C2 is adjacent to C1.",
+      "metadata": {
+        "room_id": "C2",
+        "room_name": "Classroom C2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C3 (Room ID: C3) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C2. Room type: Classroom. Next to C2.",
+      "metadata": {
+        "room_id": "C3",
+        "room_name": "Classroom C3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C3 in COMSATS Sahiwal?\nA: Classroom C3 is on the Ground Floor of C Block. Next to C2.\n\nQ: What is in room C3 at COMSATS Sahiwal?\nA: Room C3 is Classroom C3, a Classroom on the Ground Floor of C Block.\n\nQ: What is next to Classroom C3?\nA: Classroom C3 is adjacent to C2.",
+      "metadata": {
+        "room_id": "C3",
+        "room_name": "Classroom C3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_hod_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "HOD Office (Room ID: GF-HOD) is located in C Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C3, C4. Room type: Office. Next to Faculty Office.",
+      "metadata": {
+        "room_id": "GF-HOD",
+        "room_name": "HOD Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_hod_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is HOD Office in COMSATS Sahiwal?\nA: HOD Office is on the Ground Floor of C Block (Middle). Next to Faculty Office.\n\nQ: What is in room GF-HOD at COMSATS Sahiwal?\nA: Room GF-HOD is HOD Office, a Office on the Ground Floor of C Block.\n\nQ: What is next to HOD Office?\nA: HOD Office is adjacent to C3, C4.",
+      "metadata": {
+        "room_id": "GF-HOD",
+        "room_name": "HOD Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_dco_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "DCO Office (Room ID: GF-DCO) is located in C Block, Ground Floor (Middle) at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to HOD Office. Room type: Office. Near HOD Office.",
+      "metadata": {
+        "room_id": "GF-DCO",
+        "room_name": "DCO Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_dco_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is DCO Office in COMSATS Sahiwal?\nA: DCO Office is on the Ground Floor of C Block (Middle). Near HOD Office.\n\nQ: What is in room GF-DCO at COMSATS Sahiwal?\nA: Room GF-DCO is DCO Office, a Office on the Ground Floor of C Block.\n\nQ: What is next to DCO Office?\nA: DCO Office is adjacent to HOD Office.",
+      "metadata": {
+        "room_id": "GF-DCO",
+        "room_name": "DCO Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "Middle",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c4_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C4 (Room ID: C4) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to HOD Office. Room type: Classroom. After HOD Office.",
+      "metadata": {
+        "room_id": "C4",
+        "room_name": "Classroom C4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c4_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C4 in COMSATS Sahiwal?\nA: Classroom C4 is on the Ground Floor of C Block. After HOD Office.\n\nQ: What is in room C4 at COMSATS Sahiwal?\nA: Room C4 is Classroom C4, a Classroom on the Ground Floor of C Block.\n\nQ: What is next to Classroom C4?\nA: Classroom C4 is adjacent to HOD Office.",
+      "metadata": {
+        "room_id": "C4",
+        "room_name": "Classroom C4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c5_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C5 (Room ID: C5) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Faculty Toilet. Room type: Classroom. Next to Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "C5",
+        "room_name": "Classroom C5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c5_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C5 in COMSATS Sahiwal?\nA: Classroom C5 is on the Ground Floor of C Block. Next to Male Faculty Toilet.\n\nQ: What is in room C5 at COMSATS Sahiwal?\nA: Room C5 is Classroom C5, a Classroom on the Ground Floor of C Block.\n\nQ: What is next to Classroom C5?\nA: Classroom C5 is adjacent to Male Faculty Toilet.",
+      "metadata": {
+        "room_id": "C5",
+        "room_name": "Classroom C5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_mft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Faculty Toilet (Room ID: GF-MFT) is located in C Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C5. Room type: Toilet. End of ground floor, next to C5.",
+      "metadata": {
+        "room_id": "GF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_gf_mft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Faculty Toilet in COMSATS Sahiwal?\nA: Male Faculty Toilet is on the Ground Floor of C Block. End of ground floor, next to C5.\n\nQ: What is in room GF-MFT at COMSATS Sahiwal?\nA: Room GF-MFT is Male Faculty Toilet, a Toilet on the Ground Floor of C Block.\n\nQ: What is next to Male Faculty Toilet?\nA: Male Faculty Toilet is adjacent to C5.",
+      "metadata": {
+        "room_id": "GF-MFT",
+        "room_name": "Male Faculty Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_cr_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Common Room (Room ID: FF-CR) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1.2. Room type: Common Room. Start of first floor.",
+      "metadata": {
+        "room_id": "FF-CR",
+        "room_name": "Common Room",
+        "room_type": "Common Room",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_cr_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Common Room in COMSATS Sahiwal?\nA: Common Room is on the First Floor of C Block. Start of first floor.\n\nQ: What is in room FF-CR at COMSATS Sahiwal?\nA: Room FF-CR is Common Room, a Common Room on the First Floor of C Block.\n\nQ: What is next to Common Room?\nA: Common Room is adjacent to C1.2.",
+      "metadata": {
+        "room_id": "FF-CR",
+        "room_name": "Common Room",
+        "room_type": "Common Room",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.1 (Room ID: C1.1) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Common Room. Room type: Classroom. Next to Common Room.",
+      "metadata": {
+        "room_id": "C1.1",
+        "room_name": "Classroom C1.1",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.1 in COMSATS Sahiwal?\nA: Classroom C1.1 is on the First Floor of C Block. Next to Common Room.\n\nQ: What is in room C1.1 at COMSATS Sahiwal?\nA: Room C1.1 is Classroom C1.1, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.1?\nA: Classroom C1.1 is adjacent to Common Room.",
+      "metadata": {
+        "room_id": "C1.1",
+        "room_name": "Classroom C1.1",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.2 (Room ID: C1.2) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Common Room. Room type: Classroom. Adjacent to Common Room.",
+      "metadata": {
+        "room_id": "C1.2",
+        "room_name": "Classroom C1.2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.2 in COMSATS Sahiwal?\nA: Classroom C1.2 is on the First Floor of C Block. Adjacent to Common Room.\n\nQ: What is in room C1.2 at COMSATS Sahiwal?\nA: Room C1.2 is Classroom C1.2, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.2?\nA: Classroom C1.2 is adjacent to Common Room.",
+      "metadata": {
+        "room_id": "C1.2",
+        "room_name": "Classroom C1.2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.3 (Room ID: C1.3) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1.2. Room type: Classroom. Next to C1.2.",
+      "metadata": {
+        "room_id": "C1.3",
+        "room_name": "Classroom C1.3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.3 in COMSATS Sahiwal?\nA: Classroom C1.3 is on the First Floor of C Block. Next to C1.2.\n\nQ: What is in room C1.3 at COMSATS Sahiwal?\nA: Room C1.3 is Classroom C1.3, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.3?\nA: Classroom C1.3 is adjacent to C1.2.",
+      "metadata": {
+        "room_id": "C1.3",
+        "room_name": "Classroom C1.3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab4_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 4 (Room ID: CLAB4) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1.3. Room type: Lab. After C1.3.",
+      "metadata": {
+        "room_id": "CLAB4",
+        "room_name": "Computer Lab 4",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab4_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 4 in COMSATS Sahiwal?\nA: Computer Lab 4 is on the First Floor of C Block. After C1.3.\n\nQ: What is in room CLAB4 at COMSATS Sahiwal?\nA: Room CLAB4 is Computer Lab 4, a Lab on the First Floor of C Block.\n\nQ: What is next to Computer Lab 4?\nA: Computer Lab 4 is adjacent to C1.3.",
+      "metadata": {
+        "room_id": "CLAB4",
+        "room_name": "Computer Lab 4",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_4_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.4 (Room ID: C1.4) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 4, Computer Lab 3. Room type: Classroom. Between CLab4 and CLab3.",
+      "metadata": {
+        "room_id": "C1.4",
+        "room_name": "Classroom C1.4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_4_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.4 in COMSATS Sahiwal?\nA: Classroom C1.4 is on the First Floor of C Block. Between CLab4 and CLab3.\n\nQ: What is in room C1.4 at COMSATS Sahiwal?\nA: Room C1.4 is Classroom C1.4, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.4?\nA: Classroom C1.4 is adjacent to Computer Lab 4, Computer Lab 3.",
+      "metadata": {
+        "room_id": "C1.4",
+        "room_name": "Classroom C1.4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 3 (Room ID: CLAB3) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1.4. Room type: Lab. After C1.4.",
+      "metadata": {
+        "room_id": "CLAB3",
+        "room_name": "Computer Lab 3",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 3 in COMSATS Sahiwal?\nA: Computer Lab 3 is on the First Floor of C Block. After C1.4.\n\nQ: What is in room CLAB3 at COMSATS Sahiwal?\nA: Room CLAB3 is Computer Lab 3, a Lab on the First Floor of C Block.\n\nQ: What is next to Computer Lab 3?\nA: Computer Lab 3 is adjacent to C1.4.",
+      "metadata": {
+        "room_id": "CLAB3",
+        "room_name": "Computer Lab 3",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_conf_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Conference Room (Room ID: FF-CONF) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 3. Room type: Conference Room. Next to Computer Lab 3.",
+      "metadata": {
+        "room_id": "FF-CONF",
+        "room_name": "Conference Room",
+        "room_type": "Conference Room",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_conf_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Conference Room in COMSATS Sahiwal?\nA: Conference Room is on the First Floor of C Block. Next to Computer Lab 3.\n\nQ: What is in room FF-CONF at COMSATS Sahiwal?\nA: Room FF-CONF is Conference Room, a Conference Room on the First Floor of C Block.\n\nQ: What is next to Conference Room?\nA: Conference Room is adjacent to Computer Lab 3.",
+      "metadata": {
+        "room_id": "FF-CONF",
+        "room_name": "Conference Room",
+        "room_type": "Conference Room",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_5_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.5 (Room ID: C1.5) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Conference Room. Room type: Classroom. After Conference Room.",
+      "metadata": {
+        "room_id": "C1.5",
+        "room_name": "Classroom C1.5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_5_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.5 in COMSATS Sahiwal?\nA: Classroom C1.5 is on the First Floor of C Block. After Conference Room.\n\nQ: What is in room C1.5 at COMSATS Sahiwal?\nA: Room C1.5 is Classroom C1.5, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.5?\nA: Classroom C1.5 is adjacent to Conference Room.",
+      "metadata": {
+        "room_id": "C1.5",
+        "room_name": "Classroom C1.5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_ft_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Female Toilet (Room ID: FF-FT) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to HEC Smart Classroom. Room type: Toilet. Next to HEC Smart Classroom.",
+      "metadata": {
+        "room_id": "FF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_ft_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Female Toilet in COMSATS Sahiwal?\nA: Female Toilet is on the First Floor of C Block. Next to HEC Smart Classroom.\n\nQ: What is in room FF-FT at COMSATS Sahiwal?\nA: Room FF-FT is Female Toilet, a Toilet on the First Floor of C Block.\n\nQ: What is next to Female Toilet?\nA: Female Toilet is adjacent to HEC Smart Classroom.",
+      "metadata": {
+        "room_id": "FF-FT",
+        "room_name": "Female Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_hec_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "HEC Smart Classroom (Room ID: FF-HEC) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Female Toilet. Room type: Smart Classroom. Adjacent to Female Toilet.",
+      "metadata": {
+        "room_id": "FF-HEC",
+        "room_name": "HEC Smart Classroom",
+        "room_type": "Smart Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_hec_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is HEC Smart Classroom in COMSATS Sahiwal?\nA: HEC Smart Classroom is on the First Floor of C Block. Adjacent to Female Toilet.\n\nQ: What is in room FF-HEC at COMSATS Sahiwal?\nA: Room FF-HEC is HEC Smart Classroom, a Smart Classroom on the First Floor of C Block.\n\nQ: What is next to HEC Smart Classroom?\nA: HEC Smart Classroom is adjacent to Female Toilet.",
+      "metadata": {
+        "room_id": "FF-HEC",
+        "room_name": "HEC Smart Classroom",
+        "room_type": "Smart Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_ito_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "IT Office (Room ID: FF-ITO) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to HEC Smart Classroom. Room type: Office. After HEC Smart Classroom.",
+      "metadata": {
+        "room_id": "FF-ITO",
+        "room_name": "IT Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_ito_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is IT Office in COMSATS Sahiwal?\nA: IT Office is on the First Floor of C Block. After HEC Smart Classroom.\n\nQ: What is in room FF-ITO at COMSATS Sahiwal?\nA: Room FF-ITO is IT Office, a Office on the First Floor of C Block.\n\nQ: What is next to IT Office?\nA: IT Office is adjacent to HEC Smart Classroom.",
+      "metadata": {
+        "room_id": "FF-ITO",
+        "room_name": "IT Office",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_rc_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Research Center (Room ID: FF-RC) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to IT Office. Room type: Research Center. Next to IT Office.",
+      "metadata": {
+        "room_id": "FF-RC",
+        "room_name": "Research Center",
+        "room_type": "Research Center",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_rc_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Research Center in COMSATS Sahiwal?\nA: Research Center is on the First Floor of C Block. Next to IT Office.\n\nQ: What is in room FF-RC at COMSATS Sahiwal?\nA: Room FF-RC is Research Center, a Research Center on the First Floor of C Block.\n\nQ: What is next to Research Center?\nA: Research Center is adjacent to IT Office.",
+      "metadata": {
+        "room_id": "FF-RC",
+        "room_name": "Research Center",
+        "room_type": "Research Center",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 2 (Room ID: CLAB2) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Research Center. Room type: Lab. After Research Center.",
+      "metadata": {
+        "room_id": "CLAB2",
+        "room_name": "Computer Lab 2",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 2 in COMSATS Sahiwal?\nA: Computer Lab 2 is on the First Floor of C Block. After Research Center.\n\nQ: What is in room CLAB2 at COMSATS Sahiwal?\nA: Room CLAB2 is Computer Lab 2, a Lab on the First Floor of C Block.\n\nQ: What is next to Computer Lab 2?\nA: Computer Lab 2 is adjacent to Research Center.",
+      "metadata": {
+        "room_id": "CLAB2",
+        "room_name": "Computer Lab 2",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab1_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 1 (Room ID: CLAB1) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 2, Male Toilet. Room type: Lab. Between CLab2 and Male Toilet.",
+      "metadata": {
+        "room_id": "CLAB1",
+        "room_name": "Computer Lab 1",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab1_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 1 in COMSATS Sahiwal?\nA: Computer Lab 1 is on the First Floor of C Block. Between CLab2 and Male Toilet.\n\nQ: What is in room CLAB1 at COMSATS Sahiwal?\nA: Room CLAB1 is Computer Lab 1, a Lab on the First Floor of C Block.\n\nQ: What is next to Computer Lab 1?\nA: Computer Lab 1 is adjacent to Computer Lab 2, Male Toilet.",
+      "metadata": {
+        "room_id": "CLAB1",
+        "room_name": "Computer Lab 1",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_mt_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Toilet (Room ID: FF-MT) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 1, C1.6. Room type: Toilet. Next to CLab1.",
+      "metadata": {
+        "room_id": "FF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ff_mt_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Toilet in COMSATS Sahiwal?\nA: Male Toilet is on the First Floor of C Block. Next to CLab1.\n\nQ: What is in room FF-MT at COMSATS Sahiwal?\nA: Room FF-MT is Male Toilet, a Toilet on the First Floor of C Block.\n\nQ: What is next to Male Toilet?\nA: Male Toilet is adjacent to Computer Lab 1, C1.6.",
+      "metadata": {
+        "room_id": "FF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_6_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.6 (Room ID: C1.6) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet. Room type: Classroom. Next to Male Toilet.",
+      "metadata": {
+        "room_id": "C1.6",
+        "room_name": "Classroom C1.6",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_6_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.6 in COMSATS Sahiwal?\nA: Classroom C1.6 is on the First Floor of C Block. Next to Male Toilet.\n\nQ: What is in room C1.6 at COMSATS Sahiwal?\nA: Room C1.6 is Classroom C1.6, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.6?\nA: Classroom C1.6 is adjacent to Male Toilet.",
+      "metadata": {
+        "room_id": "C1.6",
+        "room_name": "Classroom C1.6",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_7_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C1.7 (Room ID: C1.7) is located in C Block, First Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C1.6. Room type: Classroom. Last classroom on first floor.",
+      "metadata": {
+        "room_id": "C1.7",
+        "room_name": "Classroom C1.7",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c1_7_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C1.7 in COMSATS Sahiwal?\nA: Classroom C1.7 is on the First Floor of C Block. Last classroom on first floor.\n\nQ: What is in room C1.7 at COMSATS Sahiwal?\nA: Room C1.7 is Classroom C1.7, a Classroom on the First Floor of C Block.\n\nQ: What is next to Classroom C1.7?\nA: Classroom C1.7 is adjacent to C1.6.",
+      "metadata": {
+        "room_id": "C1.7",
+        "room_name": "Classroom C1.7",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "First Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_2_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C2.2 (Room ID: C2.2) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. Room type: Classroom. First room on second floor.",
+      "metadata": {
+        "room_id": "C2.2",
+        "room_name": "Classroom C2.2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_2_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C2.2 in COMSATS Sahiwal?\nA: Classroom C2.2 is on the Second Floor of C Block. First room on second floor.\n\nQ: What is in room C2.2 at COMSATS Sahiwal?\nA: Room C2.2 is Classroom C2.2, a Classroom on the Second Floor of C Block.\n\nQ: What floor is Classroom C2.2 on?\nA: Classroom C2.2 is on the Second Floor of C Block.",
+      "metadata": {
+        "room_id": "C2.2",
+        "room_name": "Classroom C2.2",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_3_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C2.3 (Room ID: C2.3) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C2.2. Room type: Classroom. Next to C2.2.",
+      "metadata": {
+        "room_id": "C2.3",
+        "room_name": "Classroom C2.3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_3_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C2.3 in COMSATS Sahiwal?\nA: Classroom C2.3 is on the Second Floor of C Block. Next to C2.2.\n\nQ: What is in room C2.3 at COMSATS Sahiwal?\nA: Room C2.3 is Classroom C2.3, a Classroom on the Second Floor of C Block.\n\nQ: What is next to Classroom C2.3?\nA: Classroom C2.3 is adjacent to C2.2.",
+      "metadata": {
+        "room_id": "C2.3",
+        "room_name": "Classroom C2.3",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab7_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 7 (Room ID: CLAB7) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C2.3. Room type: Lab. After C2.3.",
+      "metadata": {
+        "room_id": "CLAB7",
+        "room_name": "Computer Lab 7",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab7_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 7 in COMSATS Sahiwal?\nA: Computer Lab 7 is on the Second Floor of C Block. After C2.3.\n\nQ: What is in room CLAB7 at COMSATS Sahiwal?\nA: Room CLAB7 is Computer Lab 7, a Lab on the Second Floor of C Block.\n\nQ: What is next to Computer Lab 7?\nA: Computer Lab 7 is adjacent to C2.3.",
+      "metadata": {
+        "room_id": "CLAB7",
+        "room_name": "Computer Lab 7",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_4_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C2.4 (Room ID: C2.4) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Computer Lab 7. Room type: Classroom. After Computer Lab 7.",
+      "metadata": {
+        "room_id": "C2.4",
+        "room_name": "Classroom C2.4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_4_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C2.4 in COMSATS Sahiwal?\nA: Classroom C2.4 is on the Second Floor of C Block. After Computer Lab 7.\n\nQ: What is in room C2.4 at COMSATS Sahiwal?\nA: Room C2.4 is Classroom C2.4, a Classroom on the Second Floor of C Block.\n\nQ: What is next to Classroom C2.4?\nA: Classroom C2.4 is adjacent to Computer Lab 7.",
+      "metadata": {
+        "room_id": "C2.4",
+        "room_name": "Classroom C2.4",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_5_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Classroom C2.5 (Room ID: C2.5) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet. Room type: Classroom. Next to Male Toilet.",
+      "metadata": {
+        "room_id": "C2.5",
+        "room_name": "Classroom C2.5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_c2_5_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Classroom C2.5 in COMSATS Sahiwal?\nA: Classroom C2.5 is on the Second Floor of C Block. Next to Male Toilet.\n\nQ: What is in room C2.5 at COMSATS Sahiwal?\nA: Room C2.5 is Classroom C2.5, a Classroom on the Second Floor of C Block.\n\nQ: What is next to Classroom C2.5?\nA: Classroom C2.5 is adjacent to Male Toilet.",
+      "metadata": {
+        "room_id": "C2.5",
+        "room_name": "Classroom C2.5",
+        "room_type": "Classroom",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab6_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Computer Lab 6 (Room ID: CLAB6) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C2.5. Room type: Lab. After C2.5.",
+      "metadata": {
+        "room_id": "CLAB6",
+        "room_name": "Computer Lab 6",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_clab6_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Computer Lab 6 in COMSATS Sahiwal?\nA: Computer Lab 6 is on the Second Floor of C Block. After C2.5.\n\nQ: What is in room CLAB6 at COMSATS Sahiwal?\nA: Room CLAB6 is Computer Lab 6, a Lab on the Second Floor of C Block.\n\nQ: What is next to Computer Lab 6?\nA: Computer Lab 6 is adjacent to C2.5.",
+      "metadata": {
+        "room_id": "CLAB6",
+        "room_name": "Computer Lab 6",
+        "room_type": "Lab",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_sf_mt_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Male Toilet (Room ID: SF-MT) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to C2.5. Room type: Toilet. Next to Classroom C2.5.",
+      "metadata": {
+        "room_id": "SF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_sf_mt_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is Male Toilet in COMSATS Sahiwal?\nA: Male Toilet is on the Second Floor of C Block. Next to Classroom C2.5.\n\nQ: What is in room SF-MT at COMSATS Sahiwal?\nA: Room SF-MT is Male Toilet, a Toilet on the Second Floor of C Block.\n\nQ: What is next to Male Toilet?\nA: Male Toilet is adjacent to C2.5.",
+      "metadata": {
+        "room_id": "SF-MT",
+        "room_name": "Male Toilet",
+        "room_type": "Toilet",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_sf_fyp_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "FYP-SE Office (Software house) (Room ID: SF-FYP) is located in C Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus. It is adjacent to Male Toilet. Room type: Office. Last room on second floor.",
+      "metadata": {
+        "room_id": "SF-FYP",
+        "room_name": "FYP-SE Office (Software house)",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_sf_fyp_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: Where is FYP-SE Office (Software house) in COMSATS Sahiwal?\nA: FYP-SE Office (Software house) is on the Second Floor of C Block. Last room on second floor.\n\nQ: What is in room SF-FYP at COMSATS Sahiwal?\nA: Room SF-FYP is FYP-SE Office (Software house), a Office on the Second Floor of C Block.\n\nQ: What is next to FYP-SE Office (Software house)?\nA: FYP-SE Office (Software house) is adjacent to Male Toilet.",
+      "metadata": {
+        "room_id": "SF-FYP",
+        "room_name": "FYP-SE Office (Software house)",
+        "room_type": "Office",
+        "block": "C Block",
+        "floor": "Second Floor",
+        "wing": "—",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_ground_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The Ground Floor of A Block at COMSATS University Islamabad, Sahiwal Campus contains 19 rooms. Classrooms: Classroom A3, Classroom A1 | Conference Rooms: Conference Room | Departments: Human Resource Department | First Aids: First Aid Facility Office | Labs: Engineering Mechanics Lab, Computer Lab 8 (CAD & CAE), Mechanics of Materials Lab, Thermodynamics Lab, IC Engine / Engineer Lab, Computer Lab 9 | Librarys: Library | Offices: Admin Office, Registration Office, Director Office | Server Rooms: Server Room | Toilets: Male Toilet, Female Toilet, Female Faculty Toilet.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_ground_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the Ground Floor of A Block?\nA: The Ground Floor of A Block has 19 rooms including: Classroom A3, Male Toilet, Engineering Mechanics Lab, Server Room, Computer Lab 8 (CAD & CAE), Mechanics of Materials Lab, Thermodynamics Lab, IC Engine / Engineer Lab, Library, Admin Office, Classroom A1, Female Toilet, Female Faculty Toilet, Human Resource Department, Registration Office, Director Office, Conference Room, First Aid Facility Office, Computer Lab 9.\n\nQ: What labs are on the Ground Floor of A Block?\nA: Labs on this floor: Engineering Mechanics Lab, Computer Lab 8 (CAD & CAE), Mechanics of Materials Lab, Thermodynamics Lab, IC Engine / Engineer Lab, Computer Lab 9.\n\nQ: What offices are in A Block on the Ground Floor?\nA: Offices on this floor: Admin Office, Registration Office, Director Office.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_first_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The First Floor of A Block at COMSATS University Islamabad, Sahiwal Campus contains 17 rooms. Auditoriums: Auditorium Hall | Classrooms: Classroom A1.1, Classroom A1.2, Classroom A1.3 | Common Rooms: Girls Common Room | Labs: Refrigeration & Air Conditioning Lab, Physics Lab, Computer Lab 11, Computer Lab 12, Mechanics of Machine Lab, Fluid Mechanics Lab, Instrument Control Lab | Offices: Accounts Office, Salary Section | Stores: Purchase & Store Department | Toilets: Male Faculty Toilet, Female Toilet.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "First Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_first_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the First Floor of A Block?\nA: The First Floor of A Block has 17 rooms including: Classroom A1.1, Male Faculty Toilet, Classroom A1.2, Refrigeration & Air Conditioning Lab, Accounts Office, Physics Lab, Purchase & Store Department, Salary Section, Computer Lab 11, Auditorium Hall, Computer Lab 12, Mechanics of Machine Lab, Girls Common Room, Fluid Mechanics Lab, Female Toilet, Classroom A1.3, Instrument Control Lab.\n\nQ: What labs are on the First Floor of A Block?\nA: Labs on this floor: Refrigeration & Air Conditioning Lab, Physics Lab, Computer Lab 11, Computer Lab 12, Mechanics of Machine Lab, Fluid Mechanics Lab, Instrument Control Lab.\n\nQ: What offices are in A Block on the First Floor?\nA: Offices on this floor: Accounts Office, Salary Section.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "First Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_second_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The Second Floor of A Block at COMSATS University Islamabad, Sahiwal Campus contains 8 rooms. Classrooms: Classroom A2.2, Classroom A2.1 | Labs: FYP Lab (Open Ended Lab), Electric Machine Lab, Cisco Lab | Offices: DCO / LDC Office | Toilets: Male Faculty Toilet | Washrooms: Male Washroom.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "Second Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_a_block_second_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the Second Floor of A Block?\nA: The Second Floor of A Block has 8 rooms including: FYP Lab (Open Ended Lab), Classroom A2.2, Male Washroom, Electric Machine Lab, DCO / LDC Office, Male Faculty Toilet, Classroom A2.1, Cisco Lab.\n\nQ: What labs are on the Second Floor of A Block?\nA: Labs on this floor: FYP Lab (Open Ended Lab), Electric Machine Lab, Cisco Lab.\n\nQ: What offices are in A Block on the Second Floor?\nA: Offices on this floor: DCO / LDC Office.",
+      "metadata": {
+        "block": "A Block",
+        "floor": "Second Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_ground_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The Ground Floor of B Block at COMSATS University Islamabad, Sahiwal Campus contains 13 rooms. Classrooms: Classroom B1, Classroom B2, Classroom B3, Classroom B4, Classroom B5, Classroom B6, Classroom B7, Classroom B8, Classroom B9, Classroom B10, Classroom B11, Classroom B14 | Toilets: Male Toilet.",
+      "metadata": {
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_b_block_ground_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the Ground Floor of B Block?\nA: The Ground Floor of B Block has 13 rooms including: Classroom B1, Classroom B2, Classroom B3, Classroom B4, Classroom B5, Classroom B6, Male Toilet, Classroom B7, Classroom B8, Classroom B9, Classroom B10, Classroom B11, Classroom B14.\n\nQ: What labs are on the Ground Floor of B Block?\nA: There are no labs on this floor.\n\nQ: What offices are in B Block on the Ground Floor?\nA: There are no offices on this floor.",
+      "metadata": {
+        "block": "B Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ground_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The Ground Floor of C Block at COMSATS University Islamabad, Sahiwal Campus contains 8 rooms. Classrooms: Classroom C1, Classroom C2, Classroom C3, Classroom C4, Classroom C5 | Offices: HOD Office, DCO Office | Toilets: Male Faculty Toilet.",
+      "metadata": {
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_ground_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the Ground Floor of C Block?\nA: The Ground Floor of C Block has 8 rooms including: Classroom C1, Classroom C2, Classroom C3, HOD Office, DCO Office, Classroom C4, Classroom C5, Male Faculty Toilet.\n\nQ: What labs are on the Ground Floor of C Block?\nA: There are no labs on this floor.\n\nQ: What offices are in C Block on the Ground Floor?\nA: Offices on this floor: HOD Office, DCO Office.",
+      "metadata": {
+        "block": "C Block",
+        "floor": "Ground Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_first_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The First Floor of C Block at COMSATS University Islamabad, Sahiwal Campus contains 18 rooms. Classrooms: Classroom C1.1, Classroom C1.2, Classroom C1.3, Classroom C1.4, Classroom C1.5, Classroom C1.6, Classroom C1.7 | Common Rooms: Common Room | Conference Rooms: Conference Room | Labs: Computer Lab 4, Computer Lab 3, Computer Lab 2, Computer Lab 1 | Offices: IT Office | Research Centers: Research Center | Smart Classrooms: HEC Smart Classroom | Toilets: Female Toilet, Male Toilet.",
+      "metadata": {
+        "block": "C Block",
+        "floor": "First Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_first_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the First Floor of C Block?\nA: The First Floor of C Block has 18 rooms including: Common Room, Classroom C1.1, Classroom C1.2, Classroom C1.3, Computer Lab 4, Classroom C1.4, Computer Lab 3, Conference Room, Classroom C1.5, Female Toilet, HEC Smart Classroom, IT Office, Research Center, Computer Lab 2, Computer Lab 1, Male Toilet, Classroom C1.6, Classroom C1.7.\n\nQ: What labs are on the First Floor of C Block?\nA: Labs on this floor: Computer Lab 4, Computer Lab 3, Computer Lab 2, Computer Lab 1.\n\nQ: What offices are in C Block on the First Floor?\nA: Offices on this floor: IT Office.",
+      "metadata": {
+        "block": "C Block",
+        "floor": "First Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_second_floor_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "The Second Floor of C Block at COMSATS University Islamabad, Sahiwal Campus contains 8 rooms. Classrooms: Classroom C2.2, Classroom C2.3, Classroom C2.4, Classroom C2.5 | Labs: Computer Lab 7, Computer Lab 6 | Offices: FYP-SE Office (Software house) | Toilets: Male Toilet.",
+      "metadata": {
+        "block": "C Block",
+        "floor": "Second Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_second_floor_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What rooms are on the Second Floor of C Block?\nA: The Second Floor of C Block has 8 rooms including: Classroom C2.2, Classroom C2.3, Computer Lab 7, Classroom C2.4, Classroom C2.5, Computer Lab 6, Male Toilet, FYP-SE Office (Software house).\n\nQ: What labs are on the Second Floor of C Block?\nA: Labs on this floor: Computer Lab 7, Computer Lab 6.\n\nQ: What offices are in C Block on the Second Floor?\nA: Offices on this floor: FYP-SE Office (Software house).",
+      "metadata": {
+        "block": "C Block",
+        "floor": "Second Floor",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_overview_narrative",
+      "chunk_type": "narrative",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "C Block at COMSATS University Islamabad, Sahiwal Campus houses the Computer Science Department. It has 8 rooms across Second Floor. Notable facilities include: Computer Lab 7, Computer Lab 6, FYP-SE Office (Software house).",
+      "metadata": {
+        "block": "C Block",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "blocks_directory_spring_2026_c_block_overview_faq",
+      "chunk_type": "faq",
+      "topic": "blocks_directory",
+      "semester": "spring_2026",
+      "source": "blocks_directory",
+      "text": "Q: What is in C Block at COMSATS Sahiwal?\nA: C Block houses the Computer Science Department. It has 8 rooms including classrooms, labs, offices and facilities.\n\nQ: Which block has the Computer Science Department?\nA: The Computer Science Department is in C Block.\n\nQ: What labs are in C Block?\nA: Labs in C Block: Computer Lab 7, Computer Lab 6.\n\nQ: What offices are in C Block?\nA: Offices in C Block: FYP-SE Office (Software house).",
+      "metadata": {
+        "block": "C Block",
+        "source": "blocks_directory",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "announcements_spring_2026_active_overview",
+      "chunk_type": "overview",
+      "topic": "announcements",
+      "semester": "spring_2026",
+      "source": "announcements",
+      "text": "Currently active announcements at COMSATS University Islamabad, Sahiwal Campus (Spring 2026):\nNo active announcements at this time.",
+      "metadata": {
+        "level": "active_overview",
+        "source": "announcements",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "announcements_spring_2026_past_overview",
+      "chunk_type": "overview",
+      "topic": "announcements",
+      "semester": "spring_2026",
+      "source": "announcements",
+      "text": "Past announcements at COMSATS University Islamabad, Sahiwal Campus (Spring 2026):\nNo past announcements recorded.",
+      "metadata": {
+        "level": "past_overview",
+        "source": "announcements",
+        "semester": "spring_2026"
+      }
+    },
+    {
+      "chunk_id": "announcements_spring_2026_full_overview",
+      "chunk_type": "overview",
+      "topic": "announcements",
+      "semester": "spring_2026",
+      "source": "announcements",
+      "text": "All announcements at COMSATS University Islamabad, Sahiwal Campus (Spring 2026):\n\nACTIVE (0):\nNone.\n\nPAST (0):\nNone.",
+      "metadata": {
+        "level": "full_overview",
+        "source": "announcements",
         "semester": "spring_2026"
       }
     }

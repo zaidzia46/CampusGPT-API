@@ -8,11 +8,11 @@ from sqlalchemy.orm import Session
 from admin.deps import get_current_admin
 from db.session import get_db
 from core.security import create_access_token, create_access_token, create_refresh_token, verify_password
-from models.models import UserAuth
+from models.models import UserAuth, Announcement
 from rag_pipeline.generator import generate
 from rag_pipeline.embedder  import embed
 from rag_pipeline.searcher  import search
-from schemas.admin.admin import EmbedRequest, GenerateRequest, SearchRequest
+from schemas.admin.admin import AnnouncementBody, EmbedRequest, GenerateRequest, SearchRequest
 
 
 public_router = APIRouter(prefix='/admin', tags=['Admin'])
@@ -25,6 +25,7 @@ protected_router = APIRouter(
 
 ROOT       = Path(__file__).parent.parent
 CHUNKS_DIR = ROOT / "UNIdata" / "chunks"
+
 
 @public_router.post('/login')
 def admin_login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
@@ -98,3 +99,94 @@ def admin_search(req: SearchRequest):
     if not result["success"]:
         raise HTTPException(status_code=500, detail=result["error"])
     return result
+
+@protected_router.get('/announcements')
+def get_announcements(
+    semester: str = None,
+    db: Session = Depends(get_db)
+):
+    query = db.query(Announcement)
+    if semester:
+        query = query.filter(Announcement.semester == semester)
+    items = query.order_by(Announcement.created_at.desc()).all()
+    return [
+        {
+            "id":              a.id,
+            "title":           a.title,
+            "description":     a.description,
+            "type":            a.type,
+            "target_audience": a.target_audience,
+            "is_active":       a.is_active,
+            "semester":        a.semester,
+            "created_at":      a.created_at.isoformat(),
+        }
+        for a in items
+    ]
+ 
+ 
+# POST /admin/announcements — create new
+@protected_router.post('/announcements')
+def create_announcement(body: AnnouncementBody, db: Session = Depends(get_db)):
+    if not body.semester.strip() or not body.title.strip() or not body.description.strip():
+        raise HTTPException(status_code=422, detail="Some fields are empty.")
+    ann = Announcement(
+        title           = body.title.strip(),
+        description     = body.description.strip(),
+        type            = body.type,
+        target_audience = body.target_audience.strip(),
+        is_active       = body.is_active,
+        semester        = body.semester.strip(),
+    )
+    db.add(ann)
+    db.commit()
+    db.refresh(ann)
+    return {"id": ann.id, "message": "Announcement created successfully"}
+ 
+ 
+# PUT /admin/announcements/{id} — update existing
+@protected_router.put('/announcements/{ann_id}')
+def update_announcement(ann_id: int, body: AnnouncementBody, db: Session = Depends(get_db)):
+    ann = db.query(Announcement).filter(Announcement.id == ann_id).first()
+    if not ann:
+        raise HTTPException(status_code=404, detail="Announcement not found")
+
+    if not body.semester.strip() or not body.title.strip() or not body.description.strip():
+        raise HTTPException(status_code=422, detail="Some fields are empty.")
+
+    ann.title           = body.title.strip()
+    ann.description     = body.description.strip()
+    ann.type            = body.type
+    ann.target_audience = body.target_audience.strip()
+    ann.is_active       = body.is_active
+    ann.semester        = body.semester.strip()
+
+    db.commit()
+    return {"message": "Announcement updated successfully"}
+ 
+ 
+# PATCH /admin/announcements/{id}/toggle — toggle active/inactive
+@protected_router.patch('/announcements/{ann_id}/toggle')
+def toggle_announcement(ann_id: int, db: Session = Depends(get_db)):
+    ann = db.query(Announcement).filter(Announcement.id == ann_id).first()
+    if not ann:
+        raise HTTPException(status_code=404, detail="Announcement not found")
+ 
+    ann.is_active = "No" if ann.is_active == "Yes" else "Yes"
+    db.commit()
+    return {
+        "id":        ann.id,
+        "is_active": ann.is_active,
+        "message":   f"Announcement {'activated' if ann.is_active == 'Yes' else 'deactivated'}",
+    }
+ 
+ 
+# DELETE /admin/announcements/{id} — delete
+@protected_router.delete('/announcements/{ann_id}')
+def delete_announcement(ann_id: int, db: Session = Depends(get_db)):
+    ann = db.query(Announcement).filter(Announcement.id == ann_id).first()
+    if not ann:
+        raise HTTPException(status_code=404, detail="Announcement not found")
+ 
+    db.delete(ann)
+    db.commit()
+    return {"message": "Announcement deleted successfully"}

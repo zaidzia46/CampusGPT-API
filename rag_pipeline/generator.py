@@ -8,7 +8,7 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "rag_pipeline"))
 
-from rag_pipeline import scholarships_chunks, fees_chunks, basic_info_chunks
+from rag_pipeline import announcements_chunks, blocks_chunks, scholarships_chunks, fees_chunks, basic_info_chunks
 
 CHUNKS_DIR = ROOT / "UNIdata" / "chunks"
 
@@ -16,6 +16,8 @@ SOURCES = [
     ("scholarships", scholarships_chunks, "scholarships_{semester}.xlsx"),
     ("basic_info",   basic_info_chunks,   "basic_info_{semester}.xlsx"),
     ("fees",         fees_chunks,         "fee_structure_{semester}.xlsx"),
+    ("blocks_directory", blocks_chunks, "blocks_directory_{semester}.xlsx"),
+    ("announcements",  announcements_chunks,  None),  
 ]
 
 def generate(semester: str, topic: str = None) -> dict:
@@ -29,11 +31,16 @@ def generate(semester: str, topic: str = None) -> dict:
         if topic and source_name != topic:
             continue
 
-        source_file = ROOT / "UNIdata" / file_pattern.format(semester=semester)
+        # announcements reads from DB, not a file
+        if file_pattern is None:
+            source_file = None
+        else:
+            source_file = ROOT / "UNIdata" / file_pattern.format(semester=semester)
+
         log_lines.append(f"[BUILD] {source_name} ...")
 
         try:
-            chunks = module.build(str(source_file))
+            chunks = module.build(str(source_file) if source_file else None, semester=semester)
             all_chunks.extend(chunks)
             log_lines.append(f"{len(chunks)} chunks generated from {source_name}")
         except Exception as e:

@@ -12,6 +12,10 @@
         "basic_info": {
             "sheet_id": "1I20Xlme_DQEK6gqHpBEQmsp6Mhh1xFdoYe3l1lcBOoM",
             "sheet_name": "Basic Info Topics"
+        },
+        "blocks_directory": {
+            "sheet_id": "1lDVhnoN3HHKbpiXfUznZjhfKu8gWeC5CyV2pdZFNK1A",
+            "sheet_name": "All Rooms"
         }
     }
 }

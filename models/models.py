@@ -71,3 +71,15 @@ class SavedChat(base):
     saved_at     = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("UserAuth", back_populates="saved_chats")
+
+class Announcement(base):
+    __tablename__ = 'announcements'
+
+    id              = Column(Integer, primary_key=True, index=True)
+    title           = Column(String, nullable=False)
+    description     = Column(String, nullable=False)
+    type            = Column(String, nullable=False, default='General')
+    target_audience = Column(String, nullable=False, default='All')
+    is_active       = Column(String, nullable=False, default='Yes')
+    semester        = Column(String, nullable=False)
+    created_at      = Column(DateTime, default=datetime.utcnow)

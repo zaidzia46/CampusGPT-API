@@ -1,13 +1,14 @@
+import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
-SEMESTER = "spring_2026"
 SOURCE   = "basic_info"
-OUT_XL   = "/home/claude/cui_rag/data/sources/basic_info_spring_2026.xlsx"
-OUT_JSON = "/home/claude/cui_rag/data/chunks/basic_info_spring_2026.json"
+DEFAULT_SEMESTER = "spring_2026"
+OUT_XL   = f"/home/claude/cui_rag/data/sources/basic_info_{DEFAULT_SEMESTER}.xlsx"
+OUT_JSON = f"/home/claude/cui_rag/data/chunks/basic_info_{DEFAULT_SEMESTER}.json"
 
 TOPICS = [
 
@@ -350,17 +351,17 @@ TOPICS = [
 ]
 
 
-def build_chunks(topics: list) -> list[dict]:
+def build_chunks(topics: list, semester: str = DEFAULT_SEMESTER) -> list[dict]:
     chunks = []
     for t in topics:
-        base_id = f"{SOURCE}_{SEMESTER}_{t['topic_id']}"
+        base_id = f"{SOURCE}_{semester}_{t['topic_id']}"
 
         # Narrative chunk
         chunks.append({
             "chunk_id":   f"{base_id}_narrative",
             "chunk_type": "narrative",
             "topic":      t["topic_id"],
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       t["narrative"],
             "metadata": {
@@ -368,7 +369,7 @@ def build_chunks(topics: list) -> list[dict]:
                 "topic_label": t["topic_label"],
                 "category":    t["category"],
                 "source":      SOURCE,
-                "semester":    SEMESTER,
+                "semester":    semester,
             },
         })
 
@@ -379,7 +380,7 @@ def build_chunks(topics: list) -> list[dict]:
             "chunk_id":   f"{base_id}_faq",
             "chunk_type": "faq",
             "topic":      t["topic_id"],
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       faq_text,
             "metadata": {
@@ -387,7 +388,7 @@ def build_chunks(topics: list) -> list[dict]:
                 "topic_label": t["topic_label"],
                 "category":    t["category"],
                 "source":      SOURCE,
-                "semester":    SEMESTER,
+                "semester":    semester,
             },
         })
 
@@ -401,18 +402,18 @@ def build_chunks(topics: list) -> list[dict]:
             "chunk_id":   f"{base_id}_metadata",
             "chunk_type": "metadata",
             "topic":      t["topic_id"],
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text": (
                 f"Topic: {t['topic_label']} | Category: {t['category']} | "
-                f"{facts_str} | Source: {SOURCE} | Semester: {SEMESTER}"
+                f"{facts_str} | Source: {SOURCE} | Semester: {semester}"
             ),
             "metadata": {
                 "topic_id":    t["topic_id"],
                 "topic_label": t["topic_label"],
                 "category":    t["category"],
                 "source":      SOURCE,
-                "semester":    SEMESTER,
+                "semester":    semester,
             },
         })
 
@@ -611,7 +612,7 @@ def build_admin_excel(topics: list, out_path: str):
     wb.save(out_path)
     print(f"  Admin Excel saved → {out_path}")
 
-def build(excel_path: str = None) -> list[dict]:
+def build(excel_path: str = None, semester: str = DEFAULT_SEMESTER, **kwargs) -> list[dict]:
     import pandas as pd   
     from sheets_reader import read_sheet
 
@@ -672,20 +673,20 @@ def build(excel_path: str = None) -> list[dict]:
         if not topic_id or not narrative:
             continue
 
-        base_id = f"{SOURCE}_{SEMESTER}_{topic_id}"
+        base_id = f"{SOURCE}_{semester}_{topic_id}"
         meta = {
             "topic_id":    topic_id,
             "topic_label": topic_label,
             "category":    category,
             "source":      SOURCE,
-            "semester":    SEMESTER,
+            "semester":    semester,
         }
 
         chunks.append({
             "chunk_id":   f"{base_id}_narrative",
             "chunk_type": "narrative",
             "topic":      topic_id,
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text":       narrative,
             "metadata":   meta,
@@ -698,7 +699,7 @@ def build(excel_path: str = None) -> list[dict]:
                 "chunk_id":   f"{base_id}_faq",
                 "chunk_type": "faq",
                 "topic":      topic_id,
-                "semester":   SEMESTER,
+                "semester":   semester,
                 "source":     SOURCE,
                 "text":       faq_text,
                 "metadata":   meta,
@@ -708,11 +709,11 @@ def build(excel_path: str = None) -> list[dict]:
             "chunk_id":   f"{base_id}_metadata",
             "chunk_type": "metadata",
             "topic":      topic_id,
-            "semester":   SEMESTER,
+            "semester":   semester,
             "source":     SOURCE,
             "text": (
                 f"Topic: {topic_label} | Category: {category} | "
-                f"Source: {SOURCE} | Semester: {SEMESTER}"
+                f"Source: {SOURCE} | Semester: {semester}"
             ),
             "metadata": meta,
         })
@@ -720,21 +721,29 @@ def build(excel_path: str = None) -> list[dict]:
     return chunks
 
 if __name__ == "__main__":
-    build_admin_excel(TOPICS, OUT_XL)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--semester", default=DEFAULT_SEMESTER)
+    args = parser.parse_args()
 
-    chunks = build_chunks(TOPICS)
+    semester = args.semester
+    out_xl = OUT_XL.replace(DEFAULT_SEMESTER, semester)
+    out_json = OUT_JSON.replace(DEFAULT_SEMESTER, semester)
+
+    build_admin_excel(TOPICS, out_xl)
+
+    chunks = build_chunks(TOPICS, semester=semester)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "semester":     SEMESTER,
+        "semester":     semester,
         "total_chunks": len(chunks),
         "chunks":       chunks,
     }
-    Path(OUT_JSON).parent.mkdir(parents=True, exist_ok=True)
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    Path(out_json).parent.mkdir(parents=True, exist_ok=True)
+    with open(out_json, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"  Chunks saved   → {OUT_JSON}")
+    print(f"  Chunks saved   → {out_json}")
     print(f"\n  Summary:")
     types = {}
     for c in chunks:
