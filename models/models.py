@@ -1,6 +1,6 @@
 from datetime import datetime
 from db.session import base
-from sqlalchemy import Column, DateTime, Integer, String, ForeignKey
+from sqlalchemy import Boolean, Column, DateTime, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 class UserAuth(base):
@@ -83,3 +83,14 @@ class Announcement(base):
     is_active       = Column(String, nullable=False, default='Yes')
     semester        = Column(String, nullable=False)
     created_at      = Column(DateTime, default=datetime.utcnow)
+
+class UserNotification(base):
+    __tablename__ = "user_notifications"
+
+    id              = Column(Integer, primary_key=True, index=True)
+    user_id         = Column(Integer, ForeignKey("user_auth.id", ondelete="CASCADE"))
+    announcement_id = Column(Integer, ForeignKey("announcements.id", ondelete="CASCADE"))
+    is_read         = Column(Boolean, default=False)
+    created_at      = Column(DateTime, default=datetime.utcnow)
+
+    announcement = relationship("Announcement")

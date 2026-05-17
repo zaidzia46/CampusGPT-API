@@ -6,6 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from admin.deps import get_current_admin
+from core.notifications import notify_all_users
 from db.session import get_db
 from core.security import create_access_token, create_access_token, create_refresh_token, verify_password
 from models.models import UserAuth, Announcement
@@ -140,7 +141,14 @@ def create_announcement(body: AnnouncementBody, db: Session = Depends(get_db)):
     db.add(ann)
     db.commit()
     db.refresh(ann)
-    return {"id": ann.id, "message": "Announcement created successfully"}
+
+    notifications_created = notify_all_users(db, ann.id)
+    
+    return {
+        "id": ann.id,
+        "message": "Announcement created successfully",
+        "notifications_created": notifications_created,
+    }
  
  
 # PUT /admin/announcements/{id} — update existing

@@ -8,7 +8,7 @@ from schemas.students.feedback import Feedback_pd
 from schemas.students.query import Query
 from schemas.students.query_feedback import QueryFeedback_pd
 from schemas.students.update_pwd import UpdatePassword
-from models.models import ChatMessage, Feedback, QueryFeedback, SavedChat, UserAuth
+from models.models import ChatMessage, Feedback, QueryFeedback, SavedChat, UserAuth, UserNotification
 from core.security import verify_password, password_hashing
 from rag_pipeline.searcher import search
 from rag_pipeline.llm import get_answer, rewrite_query
@@ -190,3 +190,76 @@ def UpdatePassword(update_password: UpdatePassword, current_student = Depends(ge
     existing_user.password = password_hashing(update_password.new_password)
     db.commit()
     return JSONResponse(status_code=status.HTTP_200_OK, content={'message': 'Password updated successfully'})
+
+@router.get("/notifications")
+def get_notifications(db: Session = Depends(get_db), 
+                      current_student: dict = Depends(get_current_student)):
+    """Get all notifications for the logged-in student."""
+    notifications = (
+        db.query(UserNotification)
+        .filter(UserNotification.user_id == current_student["user_id"])
+        .order_by(UserNotification.created_at.desc())
+        .all()
+    )
+
+    return [
+        {
+            "id":          n.id,
+            "is_read":     n.is_read,
+            "created_at":  n.created_at.isoformat(),
+            "announcement": {
+                "id":              n.announcement.id,
+                "title":           n.announcement.title,
+                "description":     n.announcement.description,
+                "type":            n.announcement.type,
+                "target_audience": n.announcement.target_audience,
+                "is_active":       n.announcement.is_active,
+                "semester":        n.announcement.semester,
+            }
+        }
+        for n in notifications
+    ]
+
+
+@router.get("/notifications/unread-count")
+def unread_count(db: Session = Depends(get_db),
+                 current_student: dict = Depends(get_current_student)):
+    """Returns unread notification count — for the badge."""
+    count = (
+        db.query(UserNotification)
+        .filter(
+            UserNotification.user_id == current_student["user_id"],
+            UserNotification.is_read == False
+        )
+        .count()
+    )
+    return {"unread_count": count}
+
+
+@router.patch("/notifications/{notification_id}/read")
+def mark_as_read(notification_id: int,
+                 db: Session = Depends(get_db),
+                 current_student: dict = Depends(get_current_student)):
+    """Mark a single notification as read."""
+    n = db.query(UserNotification).filter(
+        UserNotification.id      == notification_id,
+        UserNotification.user_id == current_student["user_id"]
+    ).first()
+
+    if n:
+        n.is_read = True
+        db.commit()
+
+    return {"message": "Marked as read"}
+
+
+@router.patch("/notifications/mark-all-read")
+def mark_all_read(db: Session = Depends(get_db),
+                  current_student: dict = Depends(get_current_student)):
+    """Mark all notifications as read at once."""
+    db.query(UserNotification).filter(
+        UserNotification.user_id == current_student["user_id"],
+        UserNotification.is_read == False
+    ).update({"is_read": True})
+    db.commit()
+    return {"message": "All notifications marked as read"}
