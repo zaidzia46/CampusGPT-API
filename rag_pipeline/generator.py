@@ -8,7 +8,7 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "rag_pipeline"))
 
-from rag_pipeline import announcements_chunks, blocks_chunks, scholarships_chunks, fees_chunks, basic_info_chunks
+from rag_pipeline import announcements_chunks, blocks_chunks, faculty_chunks, scholarships_chunks, fees_chunks, basic_info_chunks
 
 CHUNKS_DIR = ROOT / "UNIdata" / "chunks"
 
@@ -17,6 +17,7 @@ SOURCES = [
     ("basic_info",   basic_info_chunks,   "basic_info_{semester}.xlsx"),
     ("fees",         fees_chunks,         "fee_structure_{semester}.xlsx"),
     ("blocks_directory", blocks_chunks, "blocks_directory_{semester}.xlsx"),
+    ("faculty_directory", faculty_chunks, "faculty_directory_{semester}.xlsx"),
     ("announcements",  announcements_chunks,  None),  
 ]
 

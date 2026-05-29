@@ -16,6 +16,10 @@
         "blocks_directory": {
             "sheet_id": "1lDVhnoN3HHKbpiXfUznZjhfKu8gWeC5CyV2pdZFNK1A",
             "sheet_name": "All Rooms"
+        },
+        "faculty_directory": {
+            "sheet_id": "13TV9AH0eYKgLmjxOP1gB402sf4SueBWP5hFuXsPMuHE",
+            "sheet_name": "Faculty & Staff Directory"
         }
     }
 }
