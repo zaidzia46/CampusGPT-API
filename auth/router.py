@@ -30,6 +30,9 @@ def validate_university_email(email: str) -> str:
 
     return email
 
+def get_role_from_email(email: str) -> str:
+    return "student" if "student" in email.lower() else "faculty"
+
 router = APIRouter(
     prefix='/auth',
     tags=['Auth'],
@@ -43,7 +46,8 @@ def Register(register: Register, db = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='User already existed')
     
     hashed_password = password_hashing(register.password)
-    new_user = UserAuth(username=register.username, email = register.email, password=hashed_password, role='student')
+    role = get_role_from_email(register.email)
+    new_user = UserAuth(username=register.username, email = register.email, password=hashed_password, role=role)
 
     db.add(new_user)
     db.commit()
@@ -57,9 +61,17 @@ def Login(form_data: OAuth2PasswordRequestForm = Depends(), db = Depends(get_db)
     existing_user = db.query(UserAuth).filter(UserAuth.email == email).first()
     if existing_user is None or not verify_password(form_data.password, existing_user.password):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='Wrong email or password')
+
+    role = existing_user.role
+    if role != "admin":
+        role = get_role_from_email(email)
+        if existing_user.role != role:
+            existing_user.role = role
+            db.commit()
+            db.refresh(existing_user)
     
-    access_token = create_access_token({'sub': str(existing_user.id), 'role': existing_user.role})
-    refresh_token = create_refresh_token({'sub': str(existing_user.id), 'role': existing_user.role})
+    access_token = create_access_token({'sub': str(existing_user.id), 'role': role})
+    refresh_token = create_refresh_token({'sub': str(existing_user.id), 'role': role})
 
     return {
         'access_token': access_token,

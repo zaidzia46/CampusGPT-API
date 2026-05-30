@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-19T06:01:05.549241+00:00",
+  "generated_at": "2026-05-29T14:43:17.959870+00:00",
   "semester": "fall_2026",
   "total_chunks": 737,
   "chunks": [
@@ -13664,7 +13664,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "The Civil Engineering Department at COMSATS University Islamabad, Sahiwal Campus has 10 faculty/staff members. The Head of Department (HOD) is Engr. Dr. Maria Kanwal. Department offices are located in: A Block Second Floor, A Block First Floor. Faculty members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.",
+      "text": "The Civil Engineering Department at COMSATS University Islamabad, Sahiwal Campus has 10 faculty/staff members. The Head of Department (HOD) is Engr. Dr. Maria Kanwal. Department offices are located in: A Block First Floor, A Block Second Floor. Faculty members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.",
       "metadata": {
         "department": "Civil",
         "department_full": "Civil Engineering",
@@ -13680,7 +13680,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who are the faculty members of the Civil Engineering Department?\nA: The Civil Engineering Department has 10 members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.\n\nQ: Who is the HOD of Civil Engineering?\nA: The HOD of Civil Engineering is Engr. Dr. Maria Kanwal.\n\nQ: Where are the Civil Engineering faculty offices?\nA: Civil Engineering offices are in: A Block Second Floor, A Block First Floor.\n\nQ: How many faculty are in Civil Engineering?\nA: There are 10 faculty/staff members in the Civil Engineering Department.",
+      "text": "Q: Who are the faculty members of the Civil Engineering Department?\nA: The Civil Engineering Department has 10 members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.\n\nQ: Who is the HOD of Civil Engineering?\nA: The HOD of Civil Engineering is Engr. Dr. Maria Kanwal.\n\nQ: Where are the Civil Engineering faculty offices?\nA: Civil Engineering offices are in: A Block First Floor, A Block Second Floor.\n\nQ: How many faculty are in Civil Engineering?\nA: There are 10 faculty/staff members in the Civil Engineering Department.",
       "metadata": {
         "department": "Civil",
         "department_full": "Civil Engineering",
@@ -13888,7 +13888,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "A Block, First Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 8 faculty/staff members from the following departments: Civil Engineering, Mechanical Engineering, General / Mixed, IT / Administration. Faculty/staff on this floor: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.",
+      "text": "A Block, First Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 8 faculty/staff members from the following departments: IT / Administration, Civil Engineering, General / Mixed, Mechanical Engineering. Faculty/staff on this floor: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.",
       "metadata": {
         "block": "A Block",
         "floor": "First Floor",
@@ -13903,7 +13903,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who is on First Floor of A Block?\nA: 8 faculty/staff are on First Floor of A Block: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.\n\nQ: Which departments have offices on First Floor of A Block?\nA: Departments with offices here: Civil Engineering, Mechanical Engineering, General / Mixed, IT / Administration.",
+      "text": "Q: Who is on First Floor of A Block?\nA: 8 faculty/staff are on First Floor of A Block: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.\n\nQ: Which departments have offices on First Floor of A Block?\nA: Departments with offices here: IT / Administration, Civil Engineering, General / Mixed, Mechanical Engineering.",
       "metadata": {
         "block": "A Block",
         "floor": "First Floor",
@@ -13918,7 +13918,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "A Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 7 faculty/staff members from the following departments: Mechanical Engineering, IT / Administration. Faculty/staff on this floor: Muhammad Ishaq, M. Kabir Sabri, Mazhar Hussain, Dr. Tauqeer Anwar, Dr. M. Rafi Raza, Ali Khalid, Khalid Mahmood.",
+      "text": "A Block, Ground Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 7 faculty/staff members from the following departments: IT / Administration, Mechanical Engineering. Faculty/staff on this floor: Muhammad Ishaq, M. Kabir Sabri, Mazhar Hussain, Dr. Tauqeer Anwar, Dr. M. Rafi Raza, Ali Khalid, Khalid Mahmood.",
       "metadata": {
         "block": "A Block",
         "floor": "Ground Floor",
@@ -13933,7 +13933,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who is on Ground Floor of A Block?\nA: 7 faculty/staff are on Ground Floor of A Block: Muhammad Ishaq, M. Kabir Sabri, Mazhar Hussain, Dr. Tauqeer Anwar, Dr. M. Rafi Raza, Ali Khalid, Khalid Mahmood.\n\nQ: Which departments have offices on Ground Floor of A Block?\nA: Departments with offices here: Mechanical Engineering, IT / Administration.",
+      "text": "Q: Who is on Ground Floor of A Block?\nA: 7 faculty/staff are on Ground Floor of A Block: Muhammad Ishaq, M. Kabir Sabri, Mazhar Hussain, Dr. Tauqeer Anwar, Dr. M. Rafi Raza, Ali Khalid, Khalid Mahmood.\n\nQ: Which departments have offices on Ground Floor of A Block?\nA: Departments with offices here: IT / Administration, Mechanical Engineering.",
       "metadata": {
         "block": "A Block",
         "floor": "Ground Floor",
@@ -13948,7 +13948,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 22 faculty/staff members from the following departments: Computer Engineering, Electrical Engineering, Civil Engineering. Faculty/staff on this floor: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Engr. Dr. Waqas Ahmad Watto, Dr. Sajjad Ahmad, Engr. Dr. Saqlain, Engr. Sufyan Syed, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Sabeen Amin, Amna Bashir, Muhammad Abuzar Baqir, Dr. Hafiz Muhammad Zeeshan, Maulana M. Yaseen, Dr. Aftab Naqvi, Engr. Khalid Majeed, Dr. Usman Nasim Ramay, Engr. Dr. Talha Younus, Dr. Tariq Shehzad, Engr. Dr. Arif Mahmood.",
+      "text": "A Block, Second Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 22 faculty/staff members from the following departments: Electrical Engineering, Computer Engineering, Civil Engineering. Faculty/staff on this floor: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Engr. Dr. Waqas Ahmad Watto, Dr. Sajjad Ahmad, Engr. Dr. Saqlain, Engr. Sufyan Syed, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Sabeen Amin, Amna Bashir, Muhammad Abuzar Baqir, Dr. Hafiz Muhammad Zeeshan, Maulana M. Yaseen, Dr. Aftab Naqvi, Engr. Khalid Majeed, Dr. Usman Nasim Ramay, Engr. Dr. Talha Younus, Dr. Tariq Shehzad, Engr. Dr. Arif Mahmood.",
       "metadata": {
         "block": "A Block",
         "floor": "Second Floor",
@@ -13963,7 +13963,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who is on Second Floor of A Block?\nA: 22 faculty/staff are on Second Floor of A Block: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Engr. Dr. Waqas Ahmad Watto, Dr. Sajjad Ahmad, Engr. Dr. Saqlain, Engr. Sufyan Syed, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Sabeen Amin, Amna Bashir, Muhammad Abuzar Baqir, Dr. Hafiz Muhammad Zeeshan, Maulana M. Yaseen, Dr. Aftab Naqvi, Engr. Khalid Majeed, Dr. Usman Nasim Ramay, Engr. Dr. Talha Younus, Dr. Tariq Shehzad, Engr. Dr. Arif Mahmood.\n\nQ: Which departments have offices on Second Floor of A Block?\nA: Departments with offices here: Computer Engineering, Electrical Engineering, Civil Engineering.",
+      "text": "Q: Who is on Second Floor of A Block?\nA: 22 faculty/staff are on Second Floor of A Block: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Engr. Dr. Waqas Ahmad Watto, Dr. Sajjad Ahmad, Engr. Dr. Saqlain, Engr. Sufyan Syed, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Sabeen Amin, Amna Bashir, Muhammad Abuzar Baqir, Dr. Hafiz Muhammad Zeeshan, Maulana M. Yaseen, Dr. Aftab Naqvi, Engr. Khalid Majeed, Dr. Usman Nasim Ramay, Engr. Dr. Talha Younus, Dr. Tariq Shehzad, Engr. Dr. Arif Mahmood.\n\nQ: Which departments have offices on Second Floor of A Block?\nA: Departments with offices here: Electrical Engineering, Computer Engineering, Civil Engineering.",
       "metadata": {
         "block": "A Block",
         "floor": "Second Floor",
