@@ -19,7 +19,10 @@ app.include_router(admin_public_router)
 app.include_router(admin_protected_router)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",              # local dev
+        "https://campusgpt-admin.vercel.app", # your deployed admin panel
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

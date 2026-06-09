@@ -37,7 +37,6 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
         return {'user_id': user_id, 'role': role}
     
     except JWTError as e:
-        print("JWT DECODE ERROR access >>>", repr(e))
         raise HTTPException(status_code=401, detail=str(e))
     
 
@@ -65,5 +64,4 @@ def refresh_token(refresh_token: str = Body(...)):
         return {"access_token": new_access_token, "token_type": "bearer"}
     
     except JWTError as e:
-        print("JWT DECODE ERROR refresh >>>", repr(e))
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=str(e))

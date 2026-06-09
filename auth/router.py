@@ -105,12 +105,9 @@ def ResetPWD(data: ResetPasswordRequest, db: Session = Depends(get_db)):
     user = db.query(UserAuth).filter(UserAuth.id == user_id).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    print(f"data.new_password: {data.new_password}")
     user.password = password_hashing(data.new_password)
     db.commit()
-    db.refresh(user)  # add this
-    print(f"Updated hash in DB: {user.password}")
-
+    db.refresh(user) 
     return {"message": "Password reset successful"}
 
 @router.post('/send-otp')
