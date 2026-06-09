@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from auth.register_verification_fns import save_otp, verify_otp, generate_otp
+from config import FRONTEND_APP_URL
 from core.security import password_hashing, verify_password, create_access_token, create_refresh_token
 from db.session import get_db
 from sqlalchemy.orm import Session
@@ -86,7 +87,7 @@ def ForgotPassword(data: ResetPwd, db: Session = Depends(get_db)):
 
     if user:
         token = create_reset_token(user.id)
-        reset_link = f"http://172.17.111.58:8000/static-pwd-reset/forgot-password.html?token={token}"
+        reset_link = f"{FRONTEND_APP_URL}/static-pwd-reset/forgot-password.html?token={token}"
 
         send_email(
             to=user.email,

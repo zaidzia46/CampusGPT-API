@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from auth.router import router as auth_router
+from config import FRONTEND_ADMIN_URL, FRONTEND_APP_URL
 from students.router import router as students_router
 from admin.router import public_router as admin_public_router
 from admin.router import protected_router as admin_protected_router
@@ -20,8 +21,8 @@ app.include_router(admin_protected_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",              # local dev
-        "https://campusgpt-admin.vercel.app", # your deployed admin panel
+        FRONTEND_APP_URL,              # local dev
+        FRONTEND_ADMIN_URL,
     ],
     allow_credentials=True,
     allow_methods=["*"],

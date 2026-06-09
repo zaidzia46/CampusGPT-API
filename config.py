@@ -3,6 +3,8 @@ import os
 
 load_dotenv()
 
+FRONTEND_ADMIN_URL = os.getenv('FRONTEND_ADMIN_URL')
+FRONTEND_APP_URL = os.getenv('FRONTEND_APP_URL')
 DATABASE_URL = os.getenv('DATABASE_URL')
 SECRET_KEY = os.getenv('SECRET_KEY')
 ACCESS_TOKEN_EXPIRY=int(os.getenv('ACCESS_TOKEN_EXPIRY'))
