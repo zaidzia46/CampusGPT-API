@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-05-29T14:43:17.959870+00:00",
+  "generated_at": "2026-06-06T13:59:18.342901+00:00",
   "semester": "fall_2026",
-  "total_chunks": 737,
+  "total_chunks": 743,
   "chunks": [
     {
       "chunk_id": "scholarships_fall_2026_policy_cgpa",
@@ -13664,7 +13664,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "The Civil Engineering Department at COMSATS University Islamabad, Sahiwal Campus has 10 faculty/staff members. The Head of Department (HOD) is Engr. Dr. Maria Kanwal. Department offices are located in: A Block First Floor, A Block Second Floor. Faculty members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.",
+      "text": "The Civil Engineering Department at COMSATS University Islamabad, Sahiwal Campus has 10 faculty/staff members. The Head of Department (HOD) is Engr. Dr. Maria Kanwal. Department offices are located in: A Block Second Floor, A Block First Floor. Faculty members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.",
       "metadata": {
         "department": "Civil",
         "department_full": "Civil Engineering",
@@ -13680,7 +13680,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who are the faculty members of the Civil Engineering Department?\nA: The Civil Engineering Department has 10 members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.\n\nQ: Who is the HOD of Civil Engineering?\nA: The HOD of Civil Engineering is Engr. Dr. Maria Kanwal.\n\nQ: Where are the Civil Engineering faculty offices?\nA: Civil Engineering offices are in: A Block First Floor, A Block Second Floor.\n\nQ: How many faculty are in Civil Engineering?\nA: There are 10 faculty/staff members in the Civil Engineering Department.",
+      "text": "Q: Who are the faculty members of the Civil Engineering Department?\nA: The Civil Engineering Department has 10 members: Engr. Hafiz Ammar Zahid, Engr. Dr. Maria Kanwal, Engr. Ali Raza, Engr. Yousaf Mustafa, Engr. Shakir Ahmad, Dr. Sajjad Ahmad, Engr. Muhammad Hamza Ijaz, Engr. Muhammad Usman, Dr. Waqas Zaffar, Dr. Ammar Ashraf.\n\nQ: Who is the HOD of Civil Engineering?\nA: The HOD of Civil Engineering is Engr. Dr. Maria Kanwal.\n\nQ: Where are the Civil Engineering faculty offices?\nA: Civil Engineering offices are in: A Block Second Floor, A Block First Floor.\n\nQ: How many faculty are in Civil Engineering?\nA: There are 10 faculty/staff members in the Civil Engineering Department.",
       "metadata": {
         "department": "Civil",
         "department_full": "Civil Engineering",
@@ -13888,7 +13888,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "A Block, First Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 8 faculty/staff members from the following departments: IT / Administration, Civil Engineering, General / Mixed, Mechanical Engineering. Faculty/staff on this floor: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.",
+      "text": "A Block, First Floor at COMSATS University Islamabad, Sahiwal Campus has offices for 8 faculty/staff members from the following departments: IT / Administration, Mechanical Engineering, Civil Engineering, General / Mixed. Faculty/staff on this floor: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.",
       "metadata": {
         "block": "A Block",
         "floor": "First Floor",
@@ -13903,7 +13903,7 @@
       "topic": "faculty_directory",
       "semester": "fall_2026",
       "source": "faculty_directory",
-      "text": "Q: Who is on First Floor of A Block?\nA: 8 faculty/staff are on First Floor of A Block: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.\n\nQ: Which departments have offices on First Floor of A Block?\nA: Departments with offices here: IT / Administration, Civil Engineering, General / Mixed, Mechanical Engineering.",
+      "text": "Q: Who is on First Floor of A Block?\nA: 8 faculty/staff are on First Floor of A Block: M. Nadeem Rana, Avais Naeem, Dr. Muhammad Abid, Dr. Waqas Zaffar, Dr. Ammar Ashraf, Muhammad Salman Nawaz, Muhammad Hassan Iqbal, Mr. Syed Khawar Hussain Shah.\n\nQ: Which departments have offices on First Floor of A Block?\nA: Departments with offices here: IT / Administration, Mechanical Engineering, Civil Engineering, General / Mixed.",
       "metadata": {
         "block": "A Block",
         "floor": "First Floor",
@@ -14158,6 +14158,100 @@
       "metadata": {
         "level": "full_overview",
         "source": "announcements",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_king_abdullah_ibcc_attestation_narrative",
+      "chunk_type": "narrative",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "The following information about 'IBCC Attestation' was submitted by king abdullah at COMSATS University Islamabad, Sahiwal Campus. All 8 Semester Students are required to give their Attested documents to University. Related tags: IBCC, 8th semester, attestation.",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topic": "IBCC Attestation",
+        "tags": "IBCC, 8th semester, attestation",
+        "has_file": false,
+        "source": "faculty_knowledge_base",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_king_abdullah_ibcc_attestation_faq",
+      "chunk_type": "faq",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "Q: What is 'IBCC Attestation'?\nA: According to king abdullah: All 8 Semester Students are required to give their Attested documents to University.\n\nQ: Who provided information about 'IBCC Attestation'?\nA: This information was submitted by king abdullah.\n\nQ: What topics are related to 'IBCC Attestation'?\nA: Related topics/tags: IBCC, 8th semester, attestation.",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topic": "IBCC Attestation",
+        "tags": "IBCC, 8th semester, attestation",
+        "has_file": false,
+        "source": "faculty_knowledge_base",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_king_abdullah_external_evaluation_narrative",
+      "chunk_type": "narrative",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "The following information about 'External Evaluation' was submitted by king abdullah at COMSATS University Islamabad, Sahiwal Campus. External Evaluation of All 8 semester students will be conducted on 18-June-2026 with complete project and documentation. Related tags: external evaluation, external, final year project (FYP). Additional reference material is available at: https://drive.google.com/file/d/1vEb5uFDo8sx-oCc8dW3F4s4YtNaL3qnt/view?usp=sharing",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topic": "External Evaluation",
+        "tags": "external evaluation, external, final year project (FYP)",
+        "has_file": true,
+        "source": "faculty_knowledge_base",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_king_abdullah_external_evaluation_faq",
+      "chunk_type": "faq",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "Q: What is 'External Evaluation'?\nA: According to king abdullah: External Evaluation of All 8 semester students will be conducted on 18-June-2026 with complete project and documentation. For more details: https://drive.google.com/file/d/1vEb5uFDo8sx-oCc8dW3F4s4YtNaL3qnt/view?usp=sharing\n\nQ: Who provided information about 'External Evaluation'?\nA: This information was submitted by king abdullah.\n\nQ: What topics are related to 'External Evaluation'?\nA: Related topics/tags: external evaluation, external, final year project (FYP).\n\nQ: Is there a document or file available for 'External Evaluation'?\nA: Yes. king abdullah has shared a reference file: https://drive.google.com/file/d/1vEb5uFDo8sx-oCc8dW3F4s4YtNaL3qnt/view?usp=sharing",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topic": "External Evaluation",
+        "tags": "external evaluation, external, final year project (FYP)",
+        "has_file": true,
+        "source": "faculty_knowledge_base",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_faculty_king_abdullah_narrative",
+      "chunk_type": "narrative",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "king abdullah has submitted 2 knowledge base entries at COMSATS University Islamabad, Sahiwal Campus. Topics covered: IBCC Attestation, External Evaluation.\n\n- IBCC Attestation: All 8 Semester Students are required to give their Attested documents to University.\n- External Evaluation: External Evaluation of All 8 semester students will be conducted on 18-June-2026 with complete project and documentation... [File: https://drive.google.com/file/d/1vEb5uFDo8sx-oCc8dW3F4s4YtNaL3qnt/view?usp=sharing]",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topics_covered": "IBCC Attestation, External Evaluation",
+        "entry_count": 2,
+        "source": "faculty_knowledge_base",
+        "semester": "fall_2026"
+      }
+    },
+    {
+      "chunk_id": "faculty_knowledge_base_fall_2026_faculty_king_abdullah_faq",
+      "chunk_type": "faq",
+      "topic": "faculty_knowledge_base",
+      "semester": "fall_2026",
+      "source": "faculty_knowledge_base",
+      "text": "Q: What information has king abdullah submitted?\nA: king abdullah has submitted 2 entries covering: IBCC Attestation, External Evaluation.\n\nQ: How many topics has king abdullah added to the knowledge base?\nA: king abdullah has submitted 2 topics.",
+      "metadata": {
+        "faculty_name": "king abdullah",
+        "topics_covered": "IBCC Attestation, External Evaluation",
+        "entry_count": 2,
+        "source": "faculty_knowledge_base",
         "semester": "fall_2026"
       }
     }

@@ -1,8 +1,9 @@
 from openai import OpenAI
 from config import OPENROUTER_API_KEY
+import os
 
 MODEL = "deepseek/deepseek-v4-flash"
-REWRITE_MODEL = "mistralai/mistral-7b-instruct-v0.1"
+REWRITE_MODEL = "meta-llama/llama-3.3-70b-instruct"
 
 SYSTEM_PROMPT = """You are a helpful assistant for COMSATS University Islamabad, Sahiwal Campus.
 Your job is to answer student questions accurately using ONLY the exact information provided in the context below.
@@ -161,7 +162,12 @@ def rewrite_query(question: str, history: list[dict]) -> str:
             temperature=0.0,
         )
 
-        rewritten = response.choices[0].message.content.strip()
+        content = response.choices[0].message.content
+        if not content:
+            print("[QUERY REWRITE] Empty response — using original")
+            return question
+
+        rewritten = content.strip()
 
         # Strip quotes
         rewritten = rewritten.strip('"').strip("'").strip()

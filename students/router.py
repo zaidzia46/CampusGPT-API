@@ -1,14 +1,15 @@
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 from db.session import get_db
+from schemas.faculty.faculty_submission import FacultySubmitRequest
 from schemas.students.saved_chat import SaveChatRequest
 from students.deps import get_current_student
 from schemas.students.feedback import Feedback_pd
 from schemas.students.query import Query
 from schemas.students.query_feedback import QueryFeedback_pd
 from schemas.students.update_pwd import UpdatePassword
-from models.models import ChatMessage, Feedback, QueryFeedback, SavedChat, UserAuth, UserNotification
+from models.models import ChatMessage, FacultySubmission, Feedback, QueryFeedback, SavedChat, UserAuth, UserNotification
 from core.security import verify_password, password_hashing
 from rag_pipeline.searcher import search
 from rag_pipeline.llm import get_answer, rewrite_query
@@ -263,3 +264,65 @@ def mark_all_read(db: Session = Depends(get_db),
     ).update({"is_read": True})
     db.commit()
     return {"message": "All notifications marked as read"}
+
+@router.post("/faculty/submit")
+def faculty_submit(
+    body:         FacultySubmitRequest,
+    db:           Session = Depends(get_db),
+    current_user: dict = Depends(get_current_student)
+):
+    if current_user["role"] != "faculty":
+        raise HTTPException(
+            status_code=403,
+            detail="Only faculty members can submit information."
+        )
+
+    faculty = db.query(UserAuth).filter(
+        UserAuth.id == current_user["user_id"]
+    ).first()
+    if not faculty:
+        raise HTTPException(
+            status_code=404,
+            detail="Faculty user not found."
+        )
+
+    submission = FacultySubmission(
+        faculty_name  = faculty.username,
+        faculty_email = faculty.email,
+        topic         = body.topic,
+        detail        = body.detail,
+        tags          = body.tags,
+        file_url      = body.file_url or None,
+        status        = "Pending",
+        user_id       = current_user["user_id"],
+    )
+    db.add(submission)
+    db.commit()
+    db.refresh(submission)
+
+    return {"message": "Submitted successfully. Admin will review shortly."}
+
+@router.get("/faculty/my-submissions")
+def my_submissions(
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_student)
+):
+    if current_user["role"] != "faculty":
+        raise HTTPException(status_code=403, detail="Faculty only.")
+    
+    submissions = (
+        db.query(FacultySubmission)
+        .filter(FacultySubmission.user_id == current_user["user_id"])
+        .order_by(FacultySubmission.submitted_at.desc())
+        .all()
+    )
+    return [
+        {
+            "id":           s.id,
+            "topic":        s.topic,
+            "status":       s.status,
+            "admin_notes":  s.admin_notes or "Nil",
+            "submitted_at": s.submitted_at.isoformat(),
+        }
+        for s in submissions
+    ]

@@ -20,6 +20,10 @@
         "faculty_directory": {
             "sheet_id": "13TV9AH0eYKgLmjxOP1gB402sf4SueBWP5hFuXsPMuHE",
             "sheet_name": "Faculty & Staff Directory"
+        },
+        "faculty_knowledge_base": {
+            "sheet_id": "1rGN8zUBe3gJcVHsS07dUSEmPUPH54snGKN66wUdtGYE",
+            "sheet_name": "faculty_knowledge_base"
         }
     }
 }

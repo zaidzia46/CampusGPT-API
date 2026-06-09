@@ -1,3 +1,4 @@
+import datetime
 import json
 from pathlib import Path
 
@@ -9,10 +10,11 @@ from admin.deps import get_current_admin
 from core.notifications import notify_all_users
 from db.session import get_db
 from core.security import create_access_token, create_access_token, create_refresh_token, verify_password
-from models.models import UserAuth, Announcement
+from models.models import FacultySubmission, UserAuth, Announcement
 from rag_pipeline.generator import generate
 from rag_pipeline.embedder  import embed
 from rag_pipeline.searcher  import search
+from rag_pipeline.sheets_reader import append_to_faculty_sheet
 from schemas.admin.admin import AnnouncementBody, EmbedRequest, GenerateRequest, SearchRequest
 
 
@@ -198,3 +200,66 @@ def delete_announcement(ann_id: int, db: Session = Depends(get_db)):
     db.delete(ann)
     db.commit()
     return {"message": "Announcement deleted successfully"}
+
+# GET all submissions (filterable by status)
+@protected_router.get("/submissions")
+def get_submissions(
+    status: str = None,
+    db:     Session = Depends(get_db)
+):
+    query = db.query(FacultySubmission)
+    if status:
+        query = query.filter(FacultySubmission.status == status)
+    items = query.order_by(FacultySubmission.submitted_at.desc()).all()
+    return items
+
+
+# PATCH approve — writes to Google Sheet on approval
+@protected_router.patch("/submissions/{sub_id}/approve")
+def approve_submission(
+    sub_id:     int,
+    admin_notes: str = "",
+    db:          Session = Depends(get_db)
+):
+    sub = db.query(FacultySubmission).filter(
+        FacultySubmission.id == sub_id
+    ).first()
+    if not sub:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    sub.status      = "Approved"
+    sub.admin_notes = admin_notes
+    sub.reviewed_at = datetime.datetime.utcnow()
+    db.commit()
+
+    # write clean row to Google Sheet
+    append_to_faculty_sheet({
+        "faculty_name": sub.faculty_name,
+        "topic":        sub.topic,
+        "detail":       sub.detail,
+        "tags":         sub.tags or "",
+        "file_url":     sub.file_url or "",
+    })
+
+    return {"message": "Approved and written to Google Sheet"}
+
+
+# PATCH reject
+@protected_router.patch("/submissions/{sub_id}/reject")
+def reject_submission(
+    sub_id:      int,
+    admin_notes: str = "",
+    db:          Session = Depends(get_db)
+):
+    sub = db.query(FacultySubmission).filter(
+        FacultySubmission.id == sub_id
+    ).first()
+    if not sub:
+        raise HTTPException(status_code=404, detail="Submission not found")
+
+    sub.status      = "Rejected"
+    sub.admin_notes = admin_notes
+    sub.reviewed_at = datetime.datetime.utcnow()
+    db.commit()
+
+    return {"message": "Submission rejected"}

@@ -1,7 +1,9 @@
 import json
 from pathlib import Path
+import time
 import gspread
 import pandas as pd
+from gspread.exceptions import APIError
 from google.oauth2.service_account import Credentials
 
 ROOT        = Path(__file__).parent.parent
@@ -20,7 +22,16 @@ def get_client():
     creds  = Credentials.from_service_account_file(creds_path, scopes=SCOPES)
     return gspread.authorize(creds), config
 
-def read_sheet(topic: str, sheet_name: str, header_row: int = 2) -> pd.DataFrame:
+def _run_with_retry(operation, retries: int = 3, delay: int = 2):
+    for attempt in range(retries):
+        try:
+            return operation()
+        except APIError as e:
+            if "503" not in str(e) or attempt == retries - 1:
+                raise
+            time.sleep(delay * (attempt + 1))
+
+def read_sheet(topic: str, sheet_name: str = None, header_row: int = 2) -> pd.DataFrame:
     """
     Reads a Google Sheet and returns a cleaned DataFrame.
 
@@ -30,12 +41,14 @@ def read_sheet(topic: str, sheet_name: str, header_row: int = 2) -> pd.DataFrame
     """
     client, config = get_client()
 
-    sheet_id = config["sheets"][topic]["sheet_id"]
-    sheet    = client.open_by_key(sheet_id)
-    ws       = sheet.worksheet(sheet_name)
+    sheet_config = config["sheets"][topic]
+    sheet_id     = sheet_config["sheet_id"]
+    tab_name     = sheet_name or sheet_config["sheet_name"]
+    sheet        = _run_with_retry(lambda: client.open_by_key(sheet_id))
+    ws           = _run_with_retry(lambda: sheet.worksheet(tab_name))
 
     # Get all values as a list of lists
-    all_rows = ws.get_all_values()
+    all_rows = _run_with_retry(ws.get_all_values)
 
     # Use the specified row as headers
     headers = all_rows[header_row]
@@ -47,3 +60,20 @@ def read_sheet(topic: str, sheet_name: str, header_row: int = 2) -> pd.DataFrame
     df = df.replace("", None)
 
     return df
+
+def append_to_faculty_sheet(row: dict):
+    """Writes approved faculty submission to Google Sheet."""
+    gc, config = get_client()
+    sheet_config = config["sheets"]["faculty_knowledge_base"]
+    sheet = _run_with_retry(lambda: gc.open_by_key(sheet_config["sheet_id"]))
+    ws = _run_with_retry(lambda: sheet.worksheet(sheet_config["sheet_name"]))
+
+    # column order must match sheet headers exactly
+    values = [
+        row["faculty_name"],
+        row["topic"],
+        row["detail"],
+        row["tags"],
+        row["file_url"],
+    ]
+    _run_with_retry(lambda: ws.append_row(values))

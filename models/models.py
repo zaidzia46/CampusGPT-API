@@ -1,6 +1,6 @@
 from datetime import datetime
 from db.session import base
-from sqlalchemy import Boolean, Column, DateTime, Integer, String, ForeignKey
+from sqlalchemy import Boolean, Column, DateTime, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
 
 class UserAuth(base):
@@ -16,6 +16,7 @@ class UserAuth(base):
     queryfeedbacks = relationship("QueryFeedback", back_populates="userqueryfeedback")
     chat_messages = relationship("ChatMessage", back_populates="user")
     saved_chats = relationship("SavedChat", back_populates="user")
+    faculty_submissions = relationship("FacultySubmission", back_populates="user")
 
 
 class Feedback(base):
@@ -94,3 +95,21 @@ class UserNotification(base):
     created_at      = Column(DateTime, default=datetime.utcnow)
 
     announcement = relationship("Announcement")
+
+class FacultySubmission(base):
+    __tablename__ = "faculty_submissions"
+
+    id            = Column(Integer, primary_key=True, index=True)
+    user_id       = Column(Integer, ForeignKey("user_auth.id", ondelete="CASCADE"), nullable=False)  # ← add
+    faculty_name  = Column(String(100), nullable=False)
+    faculty_email = Column(String(100), nullable=False)
+    topic         = Column(String(200), nullable=False)
+    detail        = Column(Text,        nullable=False)
+    tags          = Column(String(300))
+    file_url      = Column(String(500))
+    status        = Column(String(20),  default="Pending")
+    admin_notes   = Column(Text)
+    submitted_at  = Column(DateTime,    default=datetime.utcnow)
+    reviewed_at   = Column(DateTime)
+
+    user = relationship("UserAuth", back_populates="faculty_submissions")
