@@ -237,6 +237,18 @@ def unread_count(db: Session = Depends(get_db),
     return {"unread_count": count}
 
 
+@router.patch("/notifications/mark-all-read")
+def mark_all_read(db: Session = Depends(get_db),
+                  current_student: dict = Depends(get_current_student)):
+    """Mark all notifications as read at once."""
+    db.query(UserNotification).filter(
+        UserNotification.user_id == current_student["user_id"],
+        UserNotification.is_read == False
+    ).update({"is_read": True})
+    db.commit()
+    return {"message": "All notifications marked as read"}
+
+
 @router.patch("/notifications/{notification_id}/read")
 def mark_as_read(notification_id: int,
                  db: Session = Depends(get_db),
@@ -253,17 +265,6 @@ def mark_as_read(notification_id: int,
 
     return {"message": "Marked as read"}
 
-
-@router.patch("/notifications/mark-all-read")
-def mark_all_read(db: Session = Depends(get_db),
-                  current_student: dict = Depends(get_current_student)):
-    """Mark all notifications as read at once."""
-    db.query(UserNotification).filter(
-        UserNotification.user_id == current_student["user_id"],
-        UserNotification.is_read == False
-    ).update({"is_read": True})
-    db.commit()
-    return {"message": "All notifications marked as read"}
 
 @router.post("/faculty/submit")
 def faculty_submit(
