@@ -9,7 +9,7 @@ from schemas.students.feedback import Feedback_pd
 from schemas.students.query import Query
 from schemas.students.query_feedback import QueryFeedback_pd
 from schemas.students.update_pwd import UpdatePassword
-from models.models import ChatMessage, FacultySubmission, Feedback, QueryFeedback, SavedChat, UserAuth, UserNotification
+from models.models import Announcement, ChatMessage, FacultySubmission, Feedback, QueryFeedback, SavedChat, UserAuth, UserNotification
 from core.security import verify_password, password_hashing
 from rag_pipeline.searcher import search
 from rag_pipeline.llm import get_answer, rewrite_query
@@ -198,7 +198,9 @@ def get_notifications(db: Session = Depends(get_db),
     """Get all notifications for the logged-in student."""
     notifications = (
         db.query(UserNotification)
+        .join(Announcement, UserNotification.announcement_id == Announcement.id)
         .filter(UserNotification.user_id == current_student["user_id"])
+        .filter(Announcement.is_active == "Yes")
         .order_by(UserNotification.created_at.desc())
         .all()
     )
@@ -228,9 +230,11 @@ def unread_count(db: Session = Depends(get_db),
     """Returns unread notification count — for the badge."""
     count = (
         db.query(UserNotification)
+        .join(Announcement, UserNotification.announcement_id == Announcement.id)
         .filter(
             UserNotification.user_id == current_student["user_id"],
-            UserNotification.is_read == False
+            UserNotification.is_read == False,
+            Announcement.is_active == "Yes"
         )
         .count()
     )

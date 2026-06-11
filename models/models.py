@@ -113,3 +113,11 @@ class FacultySubmission(base):
     reviewed_at   = Column(DateTime)
 
     user = relationship("UserAuth", back_populates="faculty_submissions")
+
+class EmailVerification(base):
+    __tablename__ = "email_verifications"
+
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True, index=True, nullable=False)
+    verified_at = Column(DateTime, default=datetime.utcnow)
+    expires_at = Column(DateTime, nullable=False)

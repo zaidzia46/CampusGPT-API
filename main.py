@@ -20,10 +20,7 @@ app.include_router(admin_public_router)
 app.include_router(admin_protected_router)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        FRONTEND_APP_URL,              # local dev
-        FRONTEND_ADMIN_URL,
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

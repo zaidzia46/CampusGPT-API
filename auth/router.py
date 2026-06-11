@@ -6,9 +6,10 @@ from core.security import password_hashing, verify_password, create_access_token
 from db.session import get_db
 from sqlalchemy.orm import Session
 from schemas.auth import Register, ResetPasswordRequest, ResetPwd, SendOTP, VerifyOTP
-from models.models import UserAuth
+from models.models import EmailVerification, UserAuth
 from fastapi.security import OAuth2PasswordRequestForm
 from auth.reset_password_fns import create_reset_token, send_email, verify_reset_token
+from datetime import datetime, timedelta
 import re
 
 UNIVERSITY_EMAIL_REGEX = re.compile(
@@ -42,15 +43,29 @@ router = APIRouter(
 
 @router.post('/register')
 def Register(register: Register, db = Depends(get_db)):
-    existing_user = db.query(UserAuth).filter(UserAuth.email == register.email).first()
+    email = validate_university_email(register.email)
+
+    existing_user = db.query(UserAuth).filter(UserAuth.email == email).first()
     if existing_user:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail='User already existed')
+
+    verification = db.query(EmailVerification).filter(
+        EmailVerification.email == email,
+        EmailVerification.expires_at > datetime.utcnow()
+    ).first()
+
+    if not verification:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail='Please verify your email before registering'
+        )
     
     hashed_password = password_hashing(register.password)
-    role = get_role_from_email(register.email)
-    new_user = UserAuth(username=register.username, email = register.email, password=hashed_password, role=role)
+    role = get_role_from_email(email)
+    new_user = UserAuth(username=register.username, email = email, password=hashed_password, role=role)
 
     db.add(new_user)
+    db.delete(verification)
     db.commit()
     db.refresh(new_user)
 
@@ -132,4 +147,16 @@ def SendOTP(payload: SendOTP, db: Session = Depends(get_db)):
 def VerifyOTP(payload: VerifyOTP, db: Session = Depends(get_db)):
     email = validate_university_email(payload.email)
     verify_otp(email, payload.otp, db)   # raises HTTPException on failure
+
+    db.query(EmailVerification).filter(
+        EmailVerification.email == email
+    ).delete()
+
+    verification = EmailVerification(
+        email=email,
+        expires_at=datetime.utcnow() + timedelta(minutes=10)
+    )
+    db.add(verification)
+    db.commit()
+
     return {"message": "OTP verified successfully"}
