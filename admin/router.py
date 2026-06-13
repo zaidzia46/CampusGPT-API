@@ -269,6 +269,27 @@ def reject_submission(
 
     return {"message": "Submission rejected"}
 
+
+@protected_router.post('/reset-vectordb')
+async def reset_vectordb():
+    import chromadb
+    from chromadb.config import Settings
+
+    client = chromadb.PersistentClient(
+        path=str(ROOT / "UNIdata" / "vectordb"),
+        settings=Settings(anonymized_telemetry=False),
+    )
+
+    # delete both collections if they exist
+    for name in ["cui_sahiwal_kb", "cui_sahiwal_kb_temp"]:
+        try:
+            client.delete_collection(name)
+        except Exception:
+            pass
+
+    del client
+    return {"message": "Collections wiped. Now re-upload vectordb."}
+
 @protected_router.post('/upload-vectordb')
 async def upload_vectordb(file: UploadFile = File(...)):
     vectordb_path = ROOT / "UNIdata" / "vectordb"
