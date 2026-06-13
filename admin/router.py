@@ -18,6 +18,11 @@ from rag_pipeline.sheets_reader import append_to_faculty_sheet
 from schemas.admin.admin import AnnouncementBody, EmbedRequest, GenerateRequest, SearchRequest
 
 
+import shutil
+import zipfile
+from fastapi import UploadFile, File
+
+
 public_router = APIRouter(prefix='/admin', tags=['Admin'])
 
 protected_router = APIRouter(
@@ -263,10 +268,6 @@ def reject_submission(
     db.commit()
 
     return {"message": "Submission rejected"}
-
-import shutil
-import zipfile
-from fastapi import UploadFile, File
 
 @protected_router.post('/upload-vectordb')
 async def upload_vectordb(file: UploadFile = File(...)):
