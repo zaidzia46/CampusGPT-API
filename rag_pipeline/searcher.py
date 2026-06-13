@@ -9,20 +9,17 @@ from pathlib import Path
 
 import chromadb
 from chromadb.config import Settings
-from sentence_transformers import SentenceTransformer
+from rag_pipeline.model import model as _model
 
 ROOT            = Path(__file__).parent.parent
 DB_PATH         = str((ROOT / "UNIdata" / "vectordb").resolve())
 COLLECTION_NAME = "cui_sahiwal_kb"
-EMBED_MODEL     = "all-MiniLM-L6-v2"
 
-print("[Searcher] Loading SentenceTransformer model...")
-_model  = SentenceTransformer(EMBED_MODEL)
 _client = chromadb.PersistentClient(
     path=DB_PATH,
     settings=Settings(anonymized_telemetry=False),
 )
-print("[Searcher] Model and ChromaDB client ready.")
+print("[Searcher] ChromaDB client ready.")
 
 
 def search(query: str, top_k: int = 3) -> dict:
