@@ -263,3 +263,29 @@ def reject_submission(
     db.commit()
 
     return {"message": "Submission rejected"}
+
+import shutil
+import zipfile
+from fastapi import UploadFile, File
+
+@protected_router.post('/upload-vectordb')
+async def upload_vectordb(file: UploadFile = File(...)):
+    vectordb_path = ROOT / "UNIdata" / "vectordb"
+    zip_path      = ROOT / "vectordb_upload.zip"
+
+    # save uploaded zip
+    with open(zip_path, "wb") as f:
+        content = await file.read()
+        f.write(content)
+
+    # clear existing and extract
+    if vectordb_path.exists():
+        shutil.rmtree(vectordb_path)
+    vectordb_path.mkdir(parents=True)
+
+    with zipfile.ZipFile(zip_path, 'r') as z:
+        z.extractall(str(vectordb_path))
+
+    zip_path.unlink()
+
+    return {"message": "VectorDB uploaded successfully"}
