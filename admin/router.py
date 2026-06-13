@@ -279,10 +279,8 @@ async def upload_vectordb(file: UploadFile = File(...)):
         content = await file.read()
         f.write(content)
 
-    # clear existing and extract
-    if vectordb_path.exists():
-        shutil.rmtree(vectordb_path)
-    vectordb_path.mkdir(parents=True)
+    # DON'T delete the folder — just overwrite files inside it
+    vectordb_path.mkdir(parents=True, exist_ok=True)
 
     with zipfile.ZipFile(zip_path, 'r') as z:
         z.extractall(str(vectordb_path))
