@@ -15,7 +15,6 @@ myenv/
 
 UNIdata/credentials.json
 UNIdata/sheets_config.json
-UNIdata/vectordb/
 UNIdata/chunks/
 *.json
 !requirements.txt
