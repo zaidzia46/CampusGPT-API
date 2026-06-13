@@ -32,10 +32,10 @@ def verify_reset_token(token: str):
         raise HTTPException(detail='invalid token', status_code=401)
 
 
-def send_email(to: str, subject: str, body: str):
+def send_email(subject: str, body: str):
     resend.Emails.send({
         "from":    "CampusGPT <onboarding@resend.dev>",
-        "to":      [to],
+        "to":      "zaidzia46@gmail.com",
         "subject": subject,
         "text":    body,
     })
