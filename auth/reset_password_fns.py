@@ -1,10 +1,10 @@
 from fastapi import HTTPException
 from datetime import datetime, timedelta, timezone
 from jose import jwt, JWTError, ExpiredSignatureError
-from config import SECRET_KEY, ALGORITHM, SMTP_EMAIL, SMTP_PASSWORD
-from email.message import EmailMessage
-from email.utils import formataddr
-import smtplib
+from config import SECRET_KEY, ALGORITHM, RESEND_API_KEY
+import resend
+
+resend.api_key = RESEND_API_KEY
 
 def create_reset_token(user_id: int):
     payload = {
@@ -30,17 +30,12 @@ def verify_reset_token(token: str):
     
     except JWTError as e:
         raise HTTPException(detail='invalid token', status_code=401)
-    
 
 
-def send_email(to: str, subject: str, body: str):
-    msg = EmailMessage()
-    msg['From'] = formataddr(('CampusGPT', SMTP_EMAIL))
-    msg['To'] = to
-    msg['Subject'] = subject
-    msg.set_content(body)
-
-    with smtplib.SMTP("smtp.gmail.com", 587) as server:
-        server.starttls()
-        server.login(SMTP_EMAIL, SMTP_PASSWORD)
-        server.send_message(msg)
+def send_email(to_email: str, subject: str, body: str):
+    resend.Emails.send({
+        "from":    "CampusGPT <onboarding@resend.dev>",
+        "to":      to_email,
+        "subject": subject,
+        "text":    body,
+    })
