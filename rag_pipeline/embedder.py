@@ -5,7 +5,7 @@ Embeds chunks into ChromaDB.
 - Model and client are cached at module level for performance
 - Uses temp collection strategy to prevent data loss on failure
 """
-
+import gc
 import json
 from pathlib import Path
 
@@ -19,7 +19,7 @@ DB_PATH    = str((ROOT / "UNIdata" / "vectordb").resolve())
 
 COLLECTION_NAME      = "cui_sahiwal_kb"
 COLLECTION_NAME_TEMP = "cui_sahiwal_kb_temp"
-BATCH_SIZE           = 64
+BATCH_SIZE           = 16
 
 # ── Module-level cache — loaded ONCE when server starts ───────────────────
 _client = chromadb.PersistentClient(
@@ -88,6 +88,7 @@ def embed(semester: str, wipe: bool = True) -> dict:
                 )
                 log_lines.append(f"Upserted batch — {i + 1}/{len(chunks)} chunks")
                 ids, texts, metadatas = [], [], []
+                gc.collect()
 
         # ── Step 3: Verify temp collection ────────────────────────────
         temp_count = temp_collection.count()
@@ -126,6 +127,7 @@ def embed(semester: str, wipe: bool = True) -> dict:
                 embeddings = all_data["embeddings"][start:end],
                 metadatas  = all_data["metadatas"][start:end],
             )
+            gc.collect()
 
         # ── Step 5: Clean up temp collection ──────────────────────────
         _client.delete_collection(COLLECTION_NAME_TEMP)
