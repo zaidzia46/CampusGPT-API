@@ -19,3 +19,6 @@ UNIdata/vectordb/
 UNIdata/chunks/
 *.json
 !requirements.txt
+
+vectordb_linux.zip
+create_zip.py
