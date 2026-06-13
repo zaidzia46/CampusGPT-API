@@ -10,12 +10,11 @@ from pathlib import Path
 import chromadb
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
-# from rag_pipeline.model import model as _model
+from rag_pipeline.model import model as _model
 
 ROOT            = Path(__file__).parent.parent
 DB_PATH         = str((ROOT / "UNIdata" / "vectordb").resolve())
 COLLECTION_NAME = "cui_sahiwal_kb"
-_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 _client = chromadb.PersistentClient(
     path=DB_PATH,
