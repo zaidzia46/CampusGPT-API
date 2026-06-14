@@ -135,10 +135,9 @@ def SendOTP(payload: SendOTP, db: Session = Depends(get_db)):
     otp = generate_otp()
     save_otp(email, otp, db)          # handles cooldown + storage
     send_email(
-        to      = email,
-        subject = "Your CampusGPT Verification Code",
-        body    = f"Your OTP is: {otp}\n\nIt expires in 60 seconds. Do not share it with anyone."
-    )
+            subject='Your CampusGPT Verification Code',
+            body=f"Your OTP is: {otp}\n\nIt expires in 60 seconds. Do not share it with anyone."
+        )
     return {"message": "OTP sent to your email"}
 
 
