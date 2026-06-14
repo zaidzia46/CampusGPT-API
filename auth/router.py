@@ -105,6 +105,7 @@ def ForgotPassword(data: ResetPwd, db: Session = Depends(get_db)):
         reset_link = f"{FRONTEND_APP_URL}static-pwd-reset/forgot-password.html?token={token}"
 
         send_email(
+            to=email,
             subject='Reset Password',
             body=f"Click this link to reset your password:\n{reset_link}"
         )
@@ -135,6 +136,7 @@ def SendOTP(payload: SendOTP, db: Session = Depends(get_db)):
     otp = generate_otp()
     save_otp(email, otp, db)          # handles cooldown + storage
     send_email(
+            to=email,
             subject='Your CampusGPT Verification Code',
             body=f"Your OTP is: {otp}\n\nIt expires in 60 seconds. Do not share it with anyone."
         )
