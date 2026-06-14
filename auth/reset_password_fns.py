@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 from datetime import datetime, timedelta, timezone
 from jose import jwt, JWTError, ExpiredSignatureError
-from config import BREVO_API_KEY, SECRET_KEY, ALGORITHM, RESEND_API_KEY
+from config import BREVO_API_KEY, SECRET_KEY, ALGORITHM
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
 
