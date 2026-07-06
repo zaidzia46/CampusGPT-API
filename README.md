@@ -29,6 +29,42 @@ The system uses **Retrieval-Augmented Generation (RAG)** — instead of relying 
 
 ---
 
+## Architecture
+
+```
+┌─────────────────────────────┐     ┌──────────────────────────┐
+│      Flutter Mobile App     │     │     React Admin Panel    │
+│  Students/Faculty: Chat     │     │   Manage data, generate  │
+│  Faculty: Data submissions  │     │   embed, announcements   │
+└────────────┬────────────────┘     └────────────┬─────────────┘
+             │                                   │
+             └──────────────┬────────────────────┘
+                            ▼
+             ┌──────────────────────────────┐
+             │        FastAPI Backend        │
+             │  Auth · RAG · LLM Orchestrate │
+             └──────────────┬───────────────┘
+                            ▼
+        ┌───────────────────────────────────────────┐
+        │                RAG Pipeline                │
+        │                                           │
+        │  Campus data ──► Chunks ──► Embed vectors │
+        │                                    │       │
+        │  User query ──► Embed ──► VectorDB ┘       │
+        │                            │               │
+        │                            ▼               │
+        │               LLM (Generate Answer)        │
+        └───────────────────────────────────────────┘
+             │                        │
+    ┌────────▼────────┐    ┌──────────▼────────┐
+    │  Neon PostgreSQL │    │   Google Sheets    │
+    │  Users, chats,   │    │  Source of truth   │
+    │  announcements   │    │  for campus data   │
+    └─────────────────┘    └───────────────────┘
+```
+
+---
+
 ## Features
 
 ### Student & Faculty
@@ -71,6 +107,44 @@ The system uses **Retrieval-Augmented Generation (RAG)** — instead of relying 
 | **Backend hosting** | Railway |
 | **Admin panel hosting** | Vercel |
 
+---
+
+## Project Structure
+
+```
+CampusGPT-APIs/
+├── main.py                  # FastAPI app entry point
+├── startup.py               # Writes credentials from env vars on deploy
+├── Procfile                 # Railway start command
+│
+├── auth/                    # Registration, login, OTP, password reset
+├── admin/                   # Admin-only endpoints (generate, embed, search, announcements)
+├── students/                # Student/faculty query, saved chats, feedback
+├── core/                    # JWT security, token creation
+├── db/                      # SQLAlchemy session and engine
+├── models/                  # Database models (UserAuth, ChatMessage, Announcement, etc.)
+├── schemas/                 # Pydantic request/response schemas
+│
+├── rag_pipeline/
+│   ├── generator.py         # Pulls Google Sheets data and builds chunk JSON
+│   ├── embedder.py          # Embeds chunks into ChromaDB
+│   ├── searcher.py          # Searches ChromaDB for relevant chunks
+│   ├── llm.py               # LLM answer generation and query rewriting
+│   ├── sheets_reader.py     # Google Sheets API wrapper
+│   ├── scholarships_chunks.py
+│   ├── fees_chunks.py
+│   ├── basic_info_chunks.py
+│   ├── blocks_chunks.py
+│   ├── faculty_chunks.py
+│   ├── faculty_kb_chunks.py
+│   └── announcements_chunks.py
+│
+└── UNIdata/
+    ├── sheets_config.json   # Google Sheet IDs (gitignored)
+    ├── credentials.json     # Google service account key (gitignored)
+    ├── chunks/              # Generated chunk JSON files (gitignored)
+    └── vectordb/            # ChromaDB persistent storage (gitignored)
+```
 
 ---
 
@@ -145,6 +219,85 @@ SHEETS_CONFIG_JSON={"credentials_file":"credentials.json","sheets":{...}}
 ```
 
 ---
+
+## API Endpoints
+
+### Auth (`/auth`)
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/auth/register` | Register a new student/faculty account |
+| `POST` | `/auth/login` | Login and receive JWT tokens |
+| `POST` | `/auth/send-otp` | Send OTP to university email |
+| `POST` | `/auth/verify-otp` | Verify OTP code |
+| `POST` | `/auth/forgot-password` | Send password reset link |
+| `POST` | `/auth/reset-password` | Reset password with token |
+
+### Student (`/student`) — requires auth
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/student/query` | Send a question, receive a grounded AI answer |
+| `GET` | `/student/saved-chats` | Retrieve bookmarked answers |
+| `POST` | `/student/saved-chats` | Save an answer |
+| `DELETE` | `/student/saved-chats/{id}` | Remove a saved answer |
+| `DELETE` | `/student/clear-history` | Clear chat context history |
+
+### Admin (`/admin`) — requires admin JWT
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/admin/login` | Admin login |
+| `GET` | `/admin/status` | Chunk file overview and pipeline status |
+| `POST` | `/admin/generate` | Generate chunks from Google Sheets |
+| `POST` | `/admin/embed` | Embed chunks into ChromaDB |
+| `GET` | `/admin/chunks` | Retrieve chunk JSON for a semester |
+| `POST` | `/admin/search` | Test search against ChromaDB |
+| `GET` | `/admin/announcements` | List all announcements |
+| `POST` | `/admin/announcements` | Create an announcement |
+| `PUT` | `/admin/announcements/{id}` | Update an announcement |
+| `PATCH` | `/admin/announcements/{id}/toggle` | Toggle active status |
+| `DELETE` | `/admin/announcements/{id}` | Delete an announcement |
+
+---
+
+## RAG Pipeline
+
+The RAG pipeline runs in two modes:
+
+### Ingestion (offline, admin-triggered)
+```
+Google Sheets
+    │
+    ▼
+Chunk generators (one per data source)
+    │  Narrative chunks, FAQ chunks, overview chunks
+    ▼
+chunks_{semester}.json
+    │
+    ▼
+Sentence-Transformers (all-MiniLM-L6-v2)
+    │  384-dimensional vectors
+    ▼
+ChromaDB (persistent vector store)
+```
+
+### Query (real-time, per student message)
+```
+Student question
+    │
+    ▼
+Query rewrite (LLM) — resolves vague follow-ups using chat history
+    │
+    ▼
+Sentence-Transformers — embeds question to vector
+    │
+    ▼
+ChromaDB — top-k cosine similarity search
+    │
+    ▼
+LLM (DeepSeek via OpenRouter)
+    │  System prompt + retrieved context + chat history
+    ▼
+Grounded natural-language answer
+```
 
 ### Multi-level chunking strategy
 
