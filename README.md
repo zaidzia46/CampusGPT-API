@@ -7,7 +7,6 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Architecture](#architecture)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -26,42 +25,6 @@
 CampusGPT is a Final Year Project (FYP) built at COMSATS University Islamabad, Sahiwal Campus. It solves a real problem: students waste time searching through scattered PDFs, notice boards, and word-of-mouth to find basic campus information like semester fees, scholarship eligibility, faculty office locations, and exam announcements.
 
 The system uses **Retrieval-Augmented Generation (RAG)** — instead of relying on a general-purpose LLM that may hallucinate, CampusGPT retrieves verified facts from the university knowledge base and passes them as context to the LLM. The result is accurate, grounded answers that stay up to date with a two-click admin workflow.
-
----
-
-## Architecture
-
-```
-┌─────────────────────────────┐     ┌──────────────────────────┐
-│      Flutter Mobile App     │     │     React Admin Panel    │
-│  Students/Faculty: Chat     │     │   Manage data, generate  │
-│  Faculty: Data submissions  │     │   embed, announcements   │
-└────────────┬────────────────┘     └────────────┬─────────────┘
-             │                                   │
-             └──────────────┬────────────────────┘
-                            ▼
-             ┌──────────────────────────────┐
-             │        FastAPI Backend        │
-             │  Auth · RAG · LLM Orchestrate │
-             └──────────────┬───────────────┘
-                            ▼
-        ┌───────────────────────────────────────────┐
-        │                RAG Pipeline                │
-        │                                           │
-        │  Campus data ──► Chunks ──► Embed vectors │
-        │                                    │       │
-        │  User query ──► Embed ──► VectorDB ┘       │
-        │                            │               │
-        │                            ▼               │
-        │               LLM (Generate Answer)        │
-        └───────────────────────────────────────────┘
-             │                        │
-    ┌────────▼────────┐    ┌──────────▼────────┐
-    │  Neon PostgreSQL │    │   Google Sheets    │
-    │  Users, chats,   │    │  Source of truth   │
-    │  announcements   │    │  for campus data   │
-    └─────────────────┘    └───────────────────┘
-```
 
 ---
 
